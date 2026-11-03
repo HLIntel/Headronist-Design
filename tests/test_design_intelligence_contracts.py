@@ -22,7 +22,7 @@ class DesignIntelligenceContractTests(unittest.TestCase):
 
     def test_reference_profile_requires_evidence_classification(self):
         contract = self.load_contract("reference-profile.v1.json")
-        self.assertTrue(contract["evidence"]["requireSourceId"])
+        self.assertIn("sourceId", contract["evidence"]["requiredFields"])
         self.assertEqual(
             contract["evidence"]["classification"],
             ["observed", "inferred", "user-specified"],
