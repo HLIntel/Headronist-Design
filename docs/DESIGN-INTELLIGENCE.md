@@ -4,7 +4,7 @@
 
 Headronist turns references and task context into an evidence-backed design direction. It does not copy a reference or prescribe one universal aesthetic.
 
-## Build A Reference Profile
+## Build a reference profile
 
 Read contracts/reference-profile.v1.json before analyzing supplied URLs, screenshots, brand guidelines or source styles.
 
@@ -17,7 +17,7 @@ For every meaningful observation:
 
 A screenshot may reveal spacing and hierarchy but cannot reliably reveal the original font family, responsive breakpoints, interaction states or source design tokens. Mark those as inferred or unknown unless additional evidence exists.
 
-## Select Composition
+## Select a composition
 
 Read contracts/composition-library.v1.json. Choose a pattern from the content hierarchy, medium, audience, density, brand profile and viewport requirements.
 
@@ -25,13 +25,13 @@ Return the selected pattern and why it fits, the primary focal point and content
 
 Patterns are compositional starting points, not templates. Do not default to a repeated card grid or generic hero.
 
-## Review Anti-Patterns
+## Review anti-patterns
 
 Read contracts/anti-patterns.v1.json. Treat each match as a review signal, not an automatic failure. Include evidence and explain why the signal matters in this particular interface. Dismiss a signal only with a short rationale.
 
 Static HTML checks can identify structural hints. They cannot reliably judge visual balance, whitespace, originality, actual contrast over images, or whether a composition feels appropriate.
 
-## Keep The Profile Reusable
+## Keep the profile reusable
 
 Store approved profiles as versioned JSON alongside the project or brand. Do not silently overwrite an approved profile with a new inference. Keep source references and distinguish brand-wide rules from one-off page decisions.
 
