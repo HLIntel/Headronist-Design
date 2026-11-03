@@ -1,4 +1,6 @@
-# Research inspirations, not dependencies
+# Open-Source Design Research
+
+*Research · Tags: design systems, open source, inspiration, dependencies · [Documentation index](README.md)*
 
 - Vanilla Extract: build-time zero-runtime CSS (https://vanilla-extract.style)
 - Radix/Base UI: behavior separated from appearance (https://www.radix-ui.com/primitives ; https://base-ui.com)
