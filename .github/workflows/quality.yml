@@ -1,0 +1,27 @@
+name: Headronist quality
+
+on:
+  push:
+    branches: [main, "feat/**"]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  python-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Compile Python modules
+        run: python -m compileall -q headronist tests
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate registry paths and aliases
+        run: python -m headronist.registry check
+      - name: Validate catalog and quality contracts
+        run: python -m headronist.quality_gate
