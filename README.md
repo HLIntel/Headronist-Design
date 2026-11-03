@@ -8,10 +8,12 @@ A universal, agent-ready design system for interfaces, presentations, visual ass
 
 - [Agent and model handoff](docs/INTAKE.md) · [Design workflows](docs/UNIVERSAL-WORKFLOWS.md)
 - [Composition](docs/COMPOSITION.md) · [Cross-platform adaptation](docs/PLATFORM-ADAPTATION.md)
-- [Canonical registry](contracts/registry.v1.json) · [Agent instructions](AGENTS.md)
+- [Browse design capabilities](contracts/catalog.v1.json) · [Canonical registry](contracts/registry.v1.json) · [Agent instructions](AGENTS.md)
+- [Local discovery API and hosting guidance](docs/SERVER.md)
 - [Quality requirements](contracts/quality.v1.json) · [Reuse and compatibility](docs/REUSE.md)
 
 ```sh
+python -m headronist.discover --query landing
 python -m headronist.registry routes
 python -m headronist.registry inspect landing
 python -m headronist.registry check
