@@ -4,7 +4,7 @@
 
 Headronist treats visual generation as a pipeline, not a one-line prompt. The goal is repeatable creative direction, safe asset handling, and the right visual encoding for the information.
 
-## Prompt preparation
+## Prepare an image-generation prompt
 
 Build a structured prompt brief before sending a request to an image model:
 
@@ -34,7 +34,7 @@ The command returns a JSON brief and a provider-neutral prompt. It does not call
 
 Separate observed brand properties from inferred properties and user-specified direction. Do not ask an image model to render small UI labels, chart values or critical text when semantic HTML or a chart renderer is more reliable.
 
-## Asset lifecycle and storage
+## Manage the asset lifecycle
 
 Use a predictable lifecycle:
 
@@ -76,7 +76,7 @@ Each entry should include:
 
 Never place API keys, private URLs, personal information or credentials in prompts or manifests. Treat a generated image as original only when provider terms and inputs permit that conclusion. Keep provenance even for AI-generated material.
 
-## Responsive image integration
+## Integrate responsive images
 
 - Prefer CSS background images only for decorative visuals. Use semantic `img` elements for meaningful content.
 - Set `background-size: cover` only when crop tolerance is high; otherwise use `contain` or art-directed mobile variants.
@@ -85,7 +85,7 @@ Never place API keys, private URLs, personal information or credentials in promp
 - Provide meaningful alt text for informative images and empty alt text for decorative imagery.
 - Use `prefers-reduced-motion` for animated treatments and avoid autoplay-heavy backgrounds.
 
-## Graph and chart intelligence
+## Chart and graph intelligence
 
 Get a chart recommendation from the graph catalog:
 
@@ -117,7 +117,7 @@ Supported families include bars, lines, areas, stacked bars, pie/donut, scatter,
 
 Do not select a chart because it looks impressive. Validate data shape, units, missing values, sample size, normalization, uncertainty and audience. Avoid 3D, decorative dual axes, misleading truncated magnitude scales, and color-only distinctions. Complex charts need a table or text summary. Interactive charts should expose values, keyboard access and accessible labels.
 
-## Current Headronist visual assets
+## Included Headronist visual assets
 
 - `assets/backgrounds/headronist-trust-network.svg` — precise, geometric network field.
 - `assets/backgrounds/headronist-flow-network.svg` — flowing ribbons and connected nodes, inspired by the second visual direction.
