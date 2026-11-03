@@ -36,7 +36,9 @@
       "components/navigation/AUTH_GUIDE.md"
     ],
     "agent": [
-      "adapters/agent/ROUTER.md"
+      "adapters/agent/ROUTER.md",
+      "headronist/intake.py",
+      "docs/INTAKE.md"
     ],
     "compat": [
       "docs/COMPATIBILITY.md"
@@ -87,6 +89,21 @@
     "visualQuality": [
       "contracts/quality.v1.json",
       "tests/test_visual_quality.py"
+    ],
+    "intake": [
+      "headronist/intake.py",
+      "contracts/intake.v1.schema.json",
+      "docs/INTAKE.md"
+    ],
+    "motion": [
+      "contracts/motion.v1.json",
+      "engines/composition/finish.css",
+      "engines/composition/reveal.css",
+      "components/motion/reveal.js"
+    ],
+    "finish": [
+      "engines/composition/finish.css",
+      "contracts/quality.v1.json"
     ]
   },
   "symbols": {
@@ -113,7 +130,12 @@
     "posting": "social",
     "menu": "tabs",
     "nav": "navigation",
-    "reference": "visualQuality"
+    "reference": "visualQuality",
+    "handoff": "intake",
+    "agent_chat": "intake",
+    "parallax": "motion",
+    "silk": "finish",
+    "shine": "finish"
   },
   "status": {
     "web": "partial",
@@ -137,7 +159,10 @@
     "dashboard": "partial",
     "gallery": "partial",
     "navigation": "implemented",
-    "visualQuality": "policy-and-static-tests"
+    "visualQuality": "policy-and-static-tests",
+    "intake": "implemented-routing-only",
+    "motion": "optional-native-primitives",
+    "finish": "implemented"
   },
   "compatibility": {
     "baseline": [
