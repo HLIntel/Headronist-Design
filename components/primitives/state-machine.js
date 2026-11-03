@@ -1,0 +1,3 @@
+/** Native dependency-free Headronist state machine */
+export function createMachine({initial,states,transitions}){if(!states.includes(initial))throw Error('Invalid initial state');let state=initial;const listeners=new Set();return Object.freeze({snapshot:()=>Object.freeze({state,allowed:Object.keys(transitions[state]||{}).sort()}),send(event){const next=transitions[state]?.[event];if(!next||!states.includes(next))return false;const previous=state;state=next;for(const fn of listeners)fn(Object.freeze({previous,state,event}));return true},subscribe(fn){listeners.add(fn);return ()=>listeners.delete(fn)}})}
+export const disclosure=()=>createMachine({initial:'closed',states:['closed','open'],transitions:{closed:{OPEN:'open'},open:{CLOSE:'closed',ESCAPE:'closed'}}});
