@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Headronist visual request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "intent",
+    "aspectRatio",
+    "palette",
+    "text"
+  ],
+  "properties": {
+    "kind": {
+      "enum": [
+        "logo",
+        "banner",
+        "hero",
+        "social",
+        "illustration",
+        "diagram",
+        "icon"
+      ]
+    },
+    "intent": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 600
+    },
+    "aspectRatio": {
+      "enum": [
+        "1:1",
+        "4:5",
+        "9:16",
+        "16:9",
+        "3:2",
+        "21:9"
+      ]
+    },
+    "palette": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "text": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "maxLength": 100
+      }
+    },
+    "safeArea": {
+      "type": "number",
+      "minimum": 0.03,
+      "maximum": 0.3
+    },
+    "background": {
+      "enum": [
+        "transparent",
+        "solid",
+        "gradient",
+        "editorial"
+      ]
+    },
+    "negative": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 100
+      }
+    }
+  }
+}
