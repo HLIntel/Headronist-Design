@@ -325,6 +325,34 @@
         "json",
         "markdown"
       ]
+    },
+    "repair": {
+      "label": "Evidence-driven repair handoff",
+      "group": "automation",
+      "priority": 15,
+      "tags": [
+        "repair",
+        "feedback-loop",
+        "agent-handoff",
+        "reinspection"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "designMemory": {
+      "label": "Local versioned design memory",
+      "group": "foundations",
+      "priority": 14,
+      "tags": [
+        "memory",
+        "brand-profile",
+        "versioning",
+        "local"
+      ],
+      "outputs": [
+        "json"
+      ]
     }
   },
   "groups": {
