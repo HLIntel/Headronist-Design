@@ -137,6 +137,17 @@
       "headronist/server.py",
       "headronist/discover.py",
       "docs/SERVER.md"
+    ],
+    "mcp": [
+      "headronist/mcp.py",
+      "headronist/mcp_stdio.py",
+      "tests/test_mcp.py",
+      "docs/CLOUD-MCP.md"
+    ],
+    "cloud": [
+      "headronist/cloud.py",
+      "headronist/mcp.py",
+      "docs/CLOUD-MCP.md"
     ]
   },
   "symbols": {
@@ -177,7 +188,11 @@
     "cross_platform": "universal",
     "search": "discovery",
     "server": "localApi",
-    "host": "localApi"
+    "host": "localApi",
+    "remote": "cloud",
+    "chatgpt": "mcp",
+    "gemini": "mcp",
+    "claude": "mcp"
   },
   "status": {
     "web": "partial",
@@ -209,7 +224,9 @@
     "platforms": "guidance",
     "universal": "guidance",
     "discovery": "implemented",
-    "localApi": "implemented-local-read-only"
+    "localApi": "implemented-local-read-only",
+    "mcp": "initial-stdio-adapter-untested",
+    "cloud": "http-jsonrpc-adapter-not-full-mcp-transport"
   },
   "compatibility": {
     "baseline": [
