@@ -12,7 +12,9 @@
       "engines/composition/anti-breakage.css",
       "contracts/tokens.v1.schema.json",
       "contracts/composition.v1.json",
-      "contracts/platforms.v1.json"
+      "contracts/platforms.v1.json",
+      "contracts/expertise.v1.json",
+      "contracts/depth.v1.json"
     ],
     "landing": [
       "examples/hero-workflows.html",
@@ -23,7 +25,9 @@
       "contracts/quality.v1.json",
       "assets/primitives/workflow-nodes.svg",
       "contracts/composition.v1.json",
-      "contracts/platforms.v1.json"
+      "contracts/platforms.v1.json",
+      "contracts/expertise.v1.json",
+      "contracts/depth.v1.json"
     ],
     "tokens": [
       "contracts/tokens.v1.schema.json",
@@ -43,7 +47,9 @@
       "adapters/agent/ROUTER.md",
       "headronist/intake.py",
       "docs/INTAKE.md",
-      "contracts/platforms.v1.json"
+      "contracts/platforms.v1.json",
+      "contracts/expertise.v1.json",
+      "contracts/depth.v1.json"
     ],
     "compat": [
       "docs/COMPATIBILITY.md"
@@ -97,7 +103,9 @@
     ],
     "visualQuality": [
       "contracts/quality.v1.json",
-      "tests/test_visual_quality.py"
+      "tests/test_visual_quality.py",
+      "contracts/expertise.v1.json",
+      "contracts/depth.v1.json"
     ],
     "intake": [
       "headronist/intake.py",
@@ -117,7 +125,9 @@
     "composition": [
       "contracts/composition.v1.json",
       "headronist/composition.py",
-      "docs/COMPOSITION.md"
+      "docs/COMPOSITION.md",
+      "contracts/expertise.v1.json",
+      "contracts/depth.v1.json"
     ],
     "platforms": [
       "contracts/platforms.v1.json",
@@ -148,6 +158,19 @@
       "headronist/cloud.py",
       "headronist/mcp.py",
       "docs/CLOUD-MCP.md"
+    ],
+    "expertise": [
+      "contracts/expertise.v1.json",
+      "docs/QUALITY-FLOW.md"
+    ],
+    "depth": [
+      "contracts/depth.v1.json",
+      "docs/QUALITY-FLOW.md"
+    ],
+    "qualityGate": [
+      "headronist/quality_gate.py",
+      "tests/test_quality_gate.py",
+      "docs/QUALITY-FLOW.md"
     ]
   },
   "symbols": {
@@ -192,7 +215,11 @@
     "remote": "cloud",
     "chatgpt": "mcp",
     "gemini": "mcp",
-    "claude": "mcp"
+    "claude": "mcp",
+    "review": "qualityGate",
+    "contrast": "depth",
+    "senior_designer": "expertise",
+    "ui_engineer": "expertise"
   },
   "status": {
     "web": "partial",
@@ -226,7 +253,10 @@
     "discovery": "implemented",
     "localApi": "implemented-local-read-only",
     "mcp": "initial-stdio-adapter-untested",
-    "cloud": "http-jsonrpc-adapter-not-full-mcp-transport"
+    "cloud": "http-jsonrpc-adapter-not-full-mcp-transport",
+    "expertise": "guidance",
+    "depth": "design-contract",
+    "qualityGate": "static-validation-unverified"
   },
   "compatibility": {
     "baseline": [
