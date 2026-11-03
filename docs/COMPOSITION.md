@@ -1,4 +1,6 @@
-# Composition-first design
+# Composition-First Design
+
+*Design foundations · Tags: composition, hierarchy, typography, layout · [Documentation index](README.md)*
 
 Choose the information hierarchy before styling. Use editorial, product, documentation, data, or campaign composition based on the content. Avoid repetitive card grids, badge-heavy sections, generic gradient blobs, decorative emojis, excessive empty space, and unnecessary animation.
 
