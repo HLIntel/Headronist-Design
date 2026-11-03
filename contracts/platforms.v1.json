@@ -1,0 +1,50 @@
+{
+  "version": "1",
+  "purpose": "Portable design translation, not framework imitation",
+  "sources": {
+    "google": {
+      "reference": "Material Design 3",
+      "adopt": [
+        "adaptive layout and window size classes",
+        "accessible components and state clarity",
+        "design tokens and expressive but controlled typography"
+      ],
+      "avoid": [
+        "forcing Material visual identity on all outputs"
+      ]
+    },
+    "apple": {
+      "reference": "Apple Human Interface Guidelines",
+      "adopt": [
+        "platform-native interaction conventions",
+        "content-first hierarchy",
+        "safe areas and dynamic text",
+        "reduced motion and accessibility"
+      ],
+      "avoid": [
+        "copying proprietary assets or treating iOS rules as universal"
+      ]
+    },
+    "github": {
+      "reference": "Primer Design System",
+      "adopt": [
+        "dense but readable developer workflows",
+        "semantic color roles",
+        "accessible forms and focus",
+        "documentation and contribution conventions"
+      ],
+      "avoid": [
+        "making every experience resemble a code hosting dashboard"
+      ]
+    }
+  },
+  "decisionOrder": [
+    "user brand and task intent",
+    "target platform semantics",
+    "accessibility and content hierarchy",
+    "portable token mapping",
+    "native components and verified rendering"
+  ],
+  "runtimeDependencies": [],
+  "status": "guidance"
+}
