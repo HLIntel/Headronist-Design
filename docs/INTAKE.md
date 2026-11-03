@@ -1,4 +1,6 @@
-# Headronist compact machine intake
+# Agent Task Intake
+
+*Agent tooling · Tags: JSON handoff, routing, context, task constraints · [Documentation index](README.md)*
 Agent/chat/CLI handoff: one JSON object to `python -m headronist.intake` on stdin. No hosted service, no model inference, no implicit repository writes.
 
 ```json
