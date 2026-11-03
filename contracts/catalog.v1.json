@@ -370,6 +370,42 @@
         "json",
         "svg"
       ]
+    },
+    "visualGeneration": {
+      "label": "Visual generation and asset workflows",
+      "group": "foundations",
+      "priority": 17,
+      "tags": [
+        "image-generation",
+        "prompt-engineering",
+        "brand-context",
+        "asset-library",
+        "provenance",
+        "responsive-images"
+      ],
+      "outputs": [
+        "json",
+        "markdown",
+        "svg"
+      ]
+    },
+    "graphIntelligence": {
+      "label": "Chart and graph selection",
+      "group": "experience",
+      "priority": 55,
+      "tags": [
+        "charts",
+        "graphs",
+        "data-visualization",
+        "accessibility",
+        "analytics",
+        "sankey",
+        "network"
+      ],
+      "outputs": [
+        "json",
+        "svg"
+      ]
     }
   },
   "groups": {
