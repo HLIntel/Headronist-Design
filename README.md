@@ -11,6 +11,7 @@ A universal, agent-ready design system for interfaces, presentations, visual ass
 - [Browse design capabilities](contracts/catalog.v1.json) · [Canonical registry](contracts/registry.v1.json) · [Agent instructions](AGENTS.md)
 - [Cloud agents and MCP integration](docs/CLOUD-MCP.md) · [Local discovery API](docs/SERVER.md)
 - [Quality workflow and anti-drift checks](docs/QUALITY-FLOW.md) · [Expert review lenses](contracts/expertise.v1.json)
+- [Design intelligence](docs/DESIGN-INTELLIGENCE.md) · [Visual inspection](docs/VISUAL-INSPECTION.md) · [Operational design engines](docs/DESIGN-ENGINES.md)
 - [Depth and contrast](contracts/depth.v1.json) · [Reuse and compatibility](docs/REUSE.md)
 
 ```sh
@@ -21,6 +22,10 @@ python -m headronist.registry check
 python -m headronist.intake < task.json
 python -m headronist.mcp_stdio
 python -m headronist.quality_gate
+python -m headronist.reference path/to/page.html --css path/to/site.css --output profile.json
+python -m headronist.visual capture http://127.0.0.1:3000
+python -m headronist.repair brief findings.json --output repair-brief.json
+python -m headronist.memory list
 ```
 
 ## Design coverage
@@ -33,7 +38,7 @@ Websites, application interfaces, typography, navigation, visual assets, motion,
 - `foundations/`: palettes and design tokens
 - `engines/`: layout, responsive composition, imagery and visual finish
 - `components/`: reusable interface patterns
-- `headronist/`: deterministic compiler, intake, registry and advisory analysis
+- `headronist/`: deterministic compiler, intake, registry, reference extraction, visual capture/review, repair handoff and local design memory
 - `adapters/`: integration entry points for agents and tools
 - `docs/`: workflows, compatibility and design research
 - `tests/`: regression checks
@@ -42,4 +47,4 @@ Websites, application interfaces, typography, navigation, visual assets, motion,
 
 Headronist is independent of Headron. It supplies design intelligence and reusable presentation contracts; Headron may consume them optionally for design tasks. No vendor-specific design language is mandatory. Favor native capabilities and offline assets where practical.
 
-This repository is a **partial import** of earlier v10–v13 work. Archived demos and some output renderers are not fully present. Inspect registry status before claiming an output format is supported. Machine routing and static lint are not substitutes for rendered visual testing.
+This repository is a **partial import** of earlier v10–v13 work. Archived demos and some output renderers are not fully present. Inspect registry status before claiming an output format is supported. Machine routing and static lint are not substitutes for rendered visual testing. Playwright and vision-model review are optional integrations; they require explicit installation/configuration and are not silently invoked.
