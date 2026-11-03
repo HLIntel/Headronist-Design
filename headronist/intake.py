@@ -13,6 +13,10 @@ TASK_ROUTES = {
     "visual_asset": ("image","visualQuality"),
     "docs": ("docs","typography","visualQuality"),
     "motion": ("motion","visualQuality"),
+    "reference": ("referenceProfile","compositionLibrary"),
+    "visual_review": ("visualInspection","visualQuality","responsive"),
+    "repair": ("visualInspection","antiPatterns","qualityGate"),
+    "design_memory": ("referenceProfile","expertise"),
 }
 MAX_BYTES = 32768
 def route(payload):
