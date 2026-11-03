@@ -1,0 +1,22 @@
+{
+  "version": "1",
+  "description": "Review signals for common interface quality problems. Findings require context and are not automatic failures.",
+  "antiPatterns": [
+    {"id": "card-overuse", "category": "composition", "severity": "review", "signals": ["repeated card wrappers without distinct grouping"], "falsePositive": "Cards are appropriate for independently actionable or comparable entities.", "remedy": "Use spacing, typography, dividers or open layout where grouping is unnecessary."},
+    {"id": "generic-hero", "category": "hierarchy", "severity": "review", "signals": ["generic headline, stock visual and undifferentiated CTA"], "falsePositive": "A conventional hero may be appropriate for a familiar audience or constrained brand.", "remedy": "Tie the focal message and visual evidence to the actual product or audience."},
+    {"id": "gradient-overuse", "category": "surface", "severity": "review", "signals": ["multiple decorative gradients competing with content"], "falsePositive": "A controlled gradient can be a legitimate brand asset or focal surface.", "remedy": "Use gradients only when they reinforce hierarchy or brand identity."},
+    {"id": "visual-noise", "category": "hierarchy", "severity": "review", "signals": ["many competing accents, badges, borders or effects"], "falsePositive": "Dense operational interfaces may need many simultaneous status cues.", "remedy": "Prioritize information by importance and reduce redundant decoration."},
+    {"id": "spacing-inflation", "category": "layout", "severity": "review", "signals": ["large empty regions that separate related content without purpose"], "falsePositive": "Whitespace can be intentional in editorial or premium brand work.", "remedy": "Check reading flow, viewport context and section relationships before reducing space."},
+    {"id": "typography-monotony", "category": "typography", "severity": "review", "signals": ["weak distinction between headings, body, metadata and actions"], "falsePositive": "A deliberately restrained typographic system may use a narrow scale.", "remedy": "Strengthen hierarchy through scale, weight, line length and spacing."},
+    {"id": "repetitive-sections", "category": "composition", "severity": "review", "signals": ["same card grid or split layout repeated across unrelated sections"], "falsePositive": "Repeated patterns can improve scanning when content is genuinely parallel.", "remedy": "Vary composition when the content purpose changes."},
+    {"id": "decorative-controls", "category": "interaction", "severity": "high", "signals": ["control-like element has no meaningful action or state"], "falsePositive": "Static examples may intentionally depict controls as illustrations.", "remedy": "Implement a real action/state or render it as non-interactive content."},
+    {"id": "mobile-compression", "category": "responsive", "severity": "high", "signals": ["desktop columns, controls or type become cramped at narrow widths"], "falsePositive": "Some specialist tools legitimately require horizontal data navigation.", "remedy": "Reflow content, preserve usable targets and provide intentional overflow behavior."},
+    {"id": "contrast-risk", "category": "accessibility", "severity": "high", "signals": ["text or meaningful controls may lack sufficient contrast"], "falsePositive": "Opaque color-pair checks cannot evaluate images, gradients, overlays or alpha compositing.", "remedy": "Measure actual rendered foreground/background states and inspect focus and disabled states."}
+  ],
+  "evaluation": {
+    "requireEvidence": true,
+    "allowDismissalWithRationale": true,
+    "neverAutoFailFromSingleHeuristic": true,
+    "distinguishStaticSignalsFromRenderedFindings": true
+  }
+}

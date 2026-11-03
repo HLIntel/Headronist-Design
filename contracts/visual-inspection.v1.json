@@ -1,0 +1,44 @@
+{
+  "version": "1",
+  "description": "Evidence-first browser inspection contract. This contract defines a workflow; it does not itself capture or inspect screenshots.",
+  "capture": {
+    "preferredTool": "Playwright",
+    "viewports": [
+      {"name": "small-mobile", "width": 320, "height": 800},
+      {"name": "mobile", "width": 375, "height": 812},
+      {"name": "tablet", "width": 768, "height": 1024},
+      {"name": "desktop", "width": 1440, "height": 900},
+      {"name": "wide", "width": 1920, "height": 1080}
+    ],
+    "includeFullPage": true,
+    "captureConsoleErrors": true,
+    "captureFailedRequests": true,
+    "checkReducedMotion": true,
+    "checkKeyboardFocus": true
+  },
+  "reviewDimensions": [
+    "composition-and-hierarchy",
+    "typography-and-readability",
+    "spacing-and-alignment",
+    "color-and-contrast",
+    "component-consistency",
+    "responsive-reflow",
+    "interaction-and-focus",
+    "content-clipping-and-overflow",
+    "motion-and-reduced-motion"
+  ],
+  "findingSchema": {
+    "required": ["id", "dimension", "severity", "finding", "evidence", "viewport", "recommendedAction"],
+    "severity": ["critical", "high", "medium", "low", "note"],
+    "evidence": "Screenshot path, DOM locator, measured value or reproducible interaction."
+  },
+  "verificationStates": ["not-run", "static-only", "rendered-captured", "visually-reviewed", "human-approved"],
+  "rules": [
+    "Never claim a screenshot was captured unless a browser run produced it.",
+    "Never claim a visual review from a static HTML or CSS scan.",
+    "Record the exact viewport and route for every rendered finding.",
+    "Re-run the affected viewport after a correction.",
+    "Keep accessibility automation, visual model review and human approval as separate evidence types.",
+    "Do not publish a single quality score without dimension-level findings and evidence."
+  ]
+}

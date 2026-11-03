@@ -171,6 +171,34 @@
       "headronist/quality_gate.py",
       "tests/test_quality_gate.py",
       "docs/QUALITY-FLOW.md"
+    ],
+    "referenceProfile": [
+      "contracts/reference-profile.v1.json",
+      "headronist/reference.py",
+      "docs/DESIGN-INTELLIGENCE.md"
+    ],
+    "compositionLibrary": [
+      "contracts/composition-library.v1.json",
+      "docs/DESIGN-INTELLIGENCE.md"
+    ],
+    "antiPatterns": [
+      "contracts/anti-patterns.v1.json",
+      "docs/DESIGN-INTELLIGENCE.md"
+    ],
+    "visualInspection": [
+      "contracts/visual-inspection.v1.json",
+      "headronist/visual.py",
+      "docs/VISUAL-INSPECTION.md"
+    ],
+    "repair": [
+      "headronist/repair.py",
+      "contracts/anti-patterns.v1.json",
+      "docs/DESIGN-ENGINES.md"
+    ],
+    "designMemory": [
+      "headronist/memory.py",
+      "contracts/reference-profile.v1.json",
+      "docs/DESIGN-ENGINES.md"
     ]
   },
   "symbols": {
@@ -219,7 +247,17 @@
     "review": "qualityGate",
     "contrast": "depth",
     "senior_designer": "expertise",
-    "ui_engineer": "expertise"
+    "ui_engineer": "expertise",
+    "references": "referenceProfile",
+    "design_dna": "referenceProfile",
+    "patterns": "compositionLibrary",
+    "anti_pattern": "antiPatterns",
+    "screenshot_review": "visualInspection",
+    "visual_review": "visualInspection",
+    "repair_loop": "repair",
+    "memory": "designMemory",
+    "design_memory": "designMemory",
+    "visual_capture": "visualInspection"
   },
   "status": {
     "web": "partial",
@@ -256,7 +294,13 @@
     "cloud": "http-jsonrpc-adapter-not-full-mcp-transport",
     "expertise": "guidance",
     "depth": "design-contract",
-    "qualityGate": "static-validation-unverified"
+    "qualityGate": "static-validation-unverified",
+    "referenceProfile": "implemented-local-html-css-extraction",
+    "compositionLibrary": "advisory-pattern-library",
+    "antiPatterns": "review-contract",
+    "visualInspection": "optional-playwright-capture-and-opt-in-vision-adapter",
+    "repair": "implemented-repair-handoff-and-finding-comparison",
+    "designMemory": "implemented-local-versioned-json-store"
   },
   "compatibility": {
     "baseline": [

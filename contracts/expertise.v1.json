@@ -29,14 +29,56 @@
       "viewport testing",
       "contrast",
       "regressions"
+    ],
+    "typographySpecialist": [
+      "type scale",
+      "readability",
+      "line length",
+      "hierarchy"
+    ],
+    "brandDesigner": [
+      "identity",
+      "brand consistency",
+      "reference evidence",
+      "distinctiveness"
+    ],
+    "motionDesigner": [
+      "purposeful motion",
+      "timing",
+      "easing",
+      "reduced-motion"
+    ],
+    "accessibilitySpecialist": [
+      "contrast",
+      "keyboard access",
+      "focus visibility",
+      "target size",
+      "semantic structure"
+    ],
+    "responsiveDesigner": [
+      "breakpoint behavior",
+      "content reflow",
+      "touch interaction",
+      "overflow"
+    ],
+    "visualReviewer": [
+      "rendered screenshots",
+      "visual balance",
+      "spacing",
+      "clipping",
+      "cross-viewport consistency"
     ]
   },
   "sequence": [
     "discover",
-    "compose",
+    "understand-references",
+    "select-composition",
     "implement",
-    "validate",
-    "review"
+    "static-validate",
+    "render",
+    "inspect",
+    "repair",
+    "reinspect"
   ],
-  "note": "These are review lenses, not professional credentials or executed work."
+  "note": "These are review lenses and checklists, not professional credentials, separate agents, or executed work. Select only the perspectives relevant to the task."
 }

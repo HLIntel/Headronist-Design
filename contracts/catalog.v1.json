@@ -269,6 +269,90 @@
       "outputs": [
         "json"
       ]
+    },
+    "referenceProfile": {
+      "label": "Reference intelligence profiles",
+      "group": "foundations",
+      "priority": 15,
+      "tags": [
+        "references",
+        "brand",
+        "evidence",
+        "design-profile"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "compositionLibrary": {
+      "label": "Composition pattern intelligence",
+      "group": "experience",
+      "priority": 15,
+      "tags": [
+        "composition",
+        "layout",
+        "hierarchy",
+        "patterns"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "antiPatterns": {
+      "label": "Design anti-pattern review",
+      "group": "quality",
+      "priority": 15,
+      "tags": [
+        "anti-patterns",
+        "consistency",
+        "visual-review"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "visualInspection": {
+      "label": "Rendered visual inspection workflow",
+      "group": "quality",
+      "priority": 12,
+      "tags": [
+        "playwright",
+        "screenshots",
+        "responsive",
+        "evidence"
+      ],
+      "outputs": [
+        "json",
+        "markdown"
+      ]
+    },
+    "repair": {
+      "label": "Evidence-driven repair handoff",
+      "group": "automation",
+      "priority": 15,
+      "tags": [
+        "repair",
+        "feedback-loop",
+        "agent-handoff",
+        "reinspection"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "designMemory": {
+      "label": "Local versioned design memory",
+      "group": "foundations",
+      "priority": 14,
+      "tags": [
+        "memory",
+        "brand-profile",
+        "versioning",
+        "local"
+      ],
+      "outputs": [
+        "json"
+      ]
     }
   },
   "groups": {
