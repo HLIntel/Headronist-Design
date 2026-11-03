@@ -384,9 +384,7 @@
         "responsive-images"
       ],
       "outputs": [
-        "json",
-        "markdown",
-        "svg"
+        "json"
       ]
     },
     "graphIntelligence": {
@@ -403,8 +401,7 @@
         "network"
       ],
       "outputs": [
-        "json",
-        "svg"
+        "json"
       ]
     },
     "docs": {
