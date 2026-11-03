@@ -1,10 +1,13 @@
-# Context-efficient router
+# Routing entry point
 
-- Web/landing: `engines/composition/anti-breakage.css` and `renderers/web/README.md`
-- Backgrounds: `headronist/backgrounds.py`
-- Excel: `renderers/excel/README.md`
-- Slides: `renderers/powerpoint/README.md`
-- Palettes: load only `foundations/palettes/<id>.json`
-- Authentication UI: `components/navigation/AUTH_GUIDE.md`
+Canonical machine-readable registry: `contracts/registry.v1.json`. Do not duplicate route tables here.
 
-Choose one renderer and palette, load only necessary files, generate output and verify. Avoid reading the entire repository into agent context.
+Commands (offline, read-only):
+
+- `python -m headronist.registry routes`
+- `python -m headronist.registry inspect web`
+- `python -m headronist.registry inspect palette`
+- `python -m headronist.registry check`
+- `python -m headronist.registry fingerprint`
+
+For models without shell access, parse the registry JSON directly. Only open the paths returned by the selected route. Missing and planned renderers must be reported as such rather than fabricated.
