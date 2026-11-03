@@ -15,7 +15,7 @@ body{margin:0;background:#0b101a;color:#f4f7fd;font-family:var(--hd-font-ui);ove
 .card{border:1px solid #35435a;border-radius:.8rem;padding:1.25rem;background:#111b2b;min-width:0}
 .card p{color:#b8c6d8;line-height:1.6}.footer{padding-block:2rem;border-top:1px solid #29354a;color:#b8c6d8}
 </style></head><body>
-<header class="hd-nav-wrap" id="site-navigation"></header>
+<header class="hd-nav-wrap" id="site-navigation"><nav aria-label="Primary"><a href="#overview">Overview</a> · <a href="#patterns">Patterns</a> · <a href="#quality">Quality</a></nav></header>
 <main><section class="wrap hd-hero hd-hero--split" id="overview" aria-labelledby="hero-title">
 <div class="hd-hero__content"><p class="hd-hero__eyebrow">Headronist / Native design foundations</p>
 <h1 class="hd-hero__title" id="hero-title">Design with clarity. Build with confidence.</h1>
@@ -32,7 +32,6 @@ body{margin:0;background:#0b101a;color:#f4f7fd;font-family:var(--hd-font-ui);ove
 </main><footer class="footer"><div class="wrap">Headronist Design · Native and reusable</div></footer>
 <script type="module">
 import {renderNavigation} from '../components/navigation/nav.js';
-import config from '../contracts/navigation.v1.json' with {type:'json'};
-renderNavigation(document.querySelector('#site-navigation'),config);
+try { const response = await fetch('../contracts/navigation.v1.json'); if (!response.ok) throw new Error('Navigation unavailable'); renderNavigation(document.querySelector('#site-navigation'), await response.json()); } catch (error) { console.warn('Using semantic fallback navigation', error); }
 </script>
 </body></html>
