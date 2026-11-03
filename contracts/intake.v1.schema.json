@@ -21,7 +21,8 @@
         "dashboard",
         "visual_asset",
         "docs",
-        "motion"
+        "motion",
+        "asset_sourcing"
       ]
     },
     "target": {
