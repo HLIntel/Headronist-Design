@@ -1,0 +1,37 @@
+{
+  "version": "1",
+  "layers": [
+    "canvas",
+    "surface",
+    "raised",
+    "overlay"
+  ],
+  "principles": [
+    "Use borders, luminance and spacing before shadow",
+    "Preserve semantic foreground/background contrast",
+    "Keep depth meaningful for interaction or grouping",
+    "Prefer consistent light direction",
+    "Avoid decorative blobs and competing blur"
+  ],
+  "modes": {
+    "flat": {
+      "shadow": "none",
+      "separation": "border and tone"
+    },
+    "subtle": {
+      "shadow": "small, low-opacity",
+      "separation": "surface contrast"
+    },
+    "expressive": {
+      "shadow": "only on focal interactive elements",
+      "separation": "hierarchy and selective lighting"
+    }
+  },
+  "contrast": {
+    "normalTextMinimum": 4.5,
+    "largeTextMinimum": 3,
+    "uiComponentMinimum": 3,
+    "method": "WCAG relative luminance for opaque sRGB colors; not full visual verification"
+  },
+  "status": "design contract"
+}
