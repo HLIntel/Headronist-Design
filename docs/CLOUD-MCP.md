@@ -4,7 +4,7 @@
 
 Headronist's design contracts are client-neutral. The same dispatcher is available through stdio and a stateless HTTP JSON-RPC adapter. The cloud adapter is a WSGI application, not a deployed service.
 
-## Local MCP Stdio
+## Local MCP (stdio)
 
 ```sh
 python -m headronist.mcp_stdio
@@ -12,13 +12,13 @@ python -m headronist.mcp_stdio
 
 Configure an MCP-capable agent to launch this command from the repository root. Tools: `design_discover`, `design_inspect`, `design_intake`.
 
-## Cloud Deployment
+## Cloud deployment
 
 `headronist.cloud:application` is a WSGI callable that can run under a compatible managed Python server. It requires `HEADRONIST_API_TOKEN` (at least 24 characters), accepts authenticated POST requests at `/mcp`, limits bodies to 64KiB, and serves `/health`. Deploy only behind HTTPS, gateway rate limits, monitoring and secret management. This module does not deploy itself.
 
 The HTTP adapter currently implements **JSON-RPC over HTTP**, not a complete MCP Streamable HTTP transport. It does not implement all transport negotiation, session handling, Accept headers or streaming behavior. Do not advertise it as certified MCP HTTP compatibility until protocol conformance tests pass. MCP stdio is the initial transport target.
 
-## Chat And Cloud Client Integration
+## Chat and cloud client integration
 
 - ChatGPT and ChatGPT Work: potential integration through a supported remote MCP app/connector surface where available; account authorization, deployment, and compatibility validation are still required.
 - Gemini and Google agent ecosystems: use a supported tool or MCP bridge where available; no claim of direct Gemini Work integration.
@@ -27,7 +27,7 @@ The HTTP adapter currently implements **JSON-RPC over HTTP**, not a complete MCP
 
 Never upload full chat transcripts, proprietary design assets or secrets as task intake. Send concise scoped requests and source references. Tool output describes routing and metadata, not rendered artifacts or verified design quality.
 
-## Next Integration Gates
+## Integration readiness checks
 
 1. MCP Streamable HTTP transport conformance, including header validation and protocol negotiation.
 2. OAuth or trusted gateway auth where required by the consuming platform.
