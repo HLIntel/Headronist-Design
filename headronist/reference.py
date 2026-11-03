@@ -55,7 +55,7 @@ def extract(html, source_id="local-html", css="", source_url=None):
     parser = _Markup()
     parser.feed(html)
     colors = sorted(set(COLOR_RE.findall(css)))
-    fonts = sorted(set(x.strip().strip("\\"'") for x in FONT_RE.findall(css)))
+    fonts = sorted(set(x.strip().strip(chr(34) + chr(39)) for x in FONT_RE.findall(css)))
     font_sizes = sorted(set(x.strip() for x in SIZE_RE.findall(css)))
     spacing = sorted(set(x.strip() for x in GAP_RE.findall(css)))
     evidence = []
