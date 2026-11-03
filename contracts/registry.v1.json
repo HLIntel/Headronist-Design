@@ -199,6 +199,11 @@
       "headronist/memory.py",
       "contracts/reference-profile.v1.json",
       "docs/DESIGN-ENGINES.md"
+    ],
+    "assetSourcing": [
+      "contracts/asset-sources.v1.json",
+      "headronist/assets.py",
+      "docs/ASSET-SOURCING.md"
     ]
   },
   "symbols": {
@@ -257,7 +262,10 @@
     "repair_loop": "repair",
     "memory": "designMemory",
     "design_memory": "designMemory",
-    "visual_capture": "visualInspection"
+    "visual_capture": "visualInspection",
+    "assets": "assetSourcing",
+    "asset_sourcing": "assetSourcing",
+    "image_sources": "assetSourcing"
   },
   "status": {
     "web": "partial",
@@ -300,7 +308,8 @@
     "antiPatterns": "review-contract",
     "visualInspection": "optional-playwright-capture-and-opt-in-vision-adapter",
     "repair": "implemented-repair-handoff-and-finding-comparison",
-    "designMemory": "implemented-local-versioned-json-store"
+    "designMemory": "implemented-local-versioned-json-store",
+    "assetSourcing": "implemented-local-contextual-recommendations-and-original-svg-generation"
   },
   "compatibility": {
     "baseline": [
