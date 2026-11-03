@@ -1,0 +1,3 @@
+# Headronist non-drift contract
+
+Preserve original v10 HTML/CSS/templates and v11 palettes/CLI; retain v12 anti-breakage CSS and agent routing. v13 contracts are additive. No silent changes to defaults, palette IDs, or existing API keys. New major contracts require migration notes and tests. Pin consuming projects to tagged versions or commits. Avoid runtime CDNs, remote fonts and network dependencies. Never import third-party library source wholesale. Validate at 320/375/768/1280/1920 widths, 200% zoom, RTL, reduced motion, print and long words. Do not claim browser QA without actual execution.
