@@ -10,10 +10,10 @@ class IntakeTests(unittest.TestCase):
    result=route_task({"version":"1","task":task,"target":"brand-site"})
    self.assertIn(expected_route,result["routes"])
  def test_motion(self):
-  result=route({"version":"1","task":"motion","target":"intro"})
+  result=route_task({"version":"1","task":"motion","target":"intro"})
   self.assertIn("contracts/motion.v1.json",result["paths"])
  def test_refuses_unknown(self):
   with self.assertRaises(ValueError):route_task({"version":"1","task":"web","target":"x","secret":"x"})
  def test_refuses_invalid_constraints(self):
-  with self.assertRaises(ValueError):route({"version":"1","task":"web","target":"x","constraints":{"motion":"chaotic"}})
+  with self.assertRaises(ValueError):route_task({"version":"1","task":"web","target":"x","constraints":{"motion":"chaotic"}})
 if __name__=="__main__":unittest.main()
