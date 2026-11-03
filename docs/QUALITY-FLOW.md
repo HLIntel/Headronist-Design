@@ -1,4 +1,6 @@
-# Expert design workflow and enforcement
+# Design Quality and Release Workflow
+
+*Quality assurance · Tags: quality gates, accessibility, contrast, review · [Documentation index](README.md)*
 
 Headronist uses five expert review lenses, not simulated credentials: design director, senior web engineer, creative UI engineer, design-system architect, and quality reviewer. Their concerns are declared in `contracts/expertise.v1.json`.
 
