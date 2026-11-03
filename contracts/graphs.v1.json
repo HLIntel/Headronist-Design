@@ -1,0 +1,325 @@
+{
+  "version": "1",
+  "description": "Chart and graph selection guidance. This catalog recommends visual encodings; it does not claim to render charts.",
+  "purposes": [
+    "comparison",
+    "trend",
+    "composition",
+    "distribution",
+    "relationship",
+    "geography",
+    "process",
+    "hierarchy",
+    "performance"
+  ],
+  "types": {
+    "bar": {
+      "label": "Bar chart",
+      "purposes": [
+        "comparison",
+        "performance"
+      ],
+      "dataShapes": [
+        "categories"
+      ],
+      "audiences": [
+        "general",
+        "executive",
+        "analyst",
+        "operator"
+      ],
+      "when": "Compare values across a manageable set of categories; use horizontal bars for long labels.",
+      "avoid": "Many categories, dense time series, or comparing unrelated units.",
+      "encoding": "Position on a common quantitative axis.",
+      "accessibility": "Start at zero for magnitude comparisons; sort intentionally; label units and values."
+    },
+    "line": {
+      "label": "Line chart",
+      "purposes": [
+        "trend",
+        "performance"
+      ],
+      "dataShapes": [
+        "time-series"
+      ],
+      "audiences": [
+        "general",
+        "executive",
+        "analyst",
+        "operator"
+      ],
+      "when": "Show change over ordered time with consistent intervals.",
+      "avoid": "Unordered categories or too many overlapping series.",
+      "encoding": "Position over time; connected points imply continuity.",
+      "accessibility": "Label series directly, use distinct dash patterns or markers, and expose exact values."
+    },
+    "area": {
+      "label": "Area chart",
+      "purposes": [
+        "trend",
+        "composition"
+      ],
+      "dataShapes": [
+        "time-series"
+      ],
+      "audiences": [
+        "executive",
+        "analyst"
+      ],
+      "when": "Show cumulative magnitude or part-to-whole change over time.",
+      "avoid": "Comparing many overlapping series or precise small differences.",
+      "encoding": "Position and filled area.",
+      "accessibility": "Prefer small series counts; explain stacking and baseline."
+    },
+    "stacked_bar": {
+      "label": "Stacked bar chart",
+      "purposes": [
+        "composition",
+        "comparison"
+      ],
+      "dataShapes": [
+        "categories",
+        "parts-of-whole"
+      ],
+      "audiences": [
+        "general",
+        "executive",
+        "analyst"
+      ],
+      "when": "Compare composition across a small number of categories.",
+      "avoid": "Precise comparison of middle segments across bars.",
+      "encoding": "Common baseline for first segment; aligned totals.",
+      "accessibility": "Keep segment count low, label totals and distinguish segments without color alone."
+    },
+    "pie_donut": {
+      "label": "Pie or donut chart",
+      "purposes": [
+        "composition"
+      ],
+      "dataShapes": [
+        "parts-of-whole"
+      ],
+      "audiences": [
+        "general",
+        "executive"
+      ],
+      "when": "Show a simple whole split into a few mutually exclusive parts.",
+      "avoid": "Many slices, negative values, close values, or time comparisons.",
+      "encoding": "Angle or arc length.",
+      "accessibility": "Use direct labels and values; provide a table alternative; avoid 3D."
+    },
+    "scatter": {
+      "label": "Scatter plot",
+      "purposes": [
+        "relationship",
+        "distribution"
+      ],
+      "dataShapes": [
+        "relationship"
+      ],
+      "audiences": [
+        "analyst",
+        "executive"
+      ],
+      "when": "Inspect association, clusters, outliers or correlation between two numeric variables.",
+      "avoid": "Ordinal categories or claims of causation from correlation.",
+      "encoding": "Position on two quantitative axes.",
+      "accessibility": "Label axes, disclose scale and units, use shape or outlines alongside color."
+    },
+    "histogram": {
+      "label": "Histogram",
+      "purposes": [
+        "distribution"
+      ],
+      "dataShapes": [
+        "distribution"
+      ],
+      "audiences": [
+        "analyst",
+        "operator"
+      ],
+      "when": "Show the shape of a numeric distribution using bins.",
+      "avoid": "Comparing unrelated bin definitions or using category labels.",
+      "encoding": "Binned frequency or density.",
+      "accessibility": "State bin width and whether the y-axis is count, proportion or density."
+    },
+    "box_plot": {
+      "label": "Box plot",
+      "purposes": [
+        "distribution",
+        "comparison"
+      ],
+      "dataShapes": [
+        "distribution"
+      ],
+      "audiences": [
+        "analyst"
+      ],
+      "when": "Compare medians, spread and outliers across groups.",
+      "avoid": "Audiences unfamiliar with quartiles without explanation.",
+      "encoding": "Median, quartiles, whiskers and outliers.",
+      "accessibility": "Define whisker convention and show sample size."
+    },
+    "heatmap": {
+      "label": "Heatmap",
+      "purposes": [
+        "relationship",
+        "performance"
+      ],
+      "dataShapes": [
+        "relationship",
+        "time-series"
+      ],
+      "audiences": [
+        "analyst",
+        "operator"
+      ],
+      "when": "Reveal patterns in a two-dimensional matrix such as time by category.",
+      "avoid": "Precise lookup where labels and numbers are too small.",
+      "encoding": "Color intensity in a matrix.",
+      "accessibility": "Use perceptually ordered palettes, visible cell values when practical, and non-color labels."
+    },
+    "sankey": {
+      "label": "Sankey diagram",
+      "purposes": [
+        "process",
+        "relationship"
+      ],
+      "dataShapes": [
+        "flow"
+      ],
+      "audiences": [
+        "executive",
+        "analyst",
+        "operator"
+      ],
+      "when": "Show quantities moving between stages or destinations.",
+      "avoid": "Too many crossing links or flows without measured quantities.",
+      "encoding": "Link width represents flow quantity.",
+      "accessibility": "Label nodes and values; provide a tabular flow list."
+    },
+    "network": {
+      "label": "Network graph",
+      "purposes": [
+        "relationship",
+        "process"
+      ],
+      "dataShapes": [
+        "relationship",
+        "flow"
+      ],
+      "audiences": [
+        "analyst",
+        "operator"
+      ],
+      "when": "Show entities and their connections when topology itself matters.",
+      "avoid": "Dense hairballs or using proximity as a quantitative measure without explanation.",
+      "encoding": "Nodes represent entities; edges represent relationships.",
+      "accessibility": "Provide searchable node/edge data and a text summary."
+    },
+    "treemap": {
+      "label": "Treemap",
+      "purposes": [
+        "composition",
+        "hierarchy"
+      ],
+      "dataShapes": [
+        "hierarchy",
+        "parts-of-whole"
+      ],
+      "audiences": [
+        "executive",
+        "analyst"
+      ],
+      "when": "Show hierarchical parts-of-whole across many groups.",
+      "avoid": "Precise comparison of similarly sized rectangles or deep hierarchies.",
+      "encoding": "Rectangle area represents magnitude; nesting represents hierarchy.",
+      "accessibility": "Label levels and values; provide a sortable table."
+    },
+    "funnel": {
+      "label": "Funnel chart",
+      "purposes": [
+        "process",
+        "performance"
+      ],
+      "dataShapes": [
+        "flow",
+        "categories"
+      ],
+      "audiences": [
+        "executive",
+        "operator"
+      ],
+      "when": "Show measured stage counts through a sequential process.",
+      "avoid": "Unordered categories or stages that are not nested.",
+      "encoding": "Width represents remaining quantity by stage.",
+      "accessibility": "Show stage values and conversion rates; do not imply proportionality if widths are decorative."
+    },
+    "map": {
+      "label": "Choropleth or symbol map",
+      "purposes": [
+        "geography"
+      ],
+      "dataShapes": [
+        "geospatial"
+      ],
+      "audiences": [
+        "general",
+        "executive",
+        "analyst"
+      ],
+      "when": "Show geographically anchored values or events.",
+      "avoid": "Data with no meaningful location or misleading area comparisons.",
+      "encoding": "Color by normalized rate or symbol size by quantity.",
+      "accessibility": "Name regions, state units and normalization, and provide a ranked table."
+    },
+    "small_multiples": {
+      "label": "Small multiples",
+      "purposes": [
+        "trend",
+        "comparison"
+      ],
+      "dataShapes": [
+        "time-series",
+        "categories"
+      ],
+      "audiences": [
+        "executive",
+        "analyst"
+      ],
+      "when": "Compare repeated patterns across groups without overlapping series.",
+      "avoid": "Inconsistent axes when direct comparison is intended.",
+      "encoding": "Same chart repeated with shared scales.",
+      "accessibility": "Keep scales consistent or clearly mark differences; title each panel."
+    },
+    "kpi": {
+      "label": "KPI indicator",
+      "purposes": [
+        "performance"
+      ],
+      "dataShapes": [
+        "single-kpi"
+      ],
+      "audiences": [
+        "general",
+        "executive",
+        "operator"
+      ],
+      "when": "Communicate one key value with target, context and change.",
+      "avoid": "A naked number without timeframe, units or comparison.",
+      "encoding": "Value plus reference target or prior period.",
+      "accessibility": "Include metric definition, period, units and direction semantics."
+    }
+  },
+  "rules": [
+    "Choose the encoding from the analytical question, not visual novelty.",
+    "Use line charts for continuous time; bars for category comparisons.",
+    "Do not use pie or donut charts for many categories or close values.",
+    "Avoid 3D charts, truncated magnitude axes, dual axes without strong justification, and decorative chart junk.",
+    "Use colorblind-safe palettes and never encode a category by color alone.",
+    "Show units, time window, source, sample size and uncertainty when relevant.",
+    "Provide a table or text summary for complex or accessibility-critical charts.",
+    "Keep data separate from chart configuration and validate schemas before rendering.",
+    "Treat generated chart images as presentation assets, not substitutes for accessible interactive charts when users need exploration."
+  ]
+}
