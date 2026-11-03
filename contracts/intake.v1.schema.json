@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Headronist task handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "task",
+    "target"
+  ],
+  "properties": {
+    "version": {
+      "const": "1"
+    },
+    "task": {
+      "enum": [
+        "landing",
+        "web",
+        "mobile",
+        "presentation",
+        "dashboard",
+        "visual_asset",
+        "docs",
+        "motion"
+      ]
+    },
+    "target": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "intent": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "content": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "string",
+        "maxLength": 1200
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "viewport": {
+          "enum": [
+            "auto",
+            "mobile",
+            "tablet",
+            "desktop",
+            "split"
+          ]
+        },
+        "theme": {
+          "enum": [
+            "auto",
+            "light",
+            "dark"
+          ]
+        },
+        "motion": {
+          "enum": [
+            "off",
+            "subtle",
+            "enhanced"
+          ]
+        },
+        "offline": {
+          "type": "boolean"
+        },
+        "noExternalAssets": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "string",
+        "maxLength": 256
+      }
+    }
+  }
+}
