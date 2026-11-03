@@ -1,0 +1,42 @@
+{
+  "version": "1",
+  "reviewLenses": {
+    "designDirector": [
+      "hierarchy",
+      "composition",
+      "brand consistency"
+    ],
+    "webEngineer": [
+      "semantic HTML",
+      "responsive layout",
+      "performance",
+      "accessibility"
+    ],
+    "uiEngineer": [
+      "typography",
+      "interaction",
+      "depth",
+      "motion"
+    ],
+    "systemArchitect": [
+      "tokens",
+      "compatibility",
+      "reuse",
+      "anti-drift"
+    ],
+    "qualityReviewer": [
+      "evidence",
+      "viewport testing",
+      "contrast",
+      "regressions"
+    ]
+  },
+  "sequence": [
+    "discover",
+    "compose",
+    "implement",
+    "validate",
+    "review"
+  ],
+  "note": "These are review lenses, not professional credentials or executed work."
+}
