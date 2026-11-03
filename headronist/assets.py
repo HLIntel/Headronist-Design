@@ -17,6 +17,7 @@ KEYWORDS = {
     "editorial-photo": ("editorial", "photography", "people", "team", "office", "workspace", "real world", "portrait"),
     "illustration": ("illustration", "onboarding", "empty state", "explainer", "friendly"),
     "texture": ("texture", "pattern", "background", "subtle", "surface"),
+    "placeholder": ("placeholder", "layout testing", "wireframe test"),
 }
 
 def classify(intent):
@@ -31,7 +32,7 @@ def recommend(intent, kind="auto", offline=True, allow_placeholders=False):
         raise ValueError("intent must contain 1 to 600 characters")
     if kind == "auto":
         kind = classify(intent)
-    aliases = {"hero": "abstract", "photo": "editorial-photo", "illustration": "illustration", "background": "texture"}
+    aliases = {"hero": "abstract", "photo": "editorial-photo", "illustration": "illustration", "background": "texture", "placeholder": "placeholder"}
     kind = aliases.get(kind, kind)
     catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
     matches = []
@@ -116,7 +117,7 @@ def main(argv=None):
     sub = parser.add_subparsers(dest="command", required=True)
     rec = sub.add_parser("recommend")
     rec.add_argument("--intent", required=True)
-    rec.add_argument("--kind", default="auto", choices=("auto", "abstract", "product-ui", "editorial-photo", "illustration", "texture", "hero", "photo", "background"))
+    rec.add_argument("--kind", default="auto", choices=("auto", "abstract", "product-ui", "editorial-photo", "illustration", "texture", "hero", "photo", "background", "placeholder"))
     rec.add_argument("--allow-network-sources", action="store_true")
     rec.add_argument("--allow-placeholders", action="store_true")
     svg = sub.add_parser("pattern")
