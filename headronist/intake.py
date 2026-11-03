@@ -16,7 +16,7 @@ TASK_ROUTES = {
     "reference": ("referenceProfile","compositionLibrary"),
     "visual_review": ("visualInspection","visualQuality","responsive"),
     "repair": ("repair","visualInspection","antiPatterns","qualityGate"),
-    "design_memory": ("referenceProfile","expertise"),
+    "design_memory": ("designMemory","referenceProfile","expertise"),
 }
 MAX_BYTES = 32768
 def route(payload):
