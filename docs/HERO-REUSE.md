@@ -4,7 +4,7 @@
 
 Use `components/primitives/hero.css` and copy the semantic markup from `examples/hero-workflows.html`. The example replaces the problematic phrase with **“Smarter workflows. Clearer results.”** It is an example, not a verified edit to an existing production page.
 
-## Text Collision Protections
+## Prevent text collisions
 
 Never absolutely position headline words or stack independently translated text layers. Use normal-flow heading and description elements with `clamp()`, natural line height, `min-width:0`, and container-based scaling. Do not use fixed height on headline containers. Keep hero text at a maximum of 18ch and body text at 55ch. Test at 320px, 375px, 640px split view, 200% zoom and with 2x-length localization.
 
