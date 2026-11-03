@@ -1,4 +1,6 @@
-# Pattern harvest: concepts, not copied implementations
+# Pattern Research and Reference
+
+*Research · Tags: patterns, composition, responsive design, design systems · [Documentation index](README.md)*
 
 Headronist borrows *principles* from Webflow (responsive visual composition), Webstudio (open, component-oriented site building), Penpot (shared design tokens and reusable components), Bootstrap (stable layout and predictable responsive utilities), UI Pro Max-style design galleries (scenario-driven inspiration), Ghostty (fast defaults), and accessible primitive systems (state separated from styling). No vendor source, assets, branding, hosted services or dependencies are imported.
 
