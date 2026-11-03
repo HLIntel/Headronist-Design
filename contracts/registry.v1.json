@@ -171,6 +171,22 @@
       "headronist/quality_gate.py",
       "tests/test_quality_gate.py",
       "docs/QUALITY-FLOW.md"
+    ],
+    "referenceProfile": [
+      "contracts/reference-profile.v1.json",
+      "docs/DESIGN-INTELLIGENCE.md"
+    ],
+    "compositionLibrary": [
+      "contracts/composition-library.v1.json",
+      "docs/DESIGN-INTELLIGENCE.md"
+    ],
+    "antiPatterns": [
+      "contracts/anti-patterns.v1.json",
+      "docs/DESIGN-INTELLIGENCE.md"
+    ],
+    "visualInspection": [
+      "contracts/visual-inspection.v1.json",
+      "docs/VISUAL-INSPECTION.md"
     ]
   },
   "symbols": {
@@ -219,7 +235,13 @@
     "review": "qualityGate",
     "contrast": "depth",
     "senior_designer": "expertise",
-    "ui_engineer": "expertise"
+    "ui_engineer": "expertise",
+    "references": "referenceProfile",
+    "design_dna": "referenceProfile",
+    "patterns": "compositionLibrary",
+    "anti_pattern": "antiPatterns",
+    "screenshot_review": "visualInspection",
+    "visual_review": "visualInspection"
   },
   "status": {
     "web": "partial",
@@ -256,7 +278,11 @@
     "cloud": "http-jsonrpc-adapter-not-full-mcp-transport",
     "expertise": "guidance",
     "depth": "design-contract",
-    "qualityGate": "static-validation-unverified"
+    "qualityGate": "static-validation-unverified",
+    "referenceProfile": "evidence-contract",
+    "compositionLibrary": "advisory-pattern-library",
+    "antiPatterns": "review-contract",
+    "visualInspection": "workflow-contract-no-browser-runner"
   },
   "compatibility": {
     "baseline": [
