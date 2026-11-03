@@ -15,3 +15,5 @@ Source of truth: executable code and tests > `contracts/registry.v1.json` > sche
 9. Visual finish is opt-in: static by default; no shadow blobs, redundant whitespace, or distracting parallax. Prefer local CSS/SVG, reduced-motion fallbacks, and real product clips only when demonstrably useful. See `contracts/motion.v1.json`.
 
 10. Composition precedes effects. For landing/web/docs/dashboard work, load `contracts/composition.v1.json`. Prefer intentional typography, direct content, and authentic product visuals over card walls, redundant badges, emoji, and ornamental gradients. Run `python -m headronist.composition <html-file>` as advisory lint; do not report it as screenshot or accessibility verification.
+
+11. Adapt design to medium and platform using `contracts/platforms.v1.json` and `docs/UNIVERSAL-WORKFLOWS.md`. Borrow Google Material adaptive patterns, Apple platform interaction conventions, and GitHub Primer's developer-focused information clarity selectively. Never force a vendor skin, duplicate a third-party library, or claim unsupported renderers are implemented.
