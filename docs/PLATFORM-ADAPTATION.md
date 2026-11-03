@@ -1,4 +1,6 @@
-# Universal design adaptation
+# Cross-Platform Design Adaptation
+
+*Design foundations · Tags: mobile, tablet, desktop, adaptive layouts · [Documentation index](README.md)*
 
 Headronist is not a Google, Apple, or GitHub skin. Translate the most useful interaction principles to the target medium while preserving the user's brand.
 
