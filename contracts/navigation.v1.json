@@ -7,17 +7,17 @@
   "items": [
     {
       "id": "overview",
-      "label": "Overview",
+      "label": "System overview",
       "href": "#overview"
     },
     {
       "id": "patterns",
-      "label": "Patterns",
+      "label": "Design patterns",
       "href": "#patterns"
     },
     {
       "id": "quality",
-      "label": "Quality",
+      "label": "Quality standards",
       "href": "#quality"
     }
   ],
