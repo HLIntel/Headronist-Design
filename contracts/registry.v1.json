@@ -35,6 +35,44 @@
     ],
     "compat": [
       "docs/COMPATIBILITY.md"
+    ],
+    "responsive": [
+      "engines/composition/responsive.css",
+      "contracts/scenarios.v1.json"
+    ],
+    "typography": [
+      "engines/typography/type.css"
+    ],
+    "links": [
+      "components/navigation/links.js"
+    ],
+    "social": [
+      "components/navigation/links.js",
+      "contracts/scenarios.v1.json"
+    ],
+    "tabs": [
+      "components/navigation/tabs.js",
+      "engines/composition/responsive.css"
+    ],
+    "image": [
+      "engines/imagery/prompt.py",
+      "contracts/visual.v1.schema.json"
+    ],
+    "docs": [
+      "contracts/scenarios.v1.json",
+      "docs/PATTERN-REFERENCE.md"
+    ],
+    "stream": [
+      "contracts/scenarios.v1.json",
+      "docs/PATTERN-REFERENCE.md"
+    ],
+    "dashboard": [
+      "contracts/scenarios.v1.json",
+      "engines/composition/responsive.css"
+    ],
+    "gallery": [
+      "contracts/scenarios.v1.json",
+      "engines/imagery/prompt.py"
     ]
   },
   "symbols": {
@@ -49,7 +87,17 @@
   "aliases": {
     "website": "web",
     "page": "landing",
-    "theme": "palette"
+    "theme": "palette",
+    "mobile": "responsive",
+    "iphone": "responsive",
+    "split": "responsive",
+    "fonts": "typography",
+    "logo": "image",
+    "graphics": "image",
+    "faq": "docs",
+    "privacy": "docs",
+    "posting": "social",
+    "menu": "tabs"
   },
   "status": {
     "web": "partial",
@@ -61,7 +109,17 @@
     "agent": "implemented",
     "compat": "policy",
     "presentation": "planned",
-    "excel": "planned"
+    "excel": "planned",
+    "responsive": "implemented",
+    "typography": "implemented",
+    "links": "implemented",
+    "social": "partial",
+    "tabs": "implemented",
+    "image": "implemented",
+    "docs": "guidance",
+    "stream": "guidance",
+    "dashboard": "partial",
+    "gallery": "partial"
   },
   "compatibility": {
     "baseline": [
