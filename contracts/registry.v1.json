@@ -204,6 +204,17 @@
       "contracts/asset-sources.v1.json",
       "headronist/assets.py",
       "docs/ASSET-SOURCING.md"
+    ],
+    "visualGeneration": [
+      "contracts/visual-prompt.v1.json",
+      "contracts/asset-sources.v1.json",
+      "docs/VISUAL-GENERATION-AND-GRAPHS.md",
+      "headronist/visuals.py"
+    ],
+    "graphIntelligence": [
+      "contracts/graphs.v1.json",
+      "docs/VISUAL-GENERATION-AND-GRAPHS.md",
+      "headronist/visuals.py"
     ]
   },
   "symbols": {
