@@ -406,12 +406,28 @@
         "json",
         "svg"
       ]
+    },
+    "docs": {
+      "label": "Documentation and navigation",
+      "group": "documentation",
+      "priority": 5,
+      "tags": [
+        "documentation",
+        "guides",
+        "navigation",
+        "reference",
+        "agent-context"
+      ],
+      "outputs": [
+        "markdown"
+      ]
     }
   },
   "groups": {
     "foundations": "Reusable design foundations",
     "experience": "Experience and interface patterns",
     "quality": "Review and evaluation",
-    "automation": "Agent and workflow interfaces"
+    "automation": "Agent and workflow interfaces",
+    "documentation": "Guides and reference"
   }
 }
