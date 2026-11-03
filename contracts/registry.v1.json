@@ -174,6 +174,7 @@
     ],
     "referenceProfile": [
       "contracts/reference-profile.v1.json",
+      "headronist/reference.py",
       "docs/DESIGN-INTELLIGENCE.md"
     ],
     "compositionLibrary": [
@@ -186,7 +187,18 @@
     ],
     "visualInspection": [
       "contracts/visual-inspection.v1.json",
+      "headronist/visual.py",
       "docs/VISUAL-INSPECTION.md"
+    ],
+    "repair": [
+      "headronist/repair.py",
+      "contracts/anti-patterns.v1.json",
+      "docs/DESIGN-ENGINES.md"
+    ],
+    "designMemory": [
+      "headronist/memory.py",
+      "contracts/reference-profile.v1.json",
+      "docs/DESIGN-ENGINES.md"
     ]
   },
   "symbols": {
@@ -241,7 +253,11 @@
     "patterns": "compositionLibrary",
     "anti_pattern": "antiPatterns",
     "screenshot_review": "visualInspection",
-    "visual_review": "visualInspection"
+    "visual_review": "visualInspection",
+    "repair_loop": "repair",
+    "memory": "designMemory",
+    "design_memory": "designMemory",
+    "visual_capture": "visualInspection"
   },
   "status": {
     "web": "partial",
@@ -279,10 +295,12 @@
     "expertise": "guidance",
     "depth": "design-contract",
     "qualityGate": "static-validation-unverified",
-    "referenceProfile": "evidence-contract",
+    "referenceProfile": "implemented-local-html-css-extraction",
     "compositionLibrary": "advisory-pattern-library",
     "antiPatterns": "review-contract",
-    "visualInspection": "workflow-contract-no-browser-runner"
+    "visualInspection": "optional-playwright-capture-and-opt-in-vision-adapter",
+    "repair": "implemented-repair-handoff-and-finding-comparison",
+    "designMemory": "implemented-local-versioned-json-store"
   },
   "compatibility": {
     "baseline": [
