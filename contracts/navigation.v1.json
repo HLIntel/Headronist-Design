@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "brand": {
+    "label": "Headronist",
+    "href": "./index.html"
+  },
+  "items": [
+    {
+      "id": "overview",
+      "label": "Overview",
+      "href": "#overview"
+    },
+    {
+      "id": "patterns",
+      "label": "Patterns",
+      "href": "#patterns"
+    },
+    {
+      "id": "quality",
+      "label": "Quality",
+      "href": "#quality"
+    }
+  ],
+  "action": {
+    "label": "View source",
+    "href": "https://github.com/HLIntel/Headronist-Design"
+  }
+}
