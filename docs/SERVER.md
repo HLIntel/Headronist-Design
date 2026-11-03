@@ -1,4 +1,6 @@
-# Discovery, metadata, and local hosting
+# Discovery and Local API
+
+*Developer tooling · Tags: CLI, route discovery, local server, metadata · [Documentation index](README.md)*
 
 The route catalog is metadata, not a second source of truth. The registry owns paths and statuses; the catalog adds labels, groups, priorities, tags, and intended outputs for search and navigation.
 
