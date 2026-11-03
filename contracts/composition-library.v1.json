@@ -1,0 +1,24 @@
+{
+  "version": "1",
+  "description": "Composable layout strategies selected by content, task and medium, not fixed page templates.",
+  "selectionInputs": ["medium", "audience", "content-hierarchy", "content-density", "brand-profile", "viewport"],
+  "patterns": {
+    "editorial": {"bestFor": ["storytelling", "brand", "long-form"], "signals": ["strong type hierarchy", "open section rhythm", "intentional asymmetry"]},
+    "product": {"bestFor": ["software", "product-marketing", "feature-explanation"], "signals": ["product evidence", "clear primary action", "feature-to-benefit flow"]},
+    "documentation": {"bestFor": ["guides", "reference", "technical-content"], "signals": ["scanability", "semantic headings", "code readability"]},
+    "data": {"bestFor": ["analytics", "operations", "dashboards"], "signals": ["comparison", "dense information", "clear units and labels"]},
+    "campaign": {"bestFor": ["launches", "events", "promotions"], "signals": ["single focal message", "distinctive art direction", "clear conversion path"]},
+    "split": {"bestFor": ["paired narrative and media", "product demonstrations"], "signals": ["two complementary content regions", "responsive stacking plan"]},
+    "fullBleed": {"bestFor": ["immersive imagery", "campaign moments"], "signals": ["genuine high-quality media", "text contrast plan", "crop strategy"]},
+    "modular": {"bestFor": ["multi-tool applications", "configurable workspaces"], "signals": ["independent functional regions", "repeatable component grammar"]}
+  },
+  "selectionRules": [
+    "Select the simplest pattern that expresses the content hierarchy.",
+    "Explain why the selected pattern fits the task.",
+    "Do not repeat the same section composition without a content reason.",
+    "Define mobile and narrow-screen behavior as part of the composition.",
+    "Treat patterns as starting points; allow brand-specific art direction."
+  ],
+  "reviewSignals": ["hierarchy", "rhythm", "density", "repetition", "focal-point", "responsive-reflow"],
+  "note": "Pattern selection is advisory and does not prove visual quality."
+}
