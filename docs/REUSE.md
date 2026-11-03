@@ -1,4 +1,6 @@
-# Reuse and anti-drift
+# Design Reuse and Anti-Drift
+
+*Engineering standards · Tags: reuse, tokens, compatibility, stable identifiers · [Documentation index](README.md)*
 
 The machine contract is `contracts/registry.v1.json`; this file explains consumption, not a second registry.
 
