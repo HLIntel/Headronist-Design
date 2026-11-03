@@ -1,0 +1,190 @@
+{
+  "version": "1",
+  "description": "Compact route discovery metadata; registry remains canonical for paths and implementation status",
+  "routes": {
+    "landing": {
+      "label": "Landing pages",
+      "group": "experience",
+      "priority": 10,
+      "tags": [
+        "web",
+        "hero",
+        "editorial"
+      ],
+      "outputs": [
+        "html",
+        "css"
+      ]
+    },
+    "web": {
+      "label": "Web interfaces",
+      "group": "experience",
+      "priority": 20,
+      "tags": [
+        "responsive",
+        "components"
+      ],
+      "outputs": [
+        "html",
+        "css",
+        "js"
+      ]
+    },
+    "responsive": {
+      "label": "Responsive layouts",
+      "group": "foundations",
+      "priority": 30,
+      "tags": [
+        "mobile",
+        "desktop"
+      ],
+      "outputs": [
+        "css"
+      ]
+    },
+    "composition": {
+      "label": "Composition quality",
+      "group": "quality",
+      "priority": 10,
+      "tags": [
+        "hierarchy",
+        "cards",
+        "typography"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "visualQuality": {
+      "label": "Visual quality",
+      "group": "quality",
+      "priority": 20,
+      "tags": [
+        "accessibility",
+        "viewport"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "intake": {
+      "label": "Agent task intake",
+      "group": "automation",
+      "priority": 10,
+      "tags": [
+        "chat",
+        "agent",
+        "handoff"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "agent": {
+      "label": "Agent integration",
+      "group": "automation",
+      "priority": 20,
+      "tags": [
+        "routing",
+        "model"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "motion": {
+      "label": "Motion design",
+      "group": "experience",
+      "priority": 60,
+      "tags": [
+        "transition",
+        "shine",
+        "parallax"
+      ],
+      "outputs": [
+        "css",
+        "js"
+      ]
+    },
+    "platforms": {
+      "label": "Platform adaptation",
+      "group": "foundations",
+      "priority": 40,
+      "tags": [
+        "apple",
+        "google",
+        "github"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "typography": {
+      "label": "Typography",
+      "group": "foundations",
+      "priority": 10,
+      "tags": [
+        "font",
+        "type"
+      ],
+      "outputs": [
+        "css"
+      ]
+    },
+    "tokens": {
+      "label": "Design tokens",
+      "group": "foundations",
+      "priority": 20,
+      "tags": [
+        "color",
+        "spacing"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "navigation": {
+      "label": "Navigation",
+      "group": "experience",
+      "priority": 40,
+      "tags": [
+        "menu",
+        "links"
+      ],
+      "outputs": [
+        "js",
+        "css"
+      ]
+    },
+    "dashboard": {
+      "label": "Dashboards",
+      "group": "experience",
+      "priority": 50,
+      "tags": [
+        "data",
+        "charts"
+      ],
+      "outputs": [
+        "css"
+      ]
+    },
+    "universal": {
+      "label": "Universal workflows",
+      "group": "automation",
+      "priority": 30,
+      "tags": [
+        "cross-platform",
+        "workflow"
+      ],
+      "outputs": [
+        "markdown"
+      ]
+    }
+  },
+  "groups": {
+    "foundations": "Reusable design foundations",
+    "experience": "Experience and interface patterns",
+    "quality": "Review and evaluation",
+    "automation": "Agent and workflow interfaces"
+  }
+}
