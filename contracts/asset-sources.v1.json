@@ -1,0 +1,132 @@
+{
+  "version": "1",
+  "policy": {
+    "default": "local-first",
+    "noAutomaticRemoteFetch": true,
+    "requireLicenseReview": true,
+    "requireAttributionMetadata": true,
+    "developmentPlaceholdersNeverProduction": true
+  },
+  "sources": {
+    "nativeSvg": {
+      "label": "Native SVG and CSS",
+      "category": "generated",
+      "access": "keyless",
+      "network": false,
+      "production": true,
+      "bestFor": ["abstract", "network", "trust", "dashboard", "texture", "diagram"],
+      "license": "Original project-generated output",
+      "notes": "Preferred default. Generate small, accessible, responsive SVG/CSS locally."
+    },
+    "haikei": {
+      "label": "Haikei",
+      "category": "generator",
+      "url": "https://haikei.app/",
+      "access": "browser-tool",
+      "network": true,
+      "production": true,
+      "bestFor": ["abstract", "hero", "wave", "blob", "geometric"],
+      "license": "Review the current terms for each exported asset",
+      "notes": "Use as a visual authoring tool; export and commit the resulting SVG. Not a runtime image API."
+    },
+    "heroPatterns": {
+      "label": "Hero Patterns",
+      "category": "generator",
+      "url": "https://heropatterns.com/",
+      "access": "browser-tool",
+      "network": true,
+      "production": true,
+      "bestFor": ["texture", "pattern", "background", "dashboard"],
+      "license": "Check the current project license before redistribution",
+      "notes": "Use subtle repeatable SVG patterns; keep contrast low and avoid competing with content."
+    },
+    "svgBackgrounds": {
+      "label": "SVG Backgrounds",
+      "category": "generator",
+      "url": "https://www.svgbackgrounds.com/",
+      "access": "browser-tool",
+      "network": true,
+      "production": true,
+      "bestFor": ["abstract", "geometric", "hero", "texture"],
+      "license": "Check the current license and asset-specific terms",
+      "notes": "Curated SVG generator/library, not a live API."
+    },
+    "unDraw": {
+      "label": "unDraw",
+      "category": "illustration-library",
+      "url": "https://undraw.co/illustrations",
+      "access": "keyless-download",
+      "network": true,
+      "production": true,
+      "bestFor": ["product-explainer", "onboarding", "empty-state", "illustration"],
+      "license": "Review unDraw license and trademark guidance before use",
+      "notes": "Download and adapt SVGs; recolor to match the product. Avoid generic illustration when real UI is stronger."
+    },
+    "openDoodles": {
+      "label": "Open Doodles",
+      "category": "illustration-library",
+      "url": "https://www.opendoodles.com/",
+      "access": "keyless-download",
+      "network": true,
+      "production": true,
+      "bestFor": ["illustration", "editorial", "friendly-brand"],
+      "license": "CC0; retain source metadata as good practice",
+      "notes": "Expressive hand-drawn style; use only when it fits the product voice."
+    },
+    "manyPixels": {
+      "label": "ManyPixels Gallery",
+      "category": "illustration-library",
+      "url": "https://www.manypixels.co/gallery",
+      "access": "keyless-download",
+      "network": true,
+      "production": true,
+      "bestFor": ["illustration", "onboarding", "product-explainer"],
+      "license": "Review current gallery license and attribution requirements",
+      "notes": "Download and recolor; do not assume every collection has identical terms."
+    },
+    "unsplash": {
+      "label": "Unsplash",
+      "category": "photography",
+      "url": "https://unsplash.com/developers",
+      "access": "api-key",
+      "network": true,
+      "production": true,
+      "bestFor": ["editorial-photo", "people", "workspace", "environment"],
+      "license": "Unsplash License plus Unsplash API Terms when using the API",
+      "notes": "API requires an access key and API compliance. Do not use source.unsplash.com as a production endpoint. Store image and photographer/source metadata."
+    },
+    "pexels": {
+      "label": "Pexels",
+      "category": "photography",
+      "url": "https://www.pexels.com/api/",
+      "access": "api-key",
+      "network": true,
+      "production": true,
+      "bestFor": ["editorial-photo", "people", "workspace", "environment"],
+      "license": "Pexels License and API Terms",
+      "notes": "API requires a key. Pexels currently reports that new API key issuance is paused; verify before planning an integration."
+    },
+    "pixabay": {
+      "label": "Pixabay",
+      "category": "photography",
+      "url": "https://pixabay.com/api/docs/",
+      "access": "api-key",
+      "network": true,
+      "production": true,
+      "bestFor": ["editorial-photo", "nature", "objects", "illustration"],
+      "license": "Pixabay Content License and API terms",
+      "notes": "API requires a key. Permanent hotlinking of API image URLs is not allowed; download and host permitted assets, and show source attribution in search results."
+    },
+    "picsum": {
+      "label": "Lorem Picsum",
+      "category": "placeholder",
+      "url": "https://picsum.photos/",
+      "access": "keyless",
+      "network": true,
+      "production": false,
+      "bestFor": ["placeholder", "layout-testing", "responsive-testing"],
+      "license": "Verify individual source image rights before reuse",
+      "notes": "Random photography only. Development and layout testing; never a semantic or brand-aware production asset."
+    }
+  }
+}

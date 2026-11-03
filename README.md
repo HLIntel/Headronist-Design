@@ -12,7 +12,7 @@ A universal, agent-ready design system for interfaces, presentations, visual ass
 - [Cloud agents and MCP integration](docs/CLOUD-MCP.md) · [Local discovery API](docs/SERVER.md)
 - [Quality workflow and anti-drift checks](docs/QUALITY-FLOW.md) · [Expert review lenses](contracts/expertise.v1.json)
 - [Design intelligence](docs/DESIGN-INTELLIGENCE.md) · [Visual inspection](docs/VISUAL-INSPECTION.md) · [Operational design engines](docs/DESIGN-ENGINES.md)
-- [Depth and contrast](contracts/depth.v1.json) · [Reuse and compatibility](docs/REUSE.md)
+- [Depth and contrast](contracts/depth.v1.json) · [Reuse and compatibility](docs/REUSE.md) · [Context-aware asset sourcing](docs/ASSET-SOURCING.md)
 
 ```sh
 python -m headronist.discover --query landing
@@ -26,6 +26,7 @@ python -m headronist.reference path/to/page.html --css path/to/site.css --output
 python -m headronist.visual capture http://127.0.0.1:3000
 python -m headronist.repair brief findings.json --output repair-brief.json
 python -m headronist.memory list
+python -m headronist.assets recommend --intent 'AI infrastructure trust network'
 ```
 
 ## Design coverage
@@ -38,7 +39,7 @@ Websites, application interfaces, typography, navigation, visual assets, motion,
 - `foundations/`: palettes and design tokens
 - `engines/`: layout, responsive composition, imagery and visual finish
 - `components/`: reusable interface patterns
-- `headronist/`: deterministic compiler, intake, registry, reference extraction, visual capture/review, repair handoff and local design memory
+- `headronist/`: deterministic compiler, intake, registry, reference extraction, visual capture/review, repair handoff, local design memory and contextual asset recommendations
 - `adapters/`: integration entry points for agents and tools
 - `docs/`: workflows, compatibility and design research
 - `tests/`: regression checks

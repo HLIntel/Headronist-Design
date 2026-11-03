@@ -9,6 +9,10 @@ class IntakeTests(unittest.TestCase):
   for task,expected_route in (("reference","referenceProfile"),("visual_review","visualInspection"),("repair","repair"),("design_memory","designMemory")):
    result=route_task({"version":"1","task":task,"target":"brand-site"})
    self.assertIn(expected_route,result["routes"])
+ def test_asset_sourcing(self):
+  result=route_task({"version":"1","task":"asset_sourcing","target":"hero-background"})
+  self.assertIn("assetSourcing",result["routes"])
+  self.assertIn("contracts/asset-sources.v1.json",result["paths"])
  def test_motion(self):
   result=route_task({"version":"1","task":"motion","target":"intro"})
   self.assertIn("contracts/motion.v1.json",result["paths"])

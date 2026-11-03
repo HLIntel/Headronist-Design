@@ -353,6 +353,23 @@
       "outputs": [
         "json"
       ]
+    },
+    "assetSourcing": {
+      "label": "Context-aware asset sourcing",
+      "group": "foundations",
+      "priority": 16,
+      "tags": [
+        "images",
+        "svg",
+        "illustration",
+        "photography",
+        "licensing",
+        "offline"
+      ],
+      "outputs": [
+        "json",
+        "svg"
+      ]
     }
   },
   "groups": {
