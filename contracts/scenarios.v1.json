@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "1.0.0",
+  "viewports": {
+    "phonePortrait": {
+      "width": 375,
+      "height": 812
+    },
+    "phoneLandscape": {
+      "width": 812,
+      "height": 375
+    },
+    "smallPhone": {
+      "width": 320,
+      "height": 568
+    },
+    "tablet": {
+      "width": 768,
+      "height": 1024
+    },
+    "splitDesktop": {
+      "width": 640,
+      "height": 800
+    },
+    "desktop": {
+      "width": 1440,
+      "height": 900
+    },
+    "wide": {
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "scenarios": {
+    "landing": {
+      "regions": [
+        "nav",
+        "hero",
+        "proof",
+        "features",
+        "faq",
+        "footer"
+      ],
+      "requirements": [
+        "primary-action",
+        "responsive-media",
+        "visible-focus"
+      ]
+    },
+    "app": {
+      "regions": [
+        "nav",
+        "workspace",
+        "status"
+      ],
+      "requirements": [
+        "empty",
+        "loading",
+        "error",
+        "success"
+      ]
+    },
+    "stream": {
+      "regions": [
+        "header",
+        "feed",
+        "composer"
+      ],
+      "requirements": [
+        "aria-live-polite",
+        "bounded-feed",
+        "pause",
+        "reconnect",
+        "error"
+      ]
+    },
+    "social": {
+      "regions": [
+        "profile",
+        "media",
+        "caption",
+        "actions"
+      ],
+      "requirements": [
+        "alt-text",
+        "safe-area",
+        "aspect-ratio"
+      ]
+    },
+    "docs": {
+      "regions": [
+        "sidebar",
+        "article",
+        "toc"
+      ],
+      "requirements": [
+        "anchors",
+        "code-scroll",
+        "search"
+      ]
+    },
+    "readme": {
+      "regions": [
+        "title",
+        "quickstart",
+        "examples",
+        "links"
+      ],
+      "requirements": [
+        "code-scroll",
+        "link-check"
+      ]
+    },
+    "gallery": {
+      "regions": [
+        "toolbar",
+        "grid",
+        "viewer"
+      ],
+      "requirements": [
+        "aspect-ratio",
+        "keyboard-close"
+      ]
+    },
+    "dashboard": {
+      "regions": [
+        "nav",
+        "metrics",
+        "chart",
+        "table"
+      ],
+      "requirements": [
+        "table-scroll",
+        "chart-fallback"
+      ]
+    },
+    "settings": {
+      "regions": [
+        "tabs",
+        "form",
+        "status"
+      ],
+      "requirements": [
+        "privacy-copy",
+        "keyboard-tabs"
+      ]
+    }
+  },
+  "policy": {
+    "horizontalScroll": "only for intentional carousels, code, and tables",
+    "noUnboundedMotion": true,
+    "noAbsoluteFooter": true,
+    "links": "real destinations only",
+    "privacy": "do not imply compliance or protection without evidence"
+  }
+}
