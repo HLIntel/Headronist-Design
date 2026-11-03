@@ -10,7 +10,8 @@
   "routes": {
     "web": [
       "engines/composition/anti-breakage.css",
-      "contracts/tokens.v1.schema.json"
+      "contracts/tokens.v1.schema.json",
+      "contracts/composition.v1.json"
     ],
     "landing": [
       "examples/hero-workflows.html",
@@ -19,7 +20,8 @@
       "components/navigation/nav.js",
       "contracts/navigation.v1.json",
       "contracts/quality.v1.json",
-      "assets/primitives/workflow-nodes.svg"
+      "assets/primitives/workflow-nodes.svg",
+      "contracts/composition.v1.json"
     ],
     "tokens": [
       "contracts/tokens.v1.schema.json",
@@ -67,7 +69,8 @@
     ],
     "docs": [
       "contracts/scenarios.v1.json",
-      "docs/PATTERN-REFERENCE.md"
+      "docs/PATTERN-REFERENCE.md",
+      "contracts/composition.v1.json"
     ],
     "stream": [
       "contracts/scenarios.v1.json",
@@ -75,7 +78,8 @@
     ],
     "dashboard": [
       "contracts/scenarios.v1.json",
-      "engines/composition/responsive.css"
+      "engines/composition/responsive.css",
+      "contracts/composition.v1.json"
     ],
     "gallery": [
       "contracts/scenarios.v1.json",
@@ -104,6 +108,11 @@
     "finish": [
       "engines/composition/finish.css",
       "contracts/quality.v1.json"
+    ],
+    "composition": [
+      "contracts/composition.v1.json",
+      "headronist/composition.py",
+      "docs/COMPOSITION.md"
     ]
   },
   "symbols": {
@@ -135,7 +144,9 @@
     "agent_chat": "intake",
     "parallax": "motion",
     "silk": "finish",
-    "shine": "finish"
+    "shine": "finish",
+    "editorial": "composition",
+    "art_direction": "composition"
   },
   "status": {
     "web": "partial",
@@ -162,7 +173,8 @@
     "visualQuality": "policy-and-static-tests",
     "intake": "implemented-routing-only",
     "motion": "optional-native-primitives",
-    "finish": "implemented"
+    "finish": "implemented",
+    "composition": "advisory-lint"
   },
   "compatibility": {
     "baseline": [
