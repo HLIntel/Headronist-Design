@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "headronist",
+  "policy": {
+    "offline": true,
+    "immutableInputs": true,
+    "defaultPalette": "navy",
+    "externalRuntimeDependencies": false
+  },
+  "routes": {
+    "web": [
+      "engines/composition/anti-breakage.css",
+      "contracts/tokens.v1.schema.json"
+    ],
+    "landing": [
+      "engines/composition/anti-breakage.css",
+      "contracts/tokens.v1.schema.json"
+    ],
+    "tokens": [
+      "contracts/tokens.v1.schema.json",
+      "headronist/compiler.py"
+    ],
+    "palette": [
+      "foundations/palettes/navy.json",
+      "contracts/tokens.v1.schema.json"
+    ],
+    "interaction": [
+      "components/primitives/state-machine.js"
+    ],
+    "auth": [
+      "components/navigation/AUTH_GUIDE.md"
+    ],
+    "agent": [
+      "adapters/agent/ROUTER.md"
+    ],
+    "compat": [
+      "docs/COMPATIBILITY.md"
+    ]
+  },
+  "symbols": {
+    "color": "hd.color",
+    "spacing": "hd.space",
+    "radius": "hd.radius",
+    "type": "hd.type",
+    "surface": "hd.surface",
+    "layout": "hd.layout",
+    "state": "hd.state"
+  },
+  "aliases": {
+    "website": "web",
+    "page": "landing",
+    "theme": "palette",
+    "slide": "presentation",
+    "spreadsheet": "excel"
+  },
+  "status": {
+    "web": "partial",
+    "landing": "partial",
+    "tokens": "implemented",
+    "palette": "partial",
+    "interaction": "implemented",
+    "auth": "guidance",
+    "agent": "implemented",
+    "compat": "policy",
+    "presentation": "planned",
+    "excel": "planned"
+  },
+  "compatibility": {
+    "baseline": [
+      "v10",
+      "v11",
+      "v12",
+      "v13"
+    ],
+    "breakingChanges": "major-version-only"
+  }
+}
