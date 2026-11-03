@@ -1,37 +1,40 @@
 # Headronist Design
 
-Native, offline-first, machine-readable design foundations for agents, chat models, IDEs and applications.
+A universal, agent-ready design system for interfaces, presentations, visual assets, documentation and data experiences. Headronist translates task intent into clear composition, reusable design primitives and verifiable output requirements without imposing a single visual style.
+
+**Design principles:** hierarchy before decoration; brand-aware, platform-appropriate, accessible, responsive, and visually deliberate. Reuse small components and contracts rather than copying entire frameworks.
 
 ## Start here
 
-- Human or agent: [AGENTS.md](AGENTS.md)
-- Canonical routes, semantic symbols and status: [contracts/registry.v1.json](contracts/registry.v1.json)
-- Typed tokens: [contracts/tokens.v1.schema.json](contracts/tokens.v1.schema.json)
-- Reuse and anti-drift: [docs/REUSE.md](docs/REUSE.md)
+- [Agent and model handoff](docs/INTAKE.md) · [Design workflows](docs/UNIVERSAL-WORKFLOWS.md)
+- [Composition](docs/COMPOSITION.md) · [Cross-platform adaptation](docs/PLATFORM-ADAPTATION.md)
+- [Canonical registry](contracts/registry.v1.json) · [Agent instructions](AGENTS.md)
+- [Quality requirements](contracts/quality.v1.json) · [Reuse and compatibility](docs/REUSE.md)
 
 ```sh
 python -m headronist.registry routes
-python -m headronist.registry inspect web
+python -m headronist.registry inspect landing
 python -m headronist.registry check
-python -m headronist.registry fingerprint
-python -m unittest discover -s tests -p 'test_registry.py'
+python -m headronist.intake < task.json
 ```
 
-All commands are offline. Registry inspection is read-only and returns compact JSON. There is one canonical route map; Markdown documents link to it rather than duplicating it.
+## Design coverage
 
-## Modules
+Websites, application interfaces, typography, navigation, visual assets, motion, dashboards, documents and presentations. The registry identifies implemented, partial, guidance-only and planned capabilities; not every medium has a working renderer.
 
-- `foundations/`: palettes and typed tokens
-- `engines/`: composition and anti-breakage
-- `components/`: behavioral primitives and authentication guidance
-- `renderers/`: intended target-specific output adapters
-- `contracts/`: machine-readable schema and route graph
-- `adapters/`: agent integrations
-- `headronist/`: standard-library compiler and registry CLI
+## Architecture
+
+- `contracts/`: task, token, composition, platform and quality contracts
+- `foundations/`: palettes and design tokens
+- `engines/`: layout, responsive composition, imagery and visual finish
+- `components/`: reusable interface patterns
+- `headronist/`: deterministic compiler, intake, registry and advisory analysis
+- `adapters/`: integration entry points for agents and tools
+- `docs/`: workflows, compatibility and design research
 - `tests/`: regression checks
 
-## Implementation boundary
+## Boundaries
 
-This repository is currently a **partial source import** of the original v10 through v13 design package. Do not assume the archived web demos, Excel/PPTX renderers or all palette definitions are present here. The registry distinguishes implemented, partial, guidance and planned routes. No third-party hosted API, payment card, sign-up or network fetch is required by the registry and compiler.
+Headronist is independent of Headron. It supplies design intelligence and reusable presentation contracts; Headron may consume them optionally for design tasks. No vendor-specific design language is mandatory. Favor native capabilities and offline assets where practical.
 
-Headronist owns presentation contracts and design mechanisms; Headron owns governance, verification and product behavior.
+This repository is a **partial import** of earlier v10–v13 work. Archived demos and some output renderers are not fully present. Inspect registry status before claiming an output format is supported. Machine routing and static lint are not substitutes for rendered visual testing.
