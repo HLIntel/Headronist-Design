@@ -49,9 +49,7 @@
   "aliases": {
     "website": "web",
     "page": "landing",
-    "theme": "palette",
-    "slide": "presentation",
-    "spreadsheet": "excel"
+    "theme": "palette"
   },
   "status": {
     "web": "partial",
