@@ -1,0 +1,6 @@
+@layer headronist.finish {
+@media(prefers-reduced-motion:no-preference){
+:where([data-hd-reveal]){transition:opacity 320ms ease,translate 320ms ease}
+:where(.hd-reveal-ready [data-hd-reveal]:not(.hd-revealed)){opacity:0;translate:0 12px}
+}
+}
