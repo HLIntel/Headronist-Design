@@ -10,3 +10,6 @@ Source of truth: executable code and tests > `contracts/registry.v1.json` > sche
 6. Do not copy entire third-party libraries. Prefer native Headronist primitives and explicit versioned adapters.
 
 7. Visual reference gate: read `contracts/quality.v1.json` for landing and image-related work. Never present generated UI imagery with illegible text as a quality benchmark. Use rendered semantic HTML/CSS and inspect screenshots before claiming visual correctness. Preserve fallback navigation when scripts or manifests fail.
+
+8. For model/chat handoffs, accept the bounded JSON in `contracts/intake.v1.schema.json`; run `python -m headronist.intake` and load only returned paths. Route selection is not rendering or verification. Keep input compact; refuse unknown fields and unsupported claims.
+9. Visual finish is opt-in: static by default; no shadow blobs, redundant whitespace, or distracting parallax. Prefer local CSS/SVG, reduced-motion fallbacks, and real product clips only when demonstrably useful. See `contracts/motion.v1.json`.
