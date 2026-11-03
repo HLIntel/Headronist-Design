@@ -1,10 +1,14 @@
 import unittest
-from headronist.intake import route
+from headronist.intake import route as route_task
 class IntakeTests(unittest.TestCase):
  def test_compact_landing(self):
   result=route({"version":"1","task":"landing","target":"home"})
   self.assertIn("contracts/quality.v1.json",result["paths"])
   self.assertIn("navigation",result["routes"])
+ def test_new_design_workflows(self):
+  for task,route in (("reference","referenceProfile"),("visual_review","visualInspection"),("repair","repair"),("design_memory","designMemory")):
+   result=route_task({"version":"1","task":task,"target":"brand-site"})
+   self.assertIn(route,result["routes"])
  def test_motion(self):
   result=route({"version":"1","task":"motion","target":"intro"})
   self.assertIn("contracts/motion.v1.json",result["paths"])
