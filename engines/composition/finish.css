@@ -1,0 +1,13 @@
+/* Optional refined finish. Never a dependency for legibility. */
+@layer headronist.finish {
+:where(.hd-silk){background:linear-gradient(120deg,var(--hd-silk-a,#101a2c),var(--hd-silk-b,#18263c) 48%,var(--hd-silk-a,#101a2c));background-size:200% 200%}
+:where(.hd-hairline){border:1px solid color-mix(in srgb,currentColor 17%,transparent)}
+:where(.hd-quiet){box-shadow:none!important;filter:none!important;text-shadow:none!important}
+:where(.hd-shine){position:relative;isolation:isolate;overflow:hidden}
+:where(.hd-shine)::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 38%,rgb(255 255 255 / .07) 49%,transparent 60%);transform:translateX(-120%);transition:transform 600ms ease}
+:where(.hd-shine:hover,.hd-shine:focus-within)::after{transform:translateX(120%)}
+:where(.hd-parallax){transform:translate3d(0,var(--hd-parallax-offset,0px),0)}
+:where(.hd-transition){transition:opacity 180ms ease,transform 180ms ease}
+@media(prefers-reduced-motion:reduce){:where(.hd-shine)::after{transition:none;display:none}:where(.hd-parallax){transform:none}:where(.hd-transition){transition:none}}
+@media print{:where(.hd-shine)::after{display:none}:where(.hd-parallax){transform:none}}
+}
