@@ -1,0 +1,31 @@
+{
+  "version": "1",
+  "description": "Evidence-backed design profile extracted from supplied references. Observations and inferences must remain distinct.",
+  "inputs": {
+    "allowed": ["url", "screenshot", "image", "brand-guideline", "html", "css", "design-token-file"],
+    "maxReferences": 12,
+    "requireSourceId": true
+  },
+  "dimensions": {
+    "brand": ["identity", "voice", "logo-placement", "brand-constraints"],
+    "color": ["palette", "semantic-colors", "contrast-context"],
+    "typography": ["families", "weights", "scale", "line-height", "hierarchy"],
+    "layout": ["container", "grid", "spacing", "alignment", "breakpoints"],
+    "components": ["navigation", "buttons", "forms", "cards", "surfaces"],
+    "visualStyle": ["density", "shape-language", "depth", "imagery", "texture"],
+    "motion": ["duration", "easing", "trigger", "reduced-motion"]
+  },
+  "evidence": {
+    "requiredFields": ["sourceId", "dimension", "claim", "classification", "confidence"],
+    "classification": ["observed", "inferred", "user-specified"],
+    "confidence": ["high", "medium", "low"],
+    "retainSourceLocation": true
+  },
+  "rules": [
+    "Never present an inferred property as directly observed.",
+    "Do not infer brand rules from a single decorative element.",
+    "Do not copy protected assets or reproduce a reference pixel-for-pixel.",
+    "Record missing or unreadable evidence instead of guessing.",
+    "Keep extracted profiles portable and independent of a specific model vendor."
+  ]
+}
