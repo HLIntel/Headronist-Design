@@ -1,8 +1,10 @@
-# Context-aware asset sourcing
+# Context-Aware Asset Sourcing
+
+*Visual assets · Tags: asset sourcing, SVG, photography, licensing, offline assets · [Documentation index](README.md)*
 
 Headronist uses a **local-first asset strategy**. It should choose the visual medium that explains the product rather than defaulting to stock photography or random image URLs.
 
-## Quick use
+## Quick Use
 
 Recommend sources from a short description:
 
@@ -20,7 +22,7 @@ python -m headronist.assets pattern --output assets/generated/network-field.svg 
 
 The recommender is deterministic and does not fetch images, call a provider, read secrets, or download assets. Network sources appear only when explicitly requested. It returns source and licensing notes for an agent to consider.
 
-## Choosing the right medium
+## Choosing The Right Medium
 
 | Context | Preferred visual | Avoid |
 |---|---|---|
@@ -31,7 +33,7 @@ The recommender is deterministic and does not fetch images, call a provider, rea
 | Dashboard surfaces | CSS texture, subtle SVG pattern, data visualization | Heavy imagery behind data |
 | Development layout checks | Lorem Picsum | Shipping random placeholder images |
 
-## Source notes
+## Source Notes
 
 The machine-readable source inventory is [asset-sources.v1.json](../contracts/asset-sources.v1.json).
 
@@ -44,7 +46,7 @@ The machine-readable source inventory is [asset-sources.v1.json](../contracts/as
 - **Lorem Picsum:** a keyless random placeholder service. Use only for development and layout tests, not final product imagery.
 - **LoremFlickr:** intentionally omitted from the recommended source registry. Keyword matches, source rights and operational guarantees are not strong enough to make it a default production dependency.
 
-## Agent rules
+## Agent Rules
 
 1. Start with local assets, authentic product screenshots, diagrams, or CSS/SVG.
 2. Use a photo only when a person, place or physical environment adds meaning.
