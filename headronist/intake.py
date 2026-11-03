@@ -15,7 +15,7 @@ TASK_ROUTES = {
     "motion": ("motion","visualQuality"),
     "reference": ("referenceProfile","compositionLibrary"),
     "visual_review": ("visualInspection","visualQuality","responsive"),
-    "repair": ("visualInspection","antiPatterns","qualityGate"),
+    "repair": ("repair","visualInspection","antiPatterns","qualityGate"),
     "design_memory": ("referenceProfile","expertise"),
 }
 MAX_BYTES = 32768
