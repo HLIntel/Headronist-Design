@@ -11,7 +11,8 @@
     "web": [
       "engines/composition/anti-breakage.css",
       "contracts/tokens.v1.schema.json",
-      "contracts/composition.v1.json"
+      "contracts/composition.v1.json",
+      "contracts/platforms.v1.json"
     ],
     "landing": [
       "examples/hero-workflows.html",
@@ -21,7 +22,8 @@
       "contracts/navigation.v1.json",
       "contracts/quality.v1.json",
       "assets/primitives/workflow-nodes.svg",
-      "contracts/composition.v1.json"
+      "contracts/composition.v1.json",
+      "contracts/platforms.v1.json"
     ],
     "tokens": [
       "contracts/tokens.v1.schema.json",
@@ -40,14 +42,16 @@
     "agent": [
       "adapters/agent/ROUTER.md",
       "headronist/intake.py",
-      "docs/INTAKE.md"
+      "docs/INTAKE.md",
+      "contracts/platforms.v1.json"
     ],
     "compat": [
       "docs/COMPATIBILITY.md"
     ],
     "responsive": [
       "engines/composition/responsive.css",
-      "contracts/scenarios.v1.json"
+      "contracts/scenarios.v1.json",
+      "contracts/platforms.v1.json"
     ],
     "typography": [
       "engines/typography/type.css"
@@ -70,7 +74,8 @@
     "docs": [
       "contracts/scenarios.v1.json",
       "docs/PATTERN-REFERENCE.md",
-      "contracts/composition.v1.json"
+      "contracts/composition.v1.json",
+      "contracts/platforms.v1.json"
     ],
     "stream": [
       "contracts/scenarios.v1.json",
@@ -113,6 +118,15 @@
       "contracts/composition.v1.json",
       "headronist/composition.py",
       "docs/COMPOSITION.md"
+    ],
+    "platforms": [
+      "contracts/platforms.v1.json",
+      "docs/PLATFORM-ADAPTATION.md"
+    ],
+    "universal": [
+      "docs/UNIVERSAL-WORKFLOWS.md",
+      "contracts/platforms.v1.json",
+      "contracts/composition.v1.json"
     ]
   },
   "symbols": {
@@ -146,7 +160,11 @@
     "silk": "finish",
     "shine": "finish",
     "editorial": "composition",
-    "art_direction": "composition"
+    "art_direction": "composition",
+    "google": "platforms",
+    "apple": "platforms",
+    "github": "platforms",
+    "cross_platform": "universal"
   },
   "status": {
     "web": "partial",
@@ -174,7 +192,9 @@
     "intake": "implemented-routing-only",
     "motion": "optional-native-primitives",
     "finish": "implemented",
-    "composition": "advisory-lint"
+    "composition": "advisory-lint",
+    "platforms": "guidance",
+    "universal": "guidance"
   },
   "compatibility": {
     "baseline": [
