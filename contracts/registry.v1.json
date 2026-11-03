@@ -13,8 +13,13 @@
       "contracts/tokens.v1.schema.json"
     ],
     "landing": [
-      "engines/composition/anti-breakage.css",
-      "contracts/tokens.v1.schema.json"
+      "examples/hero-workflows.html",
+      "components/primitives/hero.css",
+      "components/navigation/nav.css",
+      "components/navigation/nav.js",
+      "contracts/navigation.v1.json",
+      "contracts/quality.v1.json",
+      "assets/primitives/workflow-nodes.svg"
     ],
     "tokens": [
       "contracts/tokens.v1.schema.json",
@@ -73,6 +78,15 @@
     "gallery": [
       "contracts/scenarios.v1.json",
       "engines/imagery/prompt.py"
+    ],
+    "navigation": [
+      "components/navigation/nav.js",
+      "components/navigation/nav.css",
+      "contracts/navigation.v1.json"
+    ],
+    "visualQuality": [
+      "contracts/quality.v1.json",
+      "tests/test_visual_quality.py"
     ]
   },
   "symbols": {
@@ -97,7 +111,9 @@
     "faq": "docs",
     "privacy": "docs",
     "posting": "social",
-    "menu": "tabs"
+    "menu": "tabs",
+    "nav": "navigation",
+    "reference": "visualQuality"
   },
   "status": {
     "web": "partial",
@@ -119,7 +135,9 @@
     "docs": "guidance",
     "stream": "guidance",
     "dashboard": "partial",
-    "gallery": "partial"
+    "gallery": "partial",
+    "navigation": "implemented",
+    "visualQuality": "policy-and-static-tests"
   },
   "compatibility": {
     "baseline": [
