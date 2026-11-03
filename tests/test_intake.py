@@ -1,0 +1,15 @@
+import unittest
+from headronist.intake import route
+class IntakeTests(unittest.TestCase):
+ def test_compact_landing(self):
+  result=route({"version":"1","task":"landing","target":"home"})
+  self.assertIn("contracts/quality.v1.json",result["paths"])
+  self.assertIn("navigation",result["routes"])
+ def test_motion(self):
+  result=route({"version":"1","task":"motion","target":"intro"})
+  self.assertIn("contracts/motion.v1.json",result["paths"])
+ def test_refuses_unknown(self):
+  with self.assertRaises(ValueError):route({"version":"1","task":"web","target":"x","secret":"x"})
+ def test_refuses_invalid_constraints(self):
+  with self.assertRaises(ValueError):route({"version":"1","task":"web","target":"x","constraints":{"motion":"chaotic"}})
+if __name__=="__main__":unittest.main()
