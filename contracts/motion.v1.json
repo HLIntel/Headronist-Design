@@ -1,0 +1,40 @@
+{
+  "version": "1",
+  "default": "off",
+  "modes": {
+    "off": {
+      "use": "static imagery",
+      "runtime": "none"
+    },
+    "subtle": {
+      "use": "hover shine, reveal, crossfade",
+      "durationMs": [
+        120,
+        400
+      ],
+      "runtime": "native CSS/IntersectionObserver"
+    },
+    "enhanced": {
+      "use": "decorative parallax or short looping clip only when communication improves",
+      "durationMs": [
+        300,
+        1200
+      ],
+      "runtime": "native CSS/JS or locally bundled media"
+    }
+  },
+  "rules": [
+    "No motion required for meaning",
+    "Respect reduced motion and data saver",
+    "Never autoplay audio",
+    "Avoid heavy filters, shadow blobs, continuous motion, scroll-jank",
+    "Use poster fallback and dimensions for video",
+    "Do not fabricate generated clips or claim rendering"
+  ],
+  "freePaths": [
+    "CSS transitions/keyframes",
+    "SVG animations with fallback",
+    "IntersectionObserver",
+    "local MP4/WebM export using existing free tooling"
+  ]
+}
