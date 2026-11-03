@@ -127,6 +127,16 @@
       "docs/UNIVERSAL-WORKFLOWS.md",
       "contracts/platforms.v1.json",
       "contracts/composition.v1.json"
+    ],
+    "discovery": [
+      "contracts/catalog.v1.json",
+      "headronist/discover.py",
+      "docs/SERVER.md"
+    ],
+    "localApi": [
+      "headronist/server.py",
+      "headronist/discover.py",
+      "docs/SERVER.md"
     ]
   },
   "symbols": {
@@ -164,7 +174,10 @@
     "google": "platforms",
     "apple": "platforms",
     "github": "platforms",
-    "cross_platform": "universal"
+    "cross_platform": "universal",
+    "search": "discovery",
+    "server": "localApi",
+    "host": "localApi"
   },
   "status": {
     "web": "partial",
@@ -194,7 +207,9 @@
     "finish": "implemented",
     "composition": "advisory-lint",
     "platforms": "guidance",
-    "universal": "guidance"
+    "universal": "guidance",
+    "discovery": "implemented",
+    "localApi": "implemented-local-read-only"
   },
   "compatibility": {
     "baseline": [
