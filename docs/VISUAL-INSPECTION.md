@@ -1,4 +1,6 @@
-# Rendered visual inspection
+# Rendered Visual Quality Assurance
+
+*Quality assurance · Tags: screenshots, Playwright, responsive, evidence · [Documentation index](README.md)*
 
 Static checks are useful, but they do not establish that a page looks or behaves correctly in a browser. Use contracts/visual-inspection.v1.json as the evidence contract for rendered reviews.
 
