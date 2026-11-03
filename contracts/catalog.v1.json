@@ -179,6 +179,96 @@
       "outputs": [
         "markdown"
       ]
+    },
+    "expertise": {
+      "label": "Expert review lenses",
+      "group": "quality",
+      "priority": 30,
+      "tags": [
+        "design",
+        "engineering",
+        "review"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "depth": {
+      "label": "Contrast and depth",
+      "group": "foundations",
+      "priority": 25,
+      "tags": [
+        "contrast",
+        "surface",
+        "elevation"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "qualityGate": {
+      "label": "Static anti-drift checks",
+      "group": "quality",
+      "priority": 5,
+      "tags": [
+        "validation",
+        "registry",
+        "contrast"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "mcp": {
+      "label": "MCP agent tools",
+      "group": "automation",
+      "priority": 35,
+      "tags": [
+        "agent",
+        "stdio",
+        "tools"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "cloud": {
+      "label": "Cloud HTTP adapter",
+      "group": "automation",
+      "priority": 40,
+      "tags": [
+        "remote",
+        "http",
+        "gateway"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "discovery": {
+      "label": "Search design routes",
+      "group": "automation",
+      "priority": 5,
+      "tags": [
+        "search",
+        "catalog",
+        "metadata"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "localApi": {
+      "label": "Local discovery API",
+      "group": "automation",
+      "priority": 45,
+      "tags": [
+        "http",
+        "local"
+      ],
+      "outputs": [
+        "json"
+      ]
     }
   },
   "groups": {
