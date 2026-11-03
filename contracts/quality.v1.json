@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "visualReferences": {
+    "source": "rendered HTML/CSS or verified screenshot",
+    "reject": [
+      "AI-generated text as UI proof",
+      "overlapping headline layers",
+      "illegible microtext",
+      "unverified responsiveness",
+      "fake links",
+      "decorative controls"
+    ]
+  },
+  "gates": {
+    "horizontalOverflowPx": 1,
+    "minimumTouchTargetPx": 44,
+    "minimumBodyLineHeight": 1.4,
+    "headlineMaxCharacters": 90,
+    "requiredViewports": [
+      320,
+      375,
+      640,
+      768,
+      1440,
+      1920
+    ],
+    "zoomPercent": [
+      100,
+      200
+    ]
+  },
+  "navigation": {
+    "source": "contracts/navigation.v1.json",
+    "noPlaceholderDestinations": true
+  },
+  "compatibility": "additive v10-v13; no silent replacement"
+}
