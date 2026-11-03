@@ -8,3 +8,5 @@ Source of truth: executable code and tests > `contracts/registry.v1.json` > sche
 4. Treat generated files as disposable outputs; never edit canonical inputs through generation. No hidden writes, external fetches, secrets, or unreviewed destructive changes.
 5. Run `python -m headronist.registry check` and relevant tests. For web, test narrow screens, 200% zoom, long text, sticky header/footer, reduced motion and keyboard focus. Report what was actually tested.
 6. Do not copy entire third-party libraries. Prefer native Headronist primitives and explicit versioned adapters.
+
+7. Visual reference gate: read `contracts/quality.v1.json` for landing and image-related work. Never present generated UI imagery with illegible text as a quality benchmark. Use rendered semantic HTML/CSS and inspect screenshots before claiming visual correctness. Preserve fallback navigation when scripts or manifests fail.
