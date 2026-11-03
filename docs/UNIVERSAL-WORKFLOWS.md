@@ -1,4 +1,6 @@
-# Design workflows across agents and mediums
+# Universal Design Workflows
+
+*Workflows · Tags: agents, interfaces, presentations, spreadsheets, docs · [Documentation index](README.md)*
 
 Headronist is a task-directed design system, not a fixed aesthetic. The registry is the index; the intake is a bounded handoff; composition, quality, motion and platform guidance are loaded selectively.
 
