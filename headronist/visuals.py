@@ -64,19 +64,20 @@ def recommend_graph(data_shape, purpose="comparison", audience="general"):
     if purpose not in catalog["purposes"]:
         raise ValueError("unknown graph purpose; choose one of: " + ", ".join(catalog["purposes"]))
     ranked = []
-    for graph_id, graph in catalog["types"].items():
+    # Ties keep catalog order: the catalog lists the canonical form for a shape first.
+    for order, (graph_id, graph) in enumerate(catalog["types"].items()):
         score = 0
         if purpose in graph["purposes"]: score += 3
         if data_shape in graph["dataShapes"]: score += 2
         if audience in graph.get("audiences", ["general"]): score += 1
-        if score: ranked.append((score, graph_id, graph))
+        if score: ranked.append((score, order, graph_id, graph))
     ranked.sort(key=lambda item: (-item[0], item[1]))
     return {
         "version": "1", "purpose": purpose, "dataShape": data_shape,
         "recommendations": [
             {"id": gid, "label": g["label"], "when": g["when"], "avoid": g["avoid"],
              "encoding": g["encoding"], "accessibility": g["accessibility"]}
-            for _, gid, g in ranked[:5]
+            for _, _, gid, g in ranked[:5]
         ],
         "rules": catalog["rules"]
     }

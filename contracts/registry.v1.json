@@ -279,6 +279,8 @@
     "image_sources": "assetSourcing"
   },
   "status": {
+    "visualGeneration": "prompt-brief-only-no-provider-call",
+    "graphIntelligence": "recommendation-only-no-rendering",
     "web": "partial",
     "landing": "partial",
     "tokens": "implemented",
