@@ -1,37 +1,88 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Headronist — Landing reference</title>
-<link rel="stylesheet" href="../components/primitives/hero.css"><link rel="stylesheet" href="../components/navigation/nav.css">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Headronist — Landing reference</title>
+<link rel="stylesheet" href="../foundations/tokens.css">
+<link rel="stylesheet" href="../engines/typography/type.css">
+<link rel="stylesheet" href="../engines/composition/responsive.css">
+<link rel="stylesheet" href="../components/primitives/hero.css">
+<link rel="stylesheet" href="../components/navigation/nav.css">
+<link rel="stylesheet" href="../engines/composition/finish.css">
 <style>
-:root{color-scheme:dark;--hd-font-ui:system-ui,-apple-system,"Segoe UI",sans-serif}*{box-sizing:border-box}
-body{margin:0;background:#0b101a;color:#f4f7fd;font-family:var(--hd-font-ui);overflow-wrap:break-word}
-.wrap{width:min(100% - 2rem,76rem);margin:auto}.hd-hero{padding-block:clamp(4rem,8vw,7rem);min-height:0}
-.hd-hero__eyebrow{color:#a4c5fa}.hd-hero__title{max-width:15ch;font-size:clamp(2.25rem,5.5cqi,4.5rem);line-height:1.13}
-.hd-hero__description{color:#bac7d9}.hd-hero__actions a{display:inline-flex;align-items:center;min-height:44px;padding:.8rem 1.15rem;border-radius:.55rem;background:#b8d2fa;color:#081425;font-weight:650;text-decoration:none}
-.hd-hero__actions a:focus-visible{outline:3px solid white;outline-offset:3px}
-.hd-hero__media{aspect-ratio:4/3;border:1px solid #33435d;border-radius:1rem;background:#101a2b;padding:clamp(1rem,3vw,2rem);display:grid;place-items:center}
-.hd-hero__media img{width:100%;height:auto;display:block}.section{padding-block:3.5rem;border-top:1px solid #29354a}
-.section h2{font-size:clamp(1.5rem,3vw,2.25rem);line-height:1.2;letter-spacing:-.025em}
+:root{--hd-font-ui:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+body{margin:0;background:radial-gradient(circle at 75% 8%,rgb(50 93 161 / .22),transparent 30rem),var(--hd-color-ink);color:var(--hd-color-text);font-family:var(--hd-font-ui);overflow-wrap:break-word}
+.hd-skip-link{position:fixed;left:1rem;top:.75rem;z-index:30;transform:translateY(-200%);padding:.7rem 1rem;border-radius:var(--hd-radius-sm);background:var(--hd-color-accent);color:var(--hd-color-accent-ink);font-weight:700}
+.hd-skip-link:focus{transform:none}
+.wrap{width:min(100% - 2rem,76rem);margin-inline:auto}
+.hd-hero{position:relative;padding-block:clamp(4.5rem,10vw,8rem);min-height:0;background-image:linear-gradient(rgb(169 201 255 / .06) 1px,transparent 1px),linear-gradient(90deg,rgb(169 201 255 / .06) 1px,transparent 1px);background-size:2.5rem 2.5rem;background-position:center top}
+.hd-hero__content{gap:1.35rem}
+.hd-hero__eyebrow{color:var(--hd-color-accent);letter-spacing:.14em}
+.hd-hero__title{max-width:13ch;font-size:clamp(2.5rem,6.5cqi,5.25rem);line-height:1.04}
+.hd-hero__description{color:var(--hd-color-text-muted);max-width:48ch}
+.hd-hero__actions a{display:inline-flex;align-items:center;min-height:44px;padding:.8rem 1.15rem;border-radius:999px;background:var(--hd-color-accent);color:var(--hd-color-accent-ink);font-weight:700;text-decoration:none;transition:transform 160ms ease,background 160ms ease}
+.hd-hero__actions a:hover{transform:translateY(-2px);background:var(--hd-color-accent-strong)}
+.hd-hero__media{aspect-ratio:4/3;border:1px solid var(--hd-color-line-strong);border-radius:var(--hd-radius-lg);background:linear-gradient(145deg,rgb(19 35 58 / .9),rgb(12 22 38 / .7));padding:clamp(1rem,3vw,2rem);box-shadow:var(--hd-shadow-soft)}
+.hd-hero__media img{width:100%;height:auto;display:block}
+.proof{display:flex;flex-wrap:wrap;gap:1rem 2rem;margin:0;padding:0;list-style:none;color:var(--hd-color-text-muted);font-size:.875rem}
+.proof strong{display:block;color:var(--hd-color-text);font-size:1.25rem;letter-spacing:-.03em}
+.section{padding-block:clamp(3.5rem,8vw,6rem);border-top:1px solid var(--hd-color-line)}
+.section h2{max-width:18ch;margin:0 0 1rem;font-size:clamp(1.75rem,4vw,3rem);line-height:1.08;letter-spacing:-.035em}
+.section-intro{max-width:55ch;margin:0 0 2rem;color:var(--hd-color-text-muted);line-height:var(--hd-line-body)}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem}
-.card{border:1px solid #35435a;border-radius:.8rem;padding:1.25rem;background:#111b2b;min-width:0}
-.card p{color:#b8c6d8;line-height:1.6}.footer{padding-block:2rem;border-top:1px solid #29354a;color:#b8c6d8}
-</style></head><body>
-<header class="hd-nav-wrap" id="site-navigation"><nav aria-label="Primary"><a href="#overview">Overview</a> · <a href="#patterns">Patterns</a> · <a href="#quality">Quality</a></nav></header>
-<main><section class="wrap hd-hero hd-hero--split" id="overview" aria-labelledby="hero-title">
-<div class="hd-hero__content"><p class="hd-hero__eyebrow">Headronist / Native design foundations</p>
-<h1 class="hd-hero__title" id="hero-title">Design with clarity. Build with confidence.</h1>
-<p class="hd-hero__description">A lightweight design system for precise layouts, reusable visual assets, and consistent interfaces across screens.</p>
-<div class="hd-hero__actions"><a href="#patterns">Explore patterns</a></div></div>
-<div class="hd-hero__media"><img src="../assets/primitives/workflow-nodes.svg" width="640" height="360" alt="Three connected workflow nodes labeled Input, Design and Output"></div>
-</section>
-<section class="section" id="patterns"><div class="wrap"><h2>Built from reusable primitives.</h2><div class="cards">
-<article class="card"><h3>Layout</h3><p>Responsive composition that respects content and viewport width.</p></article>
-<article class="card"><h3>Typography</h3><p>Readable hierarchy, natural wrapping, and intentional spacing.</p></article>
-<article class="card"><h3>Navigation</h3><p>Semantic links generated from one compact manifest.</p></article>
-</div></div></section>
-<section class="section" id="quality"><div class="wrap"><h2>Quality is part of the system.</h2><p>Design references must be readable and verified, not simply visually impressive.</p></div></section>
-</main><footer class="footer"><div class="wrap">Headronist Design · Native and reusable</div></footer>
+.card{border:1px solid var(--hd-color-line);border-radius:var(--hd-radius-md);padding:1.35rem;background:linear-gradient(145deg,rgb(19 35 58 / .8),rgb(12 22 38 / .65));min-width:0;transition:border-color 160ms ease,transform 160ms ease}
+.card:hover{border-color:var(--hd-color-line-strong);transform:translateY(-3px)}
+.card h3{margin:0 0 .6rem;font-size:1.05rem}
+.card p{margin:0;color:var(--hd-color-text-muted);line-height:var(--hd-line-body)}
+.footer{padding-block:2rem;border-top:1px solid var(--hd-color-line);color:var(--hd-color-text-subtle);font-size:.875rem}
+@media(prefers-reduced-motion:reduce){.hd-hero__actions a,.card{transition:none}.hd-hero__actions a:hover,.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<a class="hd-skip-link" href="#main-content">Skip to content</a>
+<header class="hd-nav-wrap" id="site-navigation">
+  <nav aria-label="Primary">
+    <a class="hd-nav-brand" href="#overview">Headronist</a>
+    <ul class="hd-nav-items">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#patterns">Patterns</a></li>
+      <li><a href="#quality">Quality</a></li>
+    </ul>
+    <a class="hd-nav-action" href="https://github.com/HLIntel/Headronist-Design">View source</a>
+  </nav>
+</header>
+<main id="main-content">
+  <section class="wrap hd-hero hd-hero--split" id="overview" aria-labelledby="hero-title">
+    <div class="hd-hero__content">
+      <p class="hd-hero__eyebrow">Headronist / Native design foundations</p>
+      <h1 class="hd-hero__title" id="hero-title">Design with clarity. Build with confidence.</h1>
+      <p class="hd-hero__description">A lightweight design system for precise layouts, reusable visual assets, and consistent interfaces across screens.</p>
+      <div class="hd-hero__actions"><a href="#patterns">Explore patterns <span aria-hidden="true">→</span></a></div>
+      <ul class="proof" aria-label="System qualities">
+        <li><strong>Native</strong> browser-first primitives</li>
+        <li><strong>Verifiable</strong> quality contracts</li>
+        <li><strong>Responsive</strong> by default</li>
+      </ul>
+    </div>
+    <div class="hd-hero__media"><img src="../assets/primitives/workflow-nodes.svg" width="640" height="360" alt="Three connected workflow nodes labeled Input, Design and Output"></div>
+  </section>
+  <section class="section" id="patterns" aria-labelledby="patterns-title">
+    <div class="wrap"><h2 id="patterns-title">Built from reusable primitives.</h2><p class="section-intro">Clear hierarchy, resilient layout rules, and accessible interactions form the baseline. Finish is layered on only when it improves comprehension.</p><div class="cards">
+      <article class="card"><h3>Layout</h3><p>Responsive composition that respects content and viewport width.</p></article>
+      <article class="card"><h3>Typography</h3><p>Readable hierarchy, natural wrapping, and intentional spacing.</p></article>
+      <article class="card"><h3>Navigation</h3><p>Semantic links generated from one compact manifest, with active section state.</p></article>
+    </div></div>
+  </section>
+  <section class="section" id="quality" aria-labelledby="quality-title">
+    <div class="wrap"><h2 id="quality-title">Quality is part of the system.</h2><p class="section-intro">Design references must be readable and verified, not simply visually impressive. Every surface keeps keyboard focus, reduced motion, and small screens in view.</p></div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap">Headronist Design · Native and reusable</div></footer>
 <script type="module">
 import {renderNavigation} from '../components/navigation/nav.js';
 try { const response = await fetch('../contracts/navigation.v1.json'); if (!response.ok) throw new Error('Navigation unavailable'); renderNavigation(document.querySelector('#site-navigation'), await response.json()); } catch (error) { console.warn('Using semantic fallback navigation', error); }
 </script>
-</body></html>
+</body>
+</html>

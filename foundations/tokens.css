@@ -1,0 +1,37 @@
+@layer headronist.foundation {
+:root {
+  color-scheme: dark;
+  --hd-color-ink: #08111f;
+  --hd-color-ink-soft: #101d31;
+  --hd-color-surface: #0c1626;
+  --hd-color-surface-raised: #13233a;
+  --hd-color-line: rgb(157 187 228 / .18);
+  --hd-color-line-strong: rgb(157 187 228 / .34);
+  --hd-color-text: #f5f8ff;
+  --hd-color-text-muted: #aebdd2;
+  --hd-color-text-subtle: #8093ad;
+  --hd-color-accent: #a9c9ff;
+  --hd-color-accent-strong: #d7e6ff;
+  --hd-color-accent-ink: #071321;
+  --hd-radius-sm: .5rem;
+  --hd-radius-md: .75rem;
+  --hd-radius-lg: 1.25rem;
+  --hd-shadow-soft: 0 1.5rem 4rem rgb(0 0 0 / .2);
+  --hd-focus-ring: 0 0 0 .2rem var(--hd-color-ink), 0 0 0 .35rem var(--hd-color-accent);
+  --hd-header-height: 4.5rem;
+}
+
+:where(html) {
+  scroll-behavior: smooth;
+  background: var(--hd-color-ink);
+}
+
+:where(::selection) {
+  background: var(--hd-color-accent);
+  color: var(--hd-color-accent-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(html) { scroll-behavior: auto; }
+}
+}

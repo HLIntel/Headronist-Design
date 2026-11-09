@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "brand": {
     "label": "Headronist",
-    "href": "./index.html"
+    "href": "#overview"
   },
   "items": [
     {
