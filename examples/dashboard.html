@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" data-hd-theme="light" data-hd-accent="teal">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Operations dashboard — Headronist example</title>
+<link rel="stylesheet" href="../foundations/tokens.css"><link rel="stylesheet" href="../components/primitives/dashboard.css">
+<script src="../components/primitives/dashboard-filter.js" defer></script>
+</head>
+<body class="hd-dashboard">
+<header class="hd-dashboard__header"><nav class="hd-dashboard__wrap hd-dashboard__nav" aria-label="Primary"><a class="hd-dashboard__brand" href="#overview">Headronist / Operations</a><a href="#activity">View activity</a></nav></header>
+<main class="hd-dashboard__wrap hd-dashboard__main" id="overview">
+<div class="hd-dashboard__heading"><div><p class="hd-dashboard__eyebrow">Example workspace</p><h1>Operations overview</h1><p>Illustrative sample data · Replace with your own source.</p></div><a href="#activity">Review activity →</a></div>
+<section aria-labelledby="metrics-title"><h2 id="metrics-title">At a glance</h2><div class="hd-dashboard__metrics">
+<div class="hd-dashboard__panel"><p>Completed tasks</p><strong class="hd-dashboard__value">24</strong><p>Sample period</p></div>
+<div class="hd-dashboard__panel"><p>In progress</p><strong class="hd-dashboard__value">8</strong><p>Sample period</p></div>
+<div class="hd-dashboard__panel"><p>Needs attention</p><strong class="hd-dashboard__value">2</strong><p>Sample period</p></div>
+</div></section>
+<div class="hd-dashboard__columns"><section class="hd-dashboard__panel" id="activity" aria-labelledby="activity-title"><h2 id="activity-title">Recent activity</h2><p>Filter the illustrative rows by status.</p>
+<label class="hd-dashboard__filter" for="status-filter" hidden>Status<select id="status-filter" data-hd-filter="activity-rows" data-hd-result="filter-result"><option value="all">All statuses</option><option value="complete">Complete</option><option value="in-progress">In progress</option><option value="attention">Needs attention</option></select></label>
+<p id="filter-result" role="status" aria-live="polite"></p><div class="hd-dashboard__table-wrap" tabindex="0" role="region" aria-label="Activity table, scroll horizontally if needed"><table><thead><tr><th scope="col">Task</th><th scope="col">Owner</th><th scope="col">Status</th></tr></thead><tbody id="activity-rows">
+<tr data-hd-status="complete"><td>Update documentation</td><td>Alex</td><td>Complete</td></tr><tr data-hd-status="in-progress"><td>Review release</td><td>Jordan</td><td>In progress</td></tr><tr data-hd-status="attention"><td>Resolve feedback</td><td>Sam</td><td>Needs attention</td></tr></tbody></table></div></section>
+<section class="hd-dashboard__panel" aria-labelledby="distribution-title"><h2 id="distribution-title">Work by status</h2><p>Illustrative counts for the sample period.</p>
+<div class="hd-dashboard__bar"><span>Complete</span><span class="hd-dashboard__track" aria-hidden="true"><span class="hd-dashboard__fill" style="display:block;width:100%"></span></span><strong>24</strong></div>
+<div class="hd-dashboard__bar"><span>In progress</span><span class="hd-dashboard__track" aria-hidden="true"><span class="hd-dashboard__fill" style="display:block;width:33.3%"></span></span><strong>8</strong></div>
+<div class="hd-dashboard__bar"><span>Attention</span><span class="hd-dashboard__track" aria-hidden="true"><span class="hd-dashboard__fill" style="display:block;width:8.3%"></span></span><strong>2</strong></div>
+<p>Counts are shown as text; bars share a zero baseline and scale to the largest count.</p></section></div></main></body></html>

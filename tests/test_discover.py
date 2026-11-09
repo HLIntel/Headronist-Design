@@ -11,6 +11,9 @@ class DiscoveryTests(unittest.TestCase):
     def test_limit(self):
         results=discover(limit=1)
         self.assertLessEqual(len(results["results"]),1)
+    def test_alias_and_documentation_group(self):
+        self.assertIn("web", [r["id"] for r in discover("website")["results"]])
+        self.assertIn("docs", [r["id"] for r in discover(group="documentation")["results"]])
     def test_invalid(self):
         with self.assertRaises(ValueError):
             discover(group="unknown")

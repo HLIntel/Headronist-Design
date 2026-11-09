@@ -11,3 +11,22 @@
 @media(prefers-reduced-motion:reduce){:where(.hd-shine)::after{transition:none;display:none}:where(.hd-parallax){transform:none}:where(.hd-transition){transition:none}}
 @media print{:where(.hd-shine)::after{display:none}:where(.hd-parallax){transform:none}}
 }
+
+/* Opt-in showcase material. Opaque fallback works without backdrop-filter. */
+@layer headronist.finish {
+:where(.hd-glass) {
+  color: var(--hd-color-text);
+  background: var(--hd-color-surface-raised);
+  border: 1px solid var(--hd-color-line-strong);
+  border-radius: var(--hd-radius-lg);
+}
+@supports (backdrop-filter: blur(1px)) {
+  :where(.hd-glass) {
+    background: color-mix(in srgb, var(--hd-color-surface-raised) 94%, transparent);
+    backdrop-filter: blur(18px);
+  }
+}
+@media (forced-colors: active) {
+  :where(.hd-glass) { background: Canvas; color: CanvasText; border-color: CanvasText; backdrop-filter: none; }
+}
+}

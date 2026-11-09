@@ -14,3 +14,5 @@ Headronist is a task-directed design system, not a fixed aesthetic. The registry
 | Documentation | scanability, examples, semantic headings | Markdown and diagrams |
 
 Never claim a renderer exists merely because guidance exists. Prefer the smallest reusable fragment that solves the task. Avoid card walls, decorative badges, emoji and excessive effects. Keep source files portable, offline-capable and brand-neutral by default.
+
+For compact briefs and task-specific starting points, use [Quick-create workflows](QUICK-CREATE.md).

@@ -20,7 +20,7 @@ def application(environ,start_response):
     if len(secret)<24:
         return respond("503 Service Unavailable",{"error":"server not configured"})
     auth=environ.get("HTTP_AUTHORIZATION","")
-    if not hmac.compare_digest(auth,"Bearer "+secret):
+    if not isinstance(auth, str) or not hmac.compare_digest(auth.encode("utf-8"), ("Bearer "+secret).encode("utf-8")):
         return respond("401 Unauthorized",{"error":"unauthorized"},[("WWW-Authenticate","Bearer")])
     try:
         length=int(environ.get("CONTENT_LENGTH","0"))

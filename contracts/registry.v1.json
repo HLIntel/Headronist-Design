@@ -14,7 +14,11 @@
       "contracts/composition.v1.json",
       "contracts/platforms.v1.json",
       "contracts/expertise.v1.json",
-      "contracts/depth.v1.json"
+      "contracts/depth.v1.json",
+      "components/primitives/web.css",
+      "engines/typography/type.css",
+      "examples/website.html",
+      "docs/QUICK-CREATE.md"
     ],
     "landing": [
       "examples/hero-workflows.html",
@@ -35,6 +39,8 @@
     ],
     "palette": [
       "foundations/palettes/navy.json",
+      "foundations/tokens.css",
+      "docs/VISUAL-SYSTEM.md",
       "contracts/tokens.v1.schema.json"
     ],
     "interaction": [
@@ -57,10 +63,13 @@
     "responsive": [
       "engines/composition/responsive.css",
       "contracts/scenarios.v1.json",
-      "contracts/platforms.v1.json"
+      "contracts/platforms.v1.json",
+      "components/primitives/web.css",
+      "examples/website.html"
     ],
     "typography": [
-      "engines/typography/type.css"
+      "engines/typography/type.css",
+      "docs/VISUAL-SYSTEM.md"
     ],
     "links": [
       "components/navigation/links.js"
@@ -90,7 +99,11 @@
     "dashboard": [
       "contracts/scenarios.v1.json",
       "engines/composition/responsive.css",
-      "contracts/composition.v1.json"
+      "contracts/composition.v1.json",
+      "components/primitives/dashboard.css",
+      "components/primitives/dashboard-filter.js",
+      "examples/dashboard.html",
+      "docs/QUICK-CREATE.md"
     ],
     "gallery": [
       "contracts/scenarios.v1.json",
@@ -136,12 +149,14 @@
     "universal": [
       "docs/UNIVERSAL-WORKFLOWS.md",
       "contracts/platforms.v1.json",
-      "contracts/composition.v1.json"
+      "contracts/composition.v1.json",
+      "docs/QUICK-CREATE.md"
     ],
     "discovery": [
       "contracts/catalog.v1.json",
       "headronist/discover.py",
-      "docs/SERVER.md"
+      "docs/SERVER.md",
+      "headronist/hygiene.py"
     ],
     "localApi": [
       "headronist/server.py",
@@ -170,7 +185,8 @@
     "qualityGate": [
       "headronist/quality_gate.py",
       "tests/test_quality_gate.py",
-      "docs/QUALITY-FLOW.md"
+      "docs/QUALITY-FLOW.md",
+      "headronist/hygiene.py"
     ],
     "referenceProfile": [
       "contracts/reference-profile.v1.json",
@@ -202,6 +218,8 @@
     ],
     "assetSourcing": [
       "contracts/asset-sources.v1.json",
+      "assets/manifest.v1.json",
+      "assets/backgrounds/README.md",
       "headronist/assets.py",
       "docs/ASSET-SOURCING.md"
     ],

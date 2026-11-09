@@ -36,7 +36,9 @@
       "priority": 30,
       "tags": [
         "mobile",
-        "desktop"
+        "desktop",
+        "tablet",
+        "ipad"
       ],
       "outputs": [
         "css"
@@ -364,7 +366,9 @@
         "illustration",
         "photography",
         "licensing",
-        "offline"
+        "offline",
+        "background",
+        "backgrounds"
       ],
       "outputs": [
         "json",
@@ -417,6 +421,149 @@
       ],
       "outputs": [
         "markdown"
+      ]
+    },
+    "auth": {
+      "label": "Authentication guidance",
+      "group": "automation",
+      "priority": 60,
+      "tags": [
+        "authentication",
+        "security",
+        "login"
+      ],
+      "outputs": [
+        "markdown"
+      ]
+    },
+    "compat": {
+      "label": "Compatibility policy",
+      "group": "documentation",
+      "priority": 60,
+      "tags": [
+        "compatibility",
+        "migration",
+        "versions"
+      ],
+      "outputs": [
+        "markdown"
+      ]
+    },
+    "finish": {
+      "label": "Visual finish",
+      "group": "experience",
+      "priority": 60,
+      "tags": [
+        "glass",
+        "effects",
+        "surface"
+      ],
+      "outputs": [
+        "css"
+      ]
+    },
+    "gallery": {
+      "label": "Gallery patterns",
+      "group": "experience",
+      "priority": 60,
+      "tags": [
+        "gallery",
+        "images",
+        "layout"
+      ],
+      "outputs": [
+        "css"
+      ]
+    },
+    "image": {
+      "label": "Image prompt guidance",
+      "group": "foundations",
+      "priority": 60,
+      "tags": [
+        "image",
+        "visual",
+        "prompt"
+      ],
+      "outputs": [
+        "json"
+      ]
+    },
+    "interaction": {
+      "label": "Interaction state machine",
+      "group": "experience",
+      "priority": 60,
+      "tags": [
+        "interaction",
+        "state",
+        "controls"
+      ],
+      "outputs": [
+        "js"
+      ]
+    },
+    "links": {
+      "label": "Link behavior",
+      "group": "experience",
+      "priority": 60,
+      "tags": [
+        "links",
+        "navigation"
+      ],
+      "outputs": [
+        "js"
+      ]
+    },
+    "palette": {
+      "label": "Color palettes and themes",
+      "group": "foundations",
+      "priority": 60,
+      "tags": [
+        "color",
+        "palette",
+        "accent",
+        "background"
+      ],
+      "outputs": [
+        "css",
+        "json"
+      ]
+    },
+    "social": {
+      "label": "Social link patterns",
+      "group": "experience",
+      "priority": 60,
+      "tags": [
+        "social",
+        "links"
+      ],
+      "outputs": [
+        "js"
+      ]
+    },
+    "stream": {
+      "label": "Streaming interface guidance",
+      "group": "experience",
+      "priority": 60,
+      "tags": [
+        "stream",
+        "chat",
+        "interface"
+      ],
+      "outputs": [
+        "markdown"
+      ]
+    },
+    "tabs": {
+      "label": "Tab navigation",
+      "group": "experience",
+      "priority": 60,
+      "tags": [
+        "tabs",
+        "navigation"
+      ],
+      "outputs": [
+        "js",
+        "css"
       ]
     }
   },

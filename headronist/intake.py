@@ -8,8 +8,18 @@ TASK_ROUTES = {
     "landing": ("landing","navigation","typography","visualQuality"),
     "web": ("web","responsive","navigation","visualQuality"),
     "mobile": ("responsive","navigation","typography","visualQuality"),
-    "presentation": ("typography","palette","visualQuality"),
-    "dashboard": ("dashboard","responsive","visualQuality"),
+    "presentation": ("typography","palette","universal","visualQuality"),
+    "slides": ("typography","palette","universal","visualQuality"),
+    "pdf": ("docs","typography","universal","visualQuality"),
+    "document": ("docs","typography","universal","visualQuality"),
+    "diagram": ("composition","graphIntelligence","universal"),
+    "graph": ("graphIntelligence","universal"),
+    "chart": ("graphIntelligence","universal"),
+    "logo": ("image","visualGeneration","universal"),
+    "website": ("web","responsive","navigation","visualQuality","universal"),
+    "landing_page": ("landing","navigation","typography","visualQuality","universal"),
+    "dashboard_quick_create": ("dashboard","responsive","graphIntelligence","universal","visualQuality"),
+    "dashboard": ("dashboard","responsive","graphIntelligence","universal","visualQuality"),
     "visual_asset": ("image","visualQuality"),
     "docs": ("docs","typography","visualQuality"),
     "motion": ("motion","visualQuality"),
@@ -18,6 +28,16 @@ TASK_ROUTES = {
     "repair": ("repair","visualInspection","antiPatterns","qualityGate"),
     "design_memory": ("designMemory","referenceProfile","expertise"),
     "asset_sourcing": ("assetSourcing","image","visualQuality"),
+}
+CHECKS = {
+    "slides": ["narrative-and-reading-order", "text-legibility", "export-and-speaker-notes"],
+    "presentation": ["narrative-and-reading-order", "text-legibility", "export-and-speaker-notes"],
+    "pdf": ["page-breaks-and-margins", "reading-order-and-links", "export-and-print"],
+    "document": ["heading-structure", "reading-order-and-links", "export-and-print"],
+    "diagram": ["relationship-accuracy", "labels-and-reading-order", "text-alternative"],
+    "graph": ["data-and-units", "appropriate-encoding", "text-or-table-alternative"],
+    "chart": ["data-and-units", "appropriate-encoding", "text-or-table-alternative"],
+    "logo": ["originality-and-rights", "small-size-legibility", "light-dark-and-monochrome"],
 }
 MAX_BYTES = 32768
 def route(payload):
@@ -43,7 +63,7 @@ def route(payload):
     paths=list(dict.fromkeys(p for r in routes for p in registry.resolve(r,reg)[1]))
     return {"version":"1","task":task,"target":target,"routes":list(routes),"paths":paths,
             "status":{r:reg["status"].get(r,"unknown") for r in routes},
-            "checks":["no-overlap","no-horizontal-overflow","semantic-navigation","reduced-motion","no-fabricated-claims"],
+            "checks":CHECKS.get(task,["no-overlap","no-horizontal-overflow","semantic-navigation","reduced-motion","no-fabricated-claims"]),
             "note":"Routing only; no design rendered or verified."}
 def main(argv=None):
     parser=argparse.ArgumentParser()

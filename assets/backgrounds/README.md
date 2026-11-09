@@ -1,48 +1,15 @@
-# Headronist trust network background
+# Background assets
 
-Original, locally hosted visual asset for the Headronist AI developer platform.
+The [asset inventory](../manifest.v1.json) records dimensions, file sizes and alpha channels for the background collection. Files are candidates, not production approvals. Original filenames are retained to preserve source clues. The six images previously at the asset root are now here; update any external consumers of those old paths.
 
-- **File:** `assets/backgrounds/headronist-trust-network.svg`
-- **Format:** SVG, 1600 × 900 viewBox
-- **Palette:** deep navy and graphite with muted blue and silver nodes
-- **Composition:** connection mesh concentrated around the edges and lower field, with open central space for hero content
-- **Use:** hero background, section backdrop, or responsive page surface
-- **Runtime:** no external requests, scripts, fonts, or dependencies
+The two `headronist-*-network.svg` files are original, scalable, text-free network fields. The raster images were supplied for exploration. Their creators, rights and permitted redistribution have not been verified; confirm the source, license and attribution for each before use. The three supplied photos (`blue-powder-burst.jpeg`, `blue-water-splash.jpeg`, `cloud-bank-black.jpeg`) retain their source metadata.
 
-## Usage
+## Choose and prepare
 
-Use as a CSS background so the artwork remains decorative and does not interfere with content:
+- Pick an image for its composition and purpose, not just its resolution. The manifest records dimensions; small 553–720px images are poor candidates for a full-width HD hero. Do not upscale a preview and call it HD.
+- All inventoried raster files report **no alpha**, including the file whose name contains “transparent”. Use a CSS overlay or a separately reviewed transparent derivative when transparency is needed; retain the original. A filename is not evidence of transparency.
+- Create optimized, appropriately sized derivatives only after licensing and crop review. Keep the highest-quality source separate; record derivative paths and provenance in the manifest. Avoid shipping the multi-megabyte master to every screen.
+- Decorative backgrounds need no spoken description; meaningful images need an accurate text alternative. Keep headings and controls in semantic HTML. Use a solid surface or sufficiently opaque scrim under text, and measure contrast over the actual crop at each viewport. Blur alone does not guarantee legibility.
+- Use background imagery and optional glass for showcase surfaces. Product tables, forms and dashboards should use flat, opaque surfaces. Check mobile crops, long copy, zoom, reduced motion and keyboard focus in a browser.
 
-```css
-.hero {
-  background-color: #030d1b;
-  background-image: url("/assets/backgrounds/headronist-trust-network.svg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-```
-
-For mobile layouts, keep the focal area centered and add a dark overlay behind text when needed:
-
-```css
-@media (max-width: 640px) {
-  .hero {
-    background-position: 50% 50%;
-  }
-}
-```
-
-The SVG is intentionally text-free and logo-free. Keep hero copy in HTML for accessibility and responsive control.
-
-## Supplied photographic mechanisms
-
-These locally hosted JPEGs were supplied by the project owner for design exploration. Their original Adobe Stock filenames and embedded camera metadata are preserved only in the source files; confirm licensing and attribution before production redistribution.
-
-| Asset | Intended mechanism | Contrast guidance |
-|---|---|---|
-| `blue-powder-burst.jpeg` | Dark hero or feature texture | Place copy in the open black area on the left |
-| `blue-water-splash.jpeg` | Light editorial section backdrop | Use a dark text panel or overlay for readable copy |
-| `cloud-bank-black.jpeg` | Atmospheric divider or depth layer | Keep content above the cloud line and preserve the black upper field |
-
-Use them as CSS backgrounds or contained media with `object-fit: cover`; do not rely on the image itself for essential text or controls.
+See [asset sourcing](../../docs/ASSET-SOURCING.md) and [visual lifecycle](../../docs/VISUAL-GENERATION-AND-GRAPHS.md) for rights and delivery practices.
