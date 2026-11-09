@@ -36,7 +36,19 @@ body{margin:0;background:radial-gradient(circle at 75% 8%,rgb(50 93 161 / .22),t
 .card:hover{border-color:var(--hd-color-line-strong);transform:translateY(-3px)}
 .card h3{margin:0 0 .6rem;font-size:1.05rem}
 .card p{margin:0;color:var(--hd-color-text-muted);line-height:var(--hd-line-body)}
+.asset-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.asset-card{display:grid;min-height:18rem;overflow:hidden;border:1px solid var(--hd-color-line);border-radius:var(--hd-radius-md);background:var(--hd-color-surface)}
+.asset-card img{grid-area:1/1;z-index:0;display:block;width:100%;height:100%;min-height:18rem;object-fit:cover}
+.asset-card::after{grid-area:1/1;z-index:1;content:"";align-self:stretch;background:linear-gradient(transparent 35%,rgb(8 17 31 / .94))}
+.asset-card__caption{grid-area:1/1;align-self:end;z-index:2;margin:1rem}
+.asset-card__caption h3{margin:0 0 .35rem;font-size:1rem}
+.asset-card__caption p{margin:0;color:var(--hd-color-text-muted);font-size:.875rem;line-height:1.45}
+.asset-card--light{color:var(--hd-color-ink)}
+.asset-card--light::after{background:linear-gradient(transparent,rgb(232 245 252 / .96))}
+.asset-card--light .asset-card__caption p{color:#29455e}
+.asset-card--light .asset-card__caption h3{color:var(--hd-color-ink)}
 .footer{padding-block:2rem;border-top:1px solid var(--hd-color-line);color:var(--hd-color-text-subtle);font-size:.875rem}
+@media(max-width:760px){.asset-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr))}}
 @media(prefers-reduced-motion:reduce){.hd-hero__actions a,.card{transition:none}.hd-hero__actions a:hover,.card:hover{transform:none}}
 </style>
 </head>
@@ -48,6 +60,7 @@ body{margin:0;background:radial-gradient(circle at 75% 8%,rgb(50 93 161 / .22),t
     <ul class="hd-nav-items">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#patterns">Patterns</a></li>
+      <li><a href="#assets">Assets</a></li>
       <li><a href="#quality">Quality</a></li>
     </ul>
     <a class="hd-nav-action" href="https://github.com/HLIntel/Headronist-Design">View source</a>
@@ -74,6 +87,26 @@ body{margin:0;background:radial-gradient(circle at 75% 8%,rgb(50 93 161 / .22),t
       <article class="card"><h3>Typography</h3><p>Readable hierarchy, natural wrapping, and intentional spacing.</p></article>
       <article class="card"><h3>Navigation</h3><p>Semantic links generated from one compact manifest, with active section state.</p></article>
     </div></div>
+  </section>
+  <section class="section" id="assets" aria-labelledby="assets-title">
+    <div class="wrap">
+      <h2 id="assets-title">Visual mechanisms with intent.</h2>
+      <p class="section-intro">The same asset can change the feel of a surface. Keep the focal point, contrast, and content placement intentional instead of treating imagery as decoration.</p>
+      <div class="asset-grid">
+        <article class="asset-card">
+          <img src="../assets/backgrounds/blue-powder-burst.jpeg" alt="Blue powder bursting across a black background" loading="lazy" decoding="async">
+          <div class="asset-card__caption"><h3>Hero texture</h3><p>Open negative space supports headline-led compositions.</p></div>
+        </article>
+        <article class="asset-card asset-card--light">
+          <img src="../assets/backgrounds/blue-water-splash.jpeg" alt="Blue water splash across a pale background" loading="lazy" decoding="async">
+          <div class="asset-card__caption"><h3>Light section field</h3><p>Use a dark content layer to keep text readable.</p></div>
+        </article>
+        <article class="asset-card">
+          <img src="../assets/backgrounds/cloud-bank-black.jpeg" alt="White cloud bank rising from a black background" loading="lazy" decoding="async">
+          <div class="asset-card__caption"><h3>Atmospheric depth</h3><p>Anchor content above the cloud line for a calm divider.</p></div>
+        </article>
+      </div>
+    </div>
   </section>
   <section class="section" id="quality" aria-labelledby="quality-title">
     <div class="wrap"><h2 id="quality-title">Quality is part of the system.</h2><p class="section-intro">Design references must be readable and verified, not simply visually impressive. Every surface keeps keyboard focus, reduced motion, and small screens in view.</p></div>
