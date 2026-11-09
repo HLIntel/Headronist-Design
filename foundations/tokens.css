@@ -35,3 +35,42 @@
   :where(html) { scroll-behavior: auto; }
 }
 }
+
+/* Opt-in palettes; the existing navy default and token names remain unchanged. */
+@layer headronist.foundation {
+:root[data-hd-theme="light"] {
+  color-scheme: light;
+  --hd-color-ink: #ffffff;
+  --hd-color-ink-soft: #f4f5f7;
+  --hd-color-surface: #ffffff;
+  --hd-color-surface-raised: #f4f5f7;
+  --hd-color-line: #d6dce5;
+  --hd-color-line-strong: #858d9b;
+  --hd-color-text: #0b1220;
+  --hd-color-text-muted: #3b4454;
+  --hd-color-text-subtle: #5c6575;
+  --hd-color-accent: #1d4ed8;
+  --hd-color-accent-strong: #1a43b8;
+  --hd-color-accent-ink: #ffffff;
+}
+:root[data-hd-accent="teal"] {
+  --hd-color-accent: #8de0d3;
+  --hd-color-accent-strong: #b7f4ea;
+  --hd-color-accent-ink: #071b1a;
+}
+:root[data-hd-theme="light"][data-hd-accent="teal"] {
+  --hd-color-accent: #00665e;
+  --hd-color-accent-strong: #004e48;
+  --hd-color-accent-ink: #ffffff;
+}
+:root[data-hd-accent="violet"] {
+  --hd-color-accent: #c8b4ff;
+  --hd-color-accent-strong: #e2d8ff;
+  --hd-color-accent-ink: #1c1033;
+}
+:root[data-hd-theme="light"][data-hd-accent="violet"] {
+  --hd-color-accent: #563593;
+  --hd-color-accent-strong: #432775;
+  --hd-color-accent-ink: #ffffff;
+}
+}

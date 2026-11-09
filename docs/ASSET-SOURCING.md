@@ -22,6 +22,8 @@ python -m headronist.assets pattern --output assets/generated/network-field.svg 
 
 The recommender is deterministic and does not fetch images, call a provider, read secrets, or download assets. Network sources appear only when explicitly requested. It returns source and licensing notes for an agent to consider.
 
+See the [local background inventory](../assets/manifest.v1.json) and [visual system guide](VISUAL-SYSTEM.md) for available candidates and usage guidance.
+
 ## Choose the right visual medium
 
 | Context | Preferred visual | Avoid |

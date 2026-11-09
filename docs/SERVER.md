@@ -2,12 +2,16 @@
 
 *Developer tooling · Tags: CLI, route discovery, local server, metadata · [Documentation index](README.md)*
 
+Search matches route IDs, labels, tags and registered aliases. Terms are combined; group names come from the catalog. Responses contain status and a bounded result list; inspect a route for its canonical paths.
+
 The route catalog is metadata, not a second source of truth. The registry owns paths and statuses; the catalog adds labels, groups, priorities, tags, and intended outputs for search and navigation.
 
 ## CLI
 
 ```sh
-python -m headronist.discover --query typography
+python -m headronist.discover --query website
+python -m headronist.discover --query background
+python -m headronist.discover --group documentation
 python -m headronist.discover --group experience --limit 8
 python -m headronist.registry inspect landing
 ```

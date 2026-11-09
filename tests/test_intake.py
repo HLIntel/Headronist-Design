@@ -13,6 +13,18 @@ class IntakeTests(unittest.TestCase):
   result=route_task({"version":"1","task":"asset_sourcing","target":"hero-background"})
   self.assertIn("assetSourcing",result["routes"])
   self.assertIn("contracts/asset-sources.v1.json",result["paths"])
+ def test_quick_create_routes_and_schema_agree(self):
+  import json
+  from pathlib import Path
+  from headronist.intake import TASK_ROUTES
+  schema=json.loads((Path(__file__).resolve().parents[1]/"contracts/intake.v1.schema.json").read_text())
+  self.assertEqual(set(schema["properties"]["task"]["enum"]),set(TASK_ROUTES))
+  for task in ("dashboard_quick_create","slides","pdf","document","diagram","graph","chart","logo","website","landing_page"):
+   result=route_task({"version":"1","task":task,"target":"example"})
+   self.assertIn("docs/QUICK-CREATE.md",result["paths"])
+   self.assertTrue(result["checks"])
+  self.assertIn("data-and-units",route_task({"version":"1","task":"chart","target":"sales"})["checks"])
+  self.assertNotIn("semantic-navigation",route_task({"version":"1","task":"pdf","target":"report"})["checks"])
  def test_motion(self):
   result=route_task({"version":"1","task":"motion","target":"intro"})
   self.assertIn("contracts/motion.v1.json",result["paths"])

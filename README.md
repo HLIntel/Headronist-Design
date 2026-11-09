@@ -6,6 +6,9 @@ A universal, agent-ready design system for interfaces, presentations, visual ass
 
 ## Start here
 
+- Build from the [website starter](examples/website.html) or [dashboard starter](examples/dashboard.html); follow the [quick-create guide](docs/QUICK-CREATE.md).
+- Pick a theme, font and background with the [visual system](docs/VISUAL-SYSTEM.md) and [asset inventory](assets/manifest.v1.json).
+
 - [Documentation guide](docs/README.md) · [Agent instructions](AGENTS.md)
 - [Universal design workflows](docs/UNIVERSAL-WORKFLOWS.md) · [Agent task intake](docs/INTAKE.md)
 - [Capability catalog](contracts/catalog.v1.json) · [Canonical route registry](contracts/registry.v1.json)
@@ -27,10 +30,12 @@ A universal, agent-ready design system for interfaces, presentations, visual ass
 ## Common commands
 
 ```sh
-python -m headronist.discover --query landing
+python -m headronist.discover --query website
+python -m headronist.discover --group documentation
 python -m headronist.registry routes
 python -m headronist.registry inspect landing
 python -m headronist.registry check
+python -m headronist.hygiene
 python -m headronist.intake < task.json
 python -m headronist.mcp_stdio
 python -m headronist.quality_gate
@@ -50,6 +55,8 @@ python -m headronist.visuals graph --data-shape time-series --purpose trend
 - `adapters/`: integration entry points for agents and tools
 - `docs/`: task-oriented guides and design research
 - `tests/`: regression checks
+
+Commands run from the repository root with Python 3.9+ and use the standard library unless an optional integration says otherwise. Discovery and intake return JSON pointers, not rendered output. Run tests with `python -m unittest discover -s tests`.
 
 ## Scope and boundaries
 

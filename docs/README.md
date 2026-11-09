@@ -7,6 +7,8 @@ Headronist documentation is organized by the work an agent or designer is trying
 | Need | Read first | Also useful |
 |---|---|---|
 | Understand the system and choose a workflow | [Universal Design Workflows](UNIVERSAL-WORKFLOWS.md) | [Design Intake](INTAKE.md), [Reuse and Compatibility](REUSE.md) |
+| Start a dashboard, slide deck, document, chart, logo or site | [Quick-create workflows](QUICK-CREATE.md) | [Visual system](VISUAL-SYSTEM.md), [Design Intake](INTAKE.md) |
+| Choose color, type and backgrounds | [Visual system](VISUAL-SYSTEM.md) | [Background inventory](../assets/backgrounds/README.md), [Asset manifest](../assets/manifest.v1.json) |
 | Find a capability or command | [Discovery and Local API](SERVER.md) | [Capability Catalog](../contracts/catalog.v1.json), [Canonical Registry](../contracts/registry.v1.json) |
 | Give an agent a task | [Design Intake](INTAKE.md) | [Agent and MCP Integration](CLOUD-MCP.md), [Agent Contract](../AGENTS.md) |
 

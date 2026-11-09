@@ -1,0 +1,11 @@
+# Local Python and tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Local credentials and generated review artifacts
+.env
+.env.*
+!.env.example
+artifacts/

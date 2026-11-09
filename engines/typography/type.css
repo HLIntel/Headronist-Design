@@ -10,3 +10,11 @@
 :where(.hd-truncate){white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 :where(.hd-wrap){overflow-wrap:anywhere;word-break:normal}
 }
+
+/* Font roles are opt-in and use local/system faces; projects may override any role. */
+@layer headronist.type {
+:root { --hd-font-display: var(--hd-font-ui); --hd-font-humanist: "Trebuchet MS", Verdana, sans-serif; --hd-font-readable: ui-serif, Georgia, serif; }
+:where(.hd-font-humanist) { font-family: var(--hd-font-humanist); }
+:where(.hd-font-readable) { font-family: var(--hd-font-readable); }
+:where(.hd-font-display) { font-family: var(--hd-font-display); }
+}
