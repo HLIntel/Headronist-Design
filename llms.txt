@@ -55,6 +55,13 @@ Run these offline Python tools (standard library only) from repository root:
 - `python -m headronist.visuals graph --data-shape <shape> --purpose <purpose>`: Recommend chart encodings.
 - `python -m headronist.mcp_stdio`: Run standard MCP server with full tool dispatch (`design_discover`, `design_inspect`, `design_intake`, `design_recommend_assets`, `design_visual_prompt`, `design_graph_guidance`, `design_composition_check`).
 
+## Ecosystem: Shop, Extension & Platform
+
+- [Headronist Storefront](https://headron.tech/headronist): Official tech accessories shop (MacBook cases, desk mats, iPhone cases, sleeves, watch bands, speakers).
+- [Product Shop](https://headron.tech/headronist/shop): Catalog of all 39 design products.
+- [Headron Design Extension](https://github.com/HLIntel/Design): Official developer extension and VS Code integration for the Headronist design system.
+- [Headron Platform](https://headron.tech): Verification layer for AI coding agents.
+
 ## Extended Documentation
 
 - [Full LLM context](llms-full.txt): Comprehensive rules, token dictionaries, and route schemas.

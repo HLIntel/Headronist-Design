@@ -143,3 +143,12 @@ python -m headronist.mcp_stdio
 - `examples/website.html`: Production-ready, semantic, accessible marketing and product landing starter. Includes dark/light mode toggle, responsive navigation, sticky header with offset compensation, and authentic visual treatments.
 - `examples/dashboard.html`: High-density operational dashboard with clear metrics, tabular data, filter controls, and accessible status indicators.
 - `engines/composition/anti-breakage.css`: Foundational layout protections against overflow, layout shift, and misaligned sticky headers.
+
+---
+
+## 7. Ecosystem Cross-Links
+
+- **Headronist Storefront:** https://headron.tech/headronist — 39 tech accessories made with Headronist palettes (MacBook cases, desk mats, phone cases, Kindle cases, sleeves, watch bands, speakers).
+- **Headronist Product Shop:** https://headron.tech/headronist/shop — Full product catalog.
+- **Headron Design Extension:** https://github.com/HLIntel/Design — Official developer extension and VS Code integration.
+- **Headron Verification Platform:** https://headron.tech — Model-independent trust and verification layer for AI coding agents.
