@@ -10,7 +10,14 @@ Headronist's design contracts are client-neutral. The same dispatcher is availab
 python -m headronist.mcp_stdio
 ```
 
-Configure an MCP-capable agent to launch this command from the repository root. Tools: `design_discover`, `design_inspect`, `design_intake`.
+Configure an MCP-capable agent to launch this command from the repository root. Tools available:
+- `design_discover`: Search compact Headronist design routes and components.
+- `design_inspect`: Inspect one design route and its required contract/source paths.
+- `design_intake`: Route a structured design task without executing it.
+- `design_recommend_assets`: Recommend local and curated visual assets for a given intent.
+- `design_visual_prompt`: Build a structured prompt brief for image generation or visual design.
+- `design_graph_guidance`: Recommend chart and data graphic encodings based on data shape and purpose.
+- `design_composition_check`: Advisory HTML composition analysis against anti-patterns (card walls, badge clutter, run-on headings).
 
 ## Cloud deployment
 

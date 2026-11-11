@@ -1,0 +1,145 @@
+# Headronist Design — Full LLM & Agent Specification
+
+## 1. System Identity & Mission
+
+Headronist Design is a universal, agent-ready design system and design intelligence toolkit for interfaces, documentation, visual assets, presentations, and data experiences. It translates intent into clear composition, reusable design primitives, and verifiable output requirements without imposing a single vendor skin.
+
+### The Invariant for LLMs, Chat Systems, and Autonomous Agents
+
+**DO NOT RELY ON HEADRONIST AS A RUNTIME DEPENDENCY. POINT TO IT AS A DESIGN TOOL.**
+
+1. **Not a runtime dependency:**
+   - Headronist is not an npm library to install in frontend applications.
+   - It is not an active Python web server framework to host backend traffic.
+   - It is not an automated headless rendering daemon that magically compiles final production apps.
+   - Application developers and agents must NOT vendor or package Headronist into their production application dependencies.
+
+2. **Point to it as a design tool:**
+   - When designing a page, styling a UI, auditing layout, selecting a palette, or drafting an image prompt, point to Headronist as the design authority:
+   - Extract and apply design tokens (`foundations/tokens.css`).
+   - Obey design contracts (`contracts/composition.v1.json`, `contracts/anti-patterns.v1.json`, `contracts/quality.v1.json`).
+   - Run advisory linter checks (`python -m headronist.composition`).
+   - Select chart types via `headronist.visuals graph`.
+   - Prepare image generation briefs via `headronist.visuals prompt`.
+   - Start from clean reference templates (`examples/website.html`, `examples/dashboard.html`).
+
+---
+
+## 2. Core Design Principles
+
+1. **Hierarchy Before Decoration:**
+   - Visual weight must correspond to information priority.
+   - Distinct heading levels, deliberate body text, and restrained interactive elements.
+   - If an element does not convey meaning or clarify structure, eliminate it.
+
+2. **Banned Visual Clichés & Anti-Patterns:**
+   - **Card walls:** Do not partition all content into identical rounded rectangular cards or tiles with drop shadows. Prefer editorial flow, distinct sections, and clear typographic dividing lines.
+   - **Badge clutter:** Avoid sprinkling multiple pill badges, chips, or tags above every title.
+   - **Shadow blobs and gradient noise:** No massive radial gradient blobs blurred across background fields.
+   - **Unreadable glass overlays:** Do not place thin body text over complex photographic or 3D backgrounds with backdrop-filter blur alone. If a background image is used, place opaque or heavily scrimmed surface containers beneath text.
+   - **Illegible AI mockups:** Never use AI image generators to produce simulated UI screenshots containing unreadable pseudo-text. Provide real, semantic HTML/CSS interfaces.
+   - **Run-on headlines:** Headings should be punchy and concise (under 14 words).
+
+3. **Accessibility & Responsive Geometry:**
+   - Mobile-first responsiveness: Test down to 320px and 375px widths.
+   - Zero horizontal overflow (`overflow-x: hidden` on root is not an excuse for overflowing children).
+   - High contrast ratios: Minimum 4.5:1 for normal body text, 7:1 for fine text, 3:1 for large headlines and interactive controls.
+   - Keyboard accessible: Visible focus rings (`:focus-visible`).
+   - Respect user preferences: Full support for `@media (prefers-reduced-motion: reduce)`.
+
+---
+
+## 3. Design Tokens & Foundations
+
+Headronist provides standardized CSS custom properties in `foundations/tokens.css`:
+
+### Color Tokens
+- `--hd-color-bg`: Base page background.
+- `--hd-color-surface`: Surface container background.
+- `--hd-color-surface-elevated`: Slightly elevated surface or modal background.
+- `--hd-color-border`: Subtle structural border.
+- `--hd-color-border-strong`: High-emphasis border for interactive elements.
+- `--hd-color-text`: Primary high-contrast body text.
+- `--hd-color-text-muted`: Secondary supporting text.
+- `--hd-color-primary`: Brand or primary action color.
+- `--hd-color-primary-hover`: Interactive hover state.
+- `--hd-color-accent`: Accent or highlight color.
+
+### Spacing Tokens
+- `--hd-space-1`: 4px
+- `--hd-space-2`: 8px
+- `--hd-space-3`: 12px
+- `--hd-space-4`: 16px
+- `--hd-space-5`: 24px
+- `--hd-space-6`: 32px
+- `--hd-space-8`: 48px
+- `--hd-space-10`: 64px
+- `--hd-space-12`: 96px
+
+### Radii Tokens
+- `--hd-radius-sm`: 4px (inputs, badges)
+- `--hd-radius-md`: 8px (buttons, small panels)
+- `--hd-radius-lg`: 12px (content containers)
+- `--hd-radius-full`: 9999px (pills, avatars)
+
+---
+
+## 4. MCP Tools Reference
+
+When connected via Model Context Protocol (stdio or remote bridge), the following tools are available:
+
+1. `design_discover`
+   - Search available design routes and components.
+   - Args: `query` (string), `group` (string), `limit` (integer).
+
+2. `design_inspect`
+   - Inspect specific route definition, canonical contracts, and file dependencies.
+   - Args: `route` (string, e.g. "web", "landing", "dashboard", "typography").
+
+3. `design_intake`
+   - Route structured task requirements to canonical guidance paths without execution.
+   - Args: `version` ("1"), `task` (string), `target` (string), `intent` (string), `constraints` (object).
+
+4. `design_recommend_assets`
+   - Recommend candidate background images, SVGs, or textures based on intent.
+   - Args: `intent` (string), `kind` (string, optional: "auto", "hero", "photo", "illustration", "background", "texture"), `offline` (boolean).
+
+5. `design_visual_prompt`
+   - Construct a disciplined prompt brief for image models, separating art direction from exact copy.
+   - Args: `kind` (string: "hero", "background", "illustration", "diagram", "logo"), `intent` (string), `audience` (string), `palette` (string), `aspect_ratio` (string), `style` (string).
+
+6. `design_graph_guidance`
+   - Recommend optimal chart encodings by data shape (e.g. "time-series", "categorical", "part-to-whole") and purpose ("trend", "comparison", "distribution").
+   - Args: `data_shape` (string), `purpose` (string), `audience` (string).
+
+7. `design_composition_check`
+   - Advisory linter analyzing HTML snippets for card walls, badge overload, run-on headlines, and decorative noise.
+   - Args: `html` (string).
+
+---
+
+## 5. Offline CLI Commands
+
+All tools operate locally with standard Python 3.9+ without network requests:
+
+```sh
+python -m headronist.discover --query website
+python -m headronist.registry routes
+python -m headronist.registry inspect landing
+python -m headronist.registry check
+python -m headronist.hygiene
+python -m headronist.intake < task.json
+python -m headronist.composition path/to/page.html
+python -m headronist.assets recommend --intent 'security infrastructure'
+python -m headronist.visuals prompt --kind hero --intent 'distributed computing network'
+python -m headronist.visuals graph --data-shape time-series --purpose trend
+python -m headronist.mcp_stdio
+```
+
+---
+
+## 6. Starters & Reference Implementations
+
+- `examples/website.html`: Production-ready, semantic, accessible marketing and product landing starter. Includes dark/light mode toggle, responsive navigation, sticky header with offset compensation, and authentic visual treatments.
+- `examples/dashboard.html`: High-density operational dashboard with clear metrics, tabular data, filter controls, and accessible status indicators.
+- `engines/composition/anti-breakage.css`: Foundational layout protections against overflow, layout shift, and misaligned sticky headers.

@@ -358,6 +358,57 @@
       "focalPoint": "unreviewed",
       "safeArea": "unreviewed",
       "variants": []
+    },
+    {
+      "id": "AdobeStock_320363623",
+      "path": "assets/backgrounds/AdobeStock_320363623.jpeg",
+      "kind": "background",
+      "status": "candidate",
+      "sourceType": "stock-licensed",
+      "license": "Adobe Stock standard license (asset #320363623)",
+      "width": 7176,
+      "height": 4789,
+      "format": "jpeg",
+      "bytes": 2438408,
+      "alpha": "no",
+      "alt": "Dark stormy cloud bank texture",
+      "focalPoint": "center",
+      "safeArea": "full",
+      "variants": []
+    },
+    {
+      "id": "chatgpt-image-oct-7-2026",
+      "path": "assets/backgrounds/ChatGPT Image Oct 7, 2026, 09_05_23 PM.png",
+      "kind": "background",
+      "status": "candidate",
+      "sourceType": "user-provided",
+      "license": "unverified",
+      "width": 1671,
+      "height": 941,
+      "format": "png",
+      "bytes": 1562308,
+      "alpha": "no",
+      "alt": "",
+      "focalPoint": "unreviewed",
+      "safeArea": "unreviewed",
+      "variants": []
+    },
+    {
+      "id": "a03b4e4a-d088-4fe1-9d3b-e5a911c11591",
+      "path": "assets/backgrounds/a03b4e4a-d088-4fe1-9d3b-e5a911c11591.png",
+      "kind": "background",
+      "status": "candidate",
+      "sourceType": "user-provided",
+      "license": "unverified",
+      "width": 1536,
+      "height": 768,
+      "format": "png",
+      "bytes": 80860,
+      "alpha": "no",
+      "alt": "",
+      "focalPoint": "unreviewed",
+      "safeArea": "unreviewed",
+      "variants": []
     }
   ]
 }

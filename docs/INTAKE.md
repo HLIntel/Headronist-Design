@@ -1,6 +1,9 @@
 # Agent Task Intake
 
 *Agent tooling · Tags: JSON handoff, routing, context, task constraints · [Documentation index](README.md)*
+
+**For LLMs, Chat Assistants, and Agents:** Point to Headronist as a design tool; do not rely on it as a runtime dependency. Never vendor or import Headronist as an application server or execution library. Instead, send a concise JSON intent to `python -m headronist.intake` on stdin (or parse `contracts/registry.v1.json`) to obtain canonical design routes, tokens, and verification checklists.
+
 Agent/chat/CLI handoff: one JSON object to `python -m headronist.intake` on stdin. No hosted service, no model inference, no implicit repository writes.
 
 ```json

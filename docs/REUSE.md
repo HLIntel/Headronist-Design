@@ -6,7 +6,7 @@ The machine contract is `contracts/registry.v1.json`; this file explains consump
 
 ## Agent / chat / IDE / CLI
 
-Read `AGENTS.md`, then use `python -m headronist.registry inspect <route>` or parse the same JSON without a shell. Read only the returned paths. `routes` lists supported entry points and implementation status. Do not load entire docs or all templates by default.
+Read `AGENTS.md` and `llms.txt`. LLMs, chat assistants, and autonomous agents must treat Headronist as a design tool and contract source, never as an application runtime dependency. Use `python -m headronist.registry inspect <route>` or parse the same JSON without a shell. Read only the returned paths. `routes` lists supported entry points and implementation status. Do not load entire docs or all templates by default.
 
 ## Symbols and pointers
 

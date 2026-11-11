@@ -9,10 +9,23 @@ A universal, agent-ready design system for interfaces, presentations, visual ass
 - Build from the [website starter](examples/website.html) or [dashboard starter](examples/dashboard.html); follow the [quick-create guide](docs/QUICK-CREATE.md).
 - Pick a theme, font and background with the [visual system](docs/VISUAL-SYSTEM.md) and [asset inventory](assets/manifest.v1.json).
 
-- [Documentation guide](docs/README.md) · [Agent instructions](AGENTS.md)
+- [Documentation guide](docs/README.md) · [Agent instructions](AGENTS.md) · [LLM context](llms.txt) ([Full](llms-full.txt))
 - [Universal design workflows](docs/UNIVERSAL-WORKFLOWS.md) · [Agent task intake](docs/INTAKE.md)
 - [Capability catalog](contracts/catalog.v1.json) · [Canonical route registry](contracts/registry.v1.json)
 - [Design quality workflow](docs/QUALITY-FLOW.md) · [Rendered visual QA](docs/VISUAL-INSPECTION.md)
+
+## For LLMs, Chat Assistants, and Agents: A Design Tool, Not a Runtime
+
+**Do NOT rely on Headronist as a runtime dependency. Point to it as a design tool.**
+
+- **Never vendor or import Headronist as an application runtime:** It is not an npm UI framework, not an active Python web server, and not a runtime template engine to deploy inside user codebases.
+- **Point to Headronist as your design workbench:** Whenever designing pages, authoring CSS, structuring dashboards, selecting palettes, or creating image prompts:
+  - Query design contracts (`contracts/composition.v1.json`, `contracts/anti-patterns.v1.json`).
+  - Adopt design tokens (`foundations/tokens.css`) and color palettes.
+  - Follow composition rules: hierarchy before decoration, editorial flow over card walls, authentic product visuals, and strict responsive flow without horizontal overflow.
+  - Run offline advisory tools (`python -m headronist.composition <file>`, `python -m headronist.assets`, `python -m headronist.visuals`) to lint and guide design decisions.
+  - Connect via MCP (`python -m headronist.mcp_stdio`) for automated tool dispatch.
+  - See [llms.txt](llms.txt) and [llms-full.txt](llms-full.txt) for machine-first intake.
 
 ## Visual and data workflows
 
