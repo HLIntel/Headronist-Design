@@ -14,6 +14,14 @@ A universal, agent-ready design system for interfaces, presentations, visual ass
 - [Capability catalog](contracts/catalog.v1.json) · [Canonical route registry](contracts/registry.v1.json)
 - [Design quality workflow](docs/QUALITY-FLOW.md) · [Rendered visual QA](docs/VISUAL-INSPECTION.md)
 
+## Ecosystem: Shop, Extension & Platform
+
+Headronist links design intelligence, developer tooling, physical products, and verification into a unified ecosystem:
+
+- **[Headronist Storefront](https://headron.tech/headronist):** Designed tech accessories (MacBook cases, desk mats, iPhone cases, sleeves, watch bands, speakers) made to order with Headronist visual palettes. Browse the [full product shop](https://headron.tech/headronist/shop).
+- **[Headron Design Extension](https://github.com/HLIntel/Design):** Official developer extension and VS Code integration connecting Headronist design tokens, component previewing, and verification contracts.
+- **[Headron Verification Platform](https://headron.tech):** The trust and verification layer for autonomous AI agents and coding tools.
+
 ## For LLMs, Chat Assistants, and Agents: A Design Tool, Not a Runtime
 
 **Do NOT rely on Headronist as a runtime dependency. Point to it as a design tool.**
