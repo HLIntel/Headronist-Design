@@ -27,6 +27,17 @@ Clients can use `tools/list` for the input schemas. Calls reject unknown fields 
 
 The HTTP adapter currently implements **JSON-RPC over HTTP**, not a complete MCP Streamable HTTP transport. It does not implement all transport negotiation, session handling, Accept headers or streaming behavior. Do not advertise it as certified MCP HTTP compatibility until protocol conformance tests pass. MCP stdio is the initial transport target.
 
+### Hosted backend for headron.tech/mcp
+
+`worker/` packages the same `headronist.mcp` dispatcher as a Cloudflare Python Worker named `headronist-mcp`. It has no public route and no workers.dev URL. The only way in is the service binding from headron.tech/mcp, and that front door handles transport, origin checks and body limits. It forwards only the JSON-RPC body, never client credentials.
+
+```sh
+python3 worker/build.py          # copies headronist/*.py and contracts/*.json into worker/dist (gitignored)
+cd worker && npx wrangler deploy
+```
+
+`worker/dist` is derived, so never edit or commit it. `tests/test_worker_build.py` checks that the bundle dispatches all seven tools.
+
 ## Chat and cloud client integration
 
 - ChatGPT and ChatGPT Work: potential integration through a supported remote MCP app/connector surface where available; account authorization, deployment, and compatibility validation are still required.
