@@ -148,7 +148,6 @@ python -m headronist.mcp_stdio
 
 ## 7. Ecosystem Cross-Links
 
-- **Headronist Storefront:** https://headron.tech/headronist — 39 tech accessories made with Headronist palettes (MacBook cases, desk mats, phone cases, Kindle cases, sleeves, watch bands, speakers).
-- **Headronist Product Shop:** https://headron.tech/headronist/shop — Full product catalog.
-- **Headron Design Extension:** https://github.com/HLIntel/Design — Official developer extension and VS Code integration.
+- **Headronist Storefront:** https://headron.tech/headronist — Headronist products and design.
+- **Headronist Product Shop:** https://headron.tech/headronist/#/shop — Product catalog.
 - **Headron Verification Platform:** https://headron.tech — Model-independent trust and verification layer for AI coding agents.

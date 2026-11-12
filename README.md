@@ -14,12 +14,11 @@ A universal, agent-ready design system for interfaces, presentations, visual ass
 - [Capability catalog](contracts/catalog.v1.json) · [Canonical route registry](contracts/registry.v1.json)
 - [Design quality workflow](docs/QUALITY-FLOW.md) · [Rendered visual QA](docs/VISUAL-INSPECTION.md)
 
-## Ecosystem: Shop, Extension & Platform
+## Headron ecosystem
 
 Headronist links design intelligence, developer tooling, physical products, and verification into a unified ecosystem:
 
-- **[Headronist Storefront](https://headron.tech/headronist):** Designed tech accessories (MacBook cases, desk mats, iPhone cases, sleeves, watch bands, speakers) made to order with Headronist visual palettes. Browse the [full product shop](https://headron.tech/headronist/shop).
-- **[Headron Design Extension](https://github.com/HLIntel/Design):** Official developer extension and VS Code integration connecting Headronist design tokens, component previewing, and verification contracts.
+- **[Headronist Storefront](https://headron.tech/headronist):** Designed tech accessories (MacBook cases, desk mats, iPhone cases, sleeves, watch bands, speakers) made to order with Headronist visual palettes. Browse the [full product shop](https://headron.tech/headronist/#/shop).
 - **[Headron Verification Platform](https://headron.tech):** The trust and verification layer for autonomous AI agents and coding tools.
 
 ## For LLMs, Chat Assistants, and Agents: A Design Tool, Not a Runtime
@@ -77,7 +76,7 @@ python -m headronist.visuals graph --data-shape time-series --purpose trend
 - `docs/`: task-oriented guides and design research
 - `tests/`: regression checks
 
-Commands run from the repository root with Python 3.9+ and use the standard library unless an optional integration says otherwise. Discovery and intake return JSON pointers, not rendered output. Run tests with `python -m unittest discover -s tests`.
+Commands run from the repository root with Python 3.9+ and use the standard library unless an optional integration says otherwise. Discovery and intake return JSON pointers, not rendered output. For tests, install the test-only dependency with `python -m pip install jsonschema==4.25.1`, then run `python -m unittest discover -s tests`.
 
 ## Scope and boundaries
 

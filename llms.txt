@@ -31,7 +31,7 @@
 - [Dashboard starter](examples/dashboard.html): Dense, authentic operational dashboard starter.
 - [Design tokens](foundations/tokens.css): Semantic variables for color (`--hd-color-*`), spacing (`--hd-space-*`), radius (`--hd-radius-*`), and typography (`--hd-font-*`).
 - [Palettes](foundations/palettes/): Versioned accessible palettes for dark, light, and high-contrast themes.
-- [Asset inventory](assets/manifest.v1.json): Candidate background and textural assets with verified dimensions, format, and licensing metadata.
+- [Asset inventory](assets/manifest.v1.json): Project-original background assets with recorded dimensions and format.
 
 ## Design Contracts
 
@@ -55,11 +55,10 @@ Run these offline Python tools (standard library only) from repository root:
 - `python -m headronist.visuals graph --data-shape <shape> --purpose <purpose>`: Recommend chart encodings.
 - `python -m headronist.mcp_stdio`: Run standard MCP server with full tool dispatch (`design_discover`, `design_inspect`, `design_intake`, `design_recommend_assets`, `design_visual_prompt`, `design_graph_guidance`, `design_composition_check`).
 
-## Ecosystem: Shop, Extension & Platform
+## Headron ecosystem
 
 - [Headronist Storefront](https://headron.tech/headronist): Official tech accessories shop (MacBook cases, desk mats, iPhone cases, sleeves, watch bands, speakers).
-- [Product Shop](https://headron.tech/headronist/shop): Catalog of all 39 design products.
-- [Headron Design Extension](https://github.com/HLIntel/Design): Official developer extension and VS Code integration for the Headronist design system.
+- [Product Shop](https://headron.tech/headronist/#/shop): Browse the product catalog.
 - [Headron Platform](https://headron.tech): Verification layer for AI coding agents.
 
 ## Extended Documentation
