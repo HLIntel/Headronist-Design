@@ -12,6 +12,11 @@
     "fullBleed": {"bestFor": ["immersive imagery", "campaign moments"], "signals": ["genuine high-quality media", "text contrast plan", "crop strategy"]},
     "modular": {"bestFor": ["multi-tool applications", "configurable workspaces"], "signals": ["independent functional regions", "repeatable component grammar"]}
   },
+  "blocks": {
+    "kpi-row": {"bestFor": ["dashboards", "executive summaries", "status reports"], "signals": ["one value per metric", "period and units stated", "target or prior-period comparison"], "cssClass": "hd-kpi-row", "definedIn": "components/primitives/blocks.css"},
+    "chart-card": {"bestFor": ["dashboards", "reports", "presentations"], "signals": ["chart type id from graphs.v1.json", "units, period and source stated", "mandatory table fallback with the same data"], "cssClass": "hd-chart-card", "definedIn": "components/primitives/blocks.css"},
+    "comparison-table": {"bestFor": ["plan and option comparisons", "vendor evaluations", "feature matrices"], "signals": ["one option per column", "criteria rows in words, not color alone", "best cell carries a data-hd-best text marker"], "cssClass": "hd-comparison-table", "definedIn": "components/primitives/blocks.css"}
+  },
   "selectionRules": [
     "Select the simplest pattern that expresses the content hierarchy.",
     "Explain why the selected pattern fits the task.",

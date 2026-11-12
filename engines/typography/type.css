@@ -3,9 +3,12 @@
 :where(.hd-font-ui){font-family:var(--hd-font-ui)}
 :where(.hd-font-editorial){font-family:var(--hd-font-editorial)}
 :where(.hd-font-code){font-family:var(--hd-font-code)}
-:where(.hd-body){font-size:clamp(.9375rem,.25vw + .9rem,1.0625rem);line-height:var(--hd-line-body)}
+:where(.hd-body){font-size:var(--hd-type-body-fluid,clamp(.9375rem,.25vw + .9rem,1.0625rem));line-height:var(--hd-line-body)}
 :where(.hd-heading){font-weight:700;letter-spacing:var(--hd-tracking-heading);line-height:1.12;text-wrap:balance}
-:where(.hd-label){font-size:.8125rem;font-weight:600;letter-spacing:.015em}
+:where(.hd-heading--section){font-size:var(--hd-type-6,1.5rem)}
+:where(.hd-heading--title){font-size:var(--hd-type-7,2rem)}
+:where(.hd-heading--display){font-size:var(--hd-type-9,3.25rem)}
+:where(.hd-label){font-size:var(--hd-type-2,.8125rem);font-weight:600;letter-spacing:.015em}
 :where(.hd-muted){opacity:.75}
 :where(.hd-truncate){white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 :where(.hd-wrap){overflow-wrap:anywhere;word-break:normal}

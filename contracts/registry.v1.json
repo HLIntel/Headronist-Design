@@ -101,6 +101,7 @@
       "engines/composition/responsive.css",
       "contracts/composition.v1.json",
       "components/primitives/dashboard.css",
+      "components/primitives/blocks.css",
       "components/primitives/dashboard-filter.js",
       "examples/dashboard.html",
       "docs/QUICK-CREATE.md"

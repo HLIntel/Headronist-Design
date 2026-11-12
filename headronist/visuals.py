@@ -72,15 +72,23 @@ def recommend_graph(data_shape, purpose="comparison", audience="general"):
         if audience in graph.get("audiences", ["general"]): score += 1
         if score: ranked.append((score, order, graph_id, graph))
     ranked.sort(key=lambda item: (-item[0], item[1]))
-    return {
+    recommendations = [
+        {"id": gid, "label": g["label"], "when": g["when"], "avoid": g["avoid"],
+         "encoding": g["encoding"], "accessibility": g["accessibility"]}
+        for _, _, gid, g in ranked[:5]
+    ]
+    result = {
         "version": "1", "purpose": purpose, "dataShape": data_shape,
-        "recommendations": [
-            {"id": gid, "label": g["label"], "when": g["when"], "avoid": g["avoid"],
-             "encoding": g["encoding"], "accessibility": g["accessibility"]}
-            for _, _, gid, g in ranked[:5]
-        ],
+        "recommendations": recommendations,
         "rules": catalog["rules"]
     }
+    # KPI trend path: one KPI tracked over time is the kpi "trend" variant,
+    # not a bare line chart. Surface it alongside the generic ranking when
+    # the request pairs a KPI or time series with a trend/performance goal.
+    variant = catalog["types"].get("kpi", {}).get("variants", {}).get("trend")
+    if variant and data_shape in {"time-series", "single-kpi"} and purpose in {"trend", "performance"}:
+        result["variant"] = {"type": "kpi", "variant": "trend", **variant}
+    return result
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Build visual prompts and recommend graph forms.")

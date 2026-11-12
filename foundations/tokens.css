@@ -16,6 +16,31 @@
   --hd-radius-sm: .5rem;
   --hd-radius-md: .75rem;
   --hd-radius-lg: 1.25rem;
+  /* Spacing scale: 4px base rhythm. Steps are the only spacing values
+     primitives may use for gap, padding and margin (see docs/STARTER-STACK.md). */
+  --hd-space-1: .25rem;
+  --hd-space-2: .5rem;
+  --hd-space-3: .75rem;
+  --hd-space-4: 1rem;
+  --hd-space-5: 1.25rem;
+  --hd-space-6: 1.5rem;
+  --hd-space-7: 2rem;
+  --hd-space-8: 3rem;
+  --hd-space-9: 4rem;
+  --hd-space-10: 6rem;
+  /* Type scale: step sizes in px at 16px root (12/13/14/16/20/24/32/40/52).
+     Steps are drawn from sizes the primitives already used, so binding
+     classes to the scale does not move existing layouts. */
+  --hd-type-1: .75rem;
+  --hd-type-2: .8125rem;
+  --hd-type-3: .875rem;
+  --hd-type-4: 1rem;
+  --hd-type-5: 1.25rem;
+  --hd-type-6: 1.5rem;
+  --hd-type-7: 2rem;
+  --hd-type-8: 2.5rem;
+  --hd-type-9: 3.25rem;
+  --hd-type-body-fluid: clamp(.9375rem, .25vw + .9rem, 1.0625rem);
   --hd-shadow-soft: 0 1.5rem 4rem rgb(0 0 0 / .2);
   --hd-focus-ring: 0 0 0 .2rem var(--hd-color-ink), 0 0 0 .35rem var(--hd-color-accent);
   --hd-header-height: 4.5rem;
