@@ -19,6 +19,8 @@ class AssetInventoryTests(unittest.TestCase):
                  if path.suffix.lower() in extensions}
         self.assertEqual(listed, files)
         for entry in entries:
+            self.assertEqual(entry['sourceType'], 'original')
+            self.assertEqual(entry['license'], 'project-original')
             self.assertEqual(entry['bytes'], (ROOT / entry['path']).stat().st_size)
 
 
