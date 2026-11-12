@@ -59,6 +59,26 @@ The machine-readable source inventory is [asset-sources.v1.json](../contracts/as
 7. Respect image dimensions, responsive cropping, alt text, contrast, reduced-motion preferences and content licensing.
 8. A recommendation is not a license determination. Verify the current terms at the point of use.
 
+## How a new asset earns production status
+
+1. **Propose with provenance.** Record creator, source, and the license
+   evidence itself (a license file, a purchase record, or authorship by
+   the project) before the file enters the repo. A name that carries a
+   stock agency (AdobeStock, iStock, Pngtree, and similar) is a claim to
+   verify, never evidence.
+2. **Land as candidate.** Add the file under `assets/backgrounds/` with a
+   manifest entry in `assets/manifest.v1.json` (`sourceType`, `license`,
+   exact `bytes`) and a row in `docs/ASSET-PROVENANCE.md` marked
+   **rights-unverified** until step 3 completes.
+3. **Verify, then promote.** A reviewer checks the evidence against the
+   license terms at the point of use (rule 8 in Agent rules). Only then
+   does the provenance row move to **verified** (third-party) or **own**
+   (project-authored). If the evidence cannot be checked, the file stays
+   rights-unverified and out of production surfaces.
+4. **Fail closed.** `tests/test_asset_inventory.py` fails the suite when
+   a background ships without a manifest license entry or a provenance
+   row, so an undocumented asset cannot land silently.
+
 ## Scope
 
 The recommender returns contextual options; it is not a stock-image search engine and does not validate third-party license compliance. The SVG generator produces one original decorative network background, not a general illustration renderer. No runtime dependencies are added.
