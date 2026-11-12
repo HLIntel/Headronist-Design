@@ -76,7 +76,7 @@ python -m headronist.visuals graph --data-shape time-series --purpose trend
 - `docs/`: task-oriented guides and design research
 - `tests/`: regression checks
 
-Commands run from the repository root with Python 3.9+ and use the standard library unless an optional integration says otherwise. Discovery and intake return JSON pointers, not rendered output. Run tests with `python -m unittest discover -s tests`.
+Commands run from the repository root with Python 3.9+ and use the standard library unless an optional integration says otherwise. Discovery and intake return JSON pointers, not rendered output. For tests, install the test-only dependency with `python -m pip install jsonschema==4.25.1`, then run `python -m unittest discover -s tests`.
 
 ## Scope and boundaries
 
