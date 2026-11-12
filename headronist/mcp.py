@@ -1,6 +1,11 @@
 """Minimal stateless MCP JSON-RPC dispatch. No SDK, network, or writes."""
 import json
+from pathlib import Path
 from . import discover, registry, intake, assets, visuals, composition
+
+INTAKE_SCHEMA = json.loads(
+    (Path(__file__).resolve().parent.parent / "contracts/intake.v1.schema.json").read_text(encoding="utf-8")
+)
 
 TOOLS = [
     {
@@ -25,20 +30,7 @@ TOOLS = [
     {
         "name": "design_intake",
         "description": "Route a structured design task without executing it.",
-        "inputSchema": {
-            "type": "object",
-            "properties": {
-                "version": {"type": "string"},
-                "task": {"type": "string"},
-                "target": {"type": "string"},
-                "intent": {"type": "string"},
-                "content": {"type": "array", "items": {"type": "string"}},
-                "constraints": {"type": "object"},
-                "evidence": {"type": "array", "items": {"type": "string"}},
-            },
-            "required": ["version", "task", "target"],
-            "additionalProperties": False,
-        },
+        "inputSchema": INTAKE_SCHEMA,
     },
     {
         "name": "design_recommend_assets",
@@ -66,6 +58,9 @@ TOOLS = [
                 "palette": {"type": "string"},
                 "aspect_ratio": {"type": "string"},
                 "style": {"type": "string"},
+                "text": {"type": "array", "maxItems": 8, "items": {"type": "string", "maxLength": 120}},
+                "references": {"type": "array", "maxItems": 5, "items": {"type": "string", "maxLength": 300}},
+                "constraints": {"type": "array", "maxItems": 12, "items": {"type": "string", "maxLength": 300}},
             },
             "required": ["kind", "intent"],
             "additionalProperties": False,
@@ -77,9 +72,9 @@ TOOLS = [
         "inputSchema": {
             "type": "object",
             "properties": {
-                "data_shape": {"type": "string"},
+                "data_shape": {"type": "string", "enum": list(visuals.DATA_SHAPES)},
                 "purpose": {"type": "string"},
-                "audience": {"type": "string"},
+                "audience": {"type": "string", "enum": list(visuals.AUDIENCES)},
             },
             "required": ["data_shape"],
             "additionalProperties": False,
@@ -96,6 +91,37 @@ TOOLS = [
         },
     },
 ]
+
+TOOL_SCHEMAS = {tool["name"]: tool["inputSchema"] for tool in TOOLS}
+
+
+def _validate(value, schema, path="arguments"):
+    """Validate the JSON Schema keywords used by the published tool inputs."""
+    kind = schema.get("type")
+    types = {"object": dict, "array": list, "string": str, "boolean": bool, "integer": int}
+    if kind and (not isinstance(value, types[kind]) or (kind == "integer" and isinstance(value, bool))):
+        raise ValueError(f"{path} must be {kind}")
+    if "const" in schema and value != schema["const"]:
+        raise ValueError(f"{path} has unsupported value")
+    if "enum" in schema and value not in schema["enum"]:
+        raise ValueError(f"{path} has unsupported value")
+    if isinstance(value, dict):
+        properties = schema.get("properties", {})
+        if schema.get("additionalProperties") is False and value.keys() - properties.keys():
+            raise ValueError(f"{path} contains unknown fields")
+        if set(schema.get("required", [])) - value.keys():
+            raise ValueError(f"{path} is missing required fields")
+        for key, item in value.items():
+            if key in properties:
+                _validate(item, properties[key], f"{path}.{key}")
+    if isinstance(value, (str, list)):
+        low = schema.get("minLength" if isinstance(value, str) else "minItems", 0)
+        high = schema.get("maxLength" if isinstance(value, str) else "maxItems")
+        if len(value) < low or (high is not None and len(value) > high):
+            raise ValueError(f"{path} has invalid length")
+    if isinstance(value, list) and "items" in schema:
+        for item in value:
+            _validate(item, schema["items"], path + "[]")
 
 
 def dispatch(message):
@@ -130,6 +156,9 @@ def dispatch(message):
             args = params.get("arguments", {})
             if not isinstance(args, dict):
                 raise ValueError("Invalid arguments")
+            if not isinstance(name, str) or name not in TOOL_SCHEMAS:
+                raise ValueError("Unknown tool")
+            _validate(args, TOOL_SCHEMAS[name])
             if name == "design_discover":
                 if set(args) - {"query", "group", "limit"}:
                     raise ValueError("Unknown arguments")
@@ -158,6 +187,9 @@ def dispatch(message):
                     palette=args.get("palette", "brand"),
                     aspect_ratio=args.get("aspect_ratio", "16:9"),
                     style=args.get("style", "premium restrained"),
+                    text=args.get("text"),
+                    references=args.get("references"),
+                    constraints=args.get("constraints"),
                 )
             elif name == "design_graph_guidance":
                 if not isinstance(args.get("data_shape"), str):

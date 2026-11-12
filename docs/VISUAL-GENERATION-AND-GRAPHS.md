@@ -97,6 +97,8 @@ python -m headronist.visuals graph --data-shape flow --purpose process --audienc
 
 Supported families include bars, lines, areas, stacked bars, pie/donut, scatter, histogram, box plots, heatmaps, Sankey, network graphs, treemaps, funnels, maps, small multiples and KPI indicators.
 
+Recommendations must match both the data shape and analytical purpose in the catalog. An empty `recommendations` array means the catalog has no compatible chart; revisit the inputs or select a suitable encoding through design review. A separate KPI trend variant may still be provided where applicable.
+
 ### Select by analytical question
 
 | Question | Strong starting point |
