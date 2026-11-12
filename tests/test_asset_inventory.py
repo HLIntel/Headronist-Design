@@ -23,6 +23,12 @@ class AssetInventoryTests(unittest.TestCase):
             self.assertEqual(entry['license'], 'project-original')
             self.assertEqual(entry['bytes'], (ROOT / entry['path']).stat().st_size)
 
+    def test_backgrounds_have_provenance_records(self):
+        entries = json.loads((ROOT / 'assets/manifest.v1.json').read_text())['assets']
+        provenance = (ROOT / 'docs/ASSET-PROVENANCE.md').read_text()
+        for entry in entries:
+            self.assertIn(Path(entry['path']).name, provenance)
+
 
 
 if __name__ == '__main__':

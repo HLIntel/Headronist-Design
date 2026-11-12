@@ -11,6 +11,11 @@ class VisualQualityTests(unittest.TestCase):
   q=json.loads((ROOT/'contracts/quality.v1.json').read_text())
   self.assertIn('AI-generated text as UI proof',q['visualReferences']['reject'])
   self.assertIn(320,q['gates']['requiredViewports'])
+ def test_examples_pass_executed_gate(self):
+  from headronist.quality_gate import audit
+  result=audit()
+  self.assertTrue(result['ok'],result['errors'])
+  self.assertEqual(result['verified'],'static-surface-checks-executed')
  def test_semantic_markup(self):
   html=(ROOT/'examples/hero-workflows.html').read_text()
   self.assertIn('<h1',html)
