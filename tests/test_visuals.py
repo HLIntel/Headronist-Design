@@ -32,6 +32,11 @@ class VisualPromptTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             recommend_graph("categories", "vibes")
 
+    def test_graph_rejects_unknown_shape_and_audience(self):
+        for shape, audience in (("unknown", "general"), ("categories", "unknown")):
+            with self.subTest(shape=shape, audience=audience), self.assertRaises(ValueError):
+                recommend_graph(shape, "comparison", audience)
+
 
 class GraphCatalogTests(unittest.TestCase):
     def test_every_type_has_guidance_fields(self):
@@ -60,6 +65,11 @@ class GraphCatalogTests(unittest.TestCase):
                 result = recommend_graph(shape, purpose)
                 for item in result["recommendations"]:
                     self.assertIn(item["id"], CATALOG["types"])
+                    self.assertIn(shape, CATALOG["types"][item["id"]]["dataShapes"])
+                    self.assertIn(purpose, CATALOG["types"][item["id"]]["purposes"])
+
+    def test_no_catalog_match_is_empty(self):
+        self.assertEqual(recommend_graph("cohort", "trend")["recommendations"], [])
 
     def test_kpi_trend_variant_is_reachable(self):
         result = recommend_graph("time-series", "trend", "executive")

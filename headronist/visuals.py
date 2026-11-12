@@ -12,6 +12,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 GRAPH_CATALOG = ROOT / "contracts" / "graphs.v1.json"
 PROMPT_CATALOG = ROOT / "contracts" / "visual-prompt.v1.json"
+DATA_SHAPES = ("categories", "time-series", "parts-of-whole", "distribution", "relationship", "geospatial", "hierarchy", "flow", "cohort", "single-kpi")
+AUDIENCES = ("general", "executive", "analyst", "operator")
 
 def build_prompt(kind, intent, audience="general", palette="brand", aspect_ratio="16:9",
                  text=None, references=None, constraints=None, style="premium restrained"):
@@ -61,11 +63,17 @@ def build_prompt(kind, intent, audience="general", palette="brand", aspect_ratio
 
 def recommend_graph(data_shape, purpose="comparison", audience="general"):
     catalog = json.loads(GRAPH_CATALOG.read_text(encoding="utf-8"))
+    if data_shape not in DATA_SHAPES:
+        raise ValueError("unknown data shape; choose one of: " + ", ".join(DATA_SHAPES))
     if purpose not in catalog["purposes"]:
         raise ValueError("unknown graph purpose; choose one of: " + ", ".join(catalog["purposes"]))
+    if audience not in AUDIENCES:
+        raise ValueError("unknown audience; choose one of: " + ", ".join(AUDIENCES))
     ranked = []
     # Ties keep catalog order: the catalog lists the canonical form for a shape first.
     for order, (graph_id, graph) in enumerate(catalog["types"].items()):
+        if data_shape not in graph["dataShapes"] or purpose not in graph["purposes"]:
+            continue
         score = 0
         if purpose in graph["purposes"]: score += 3
         if data_shape in graph["dataShapes"]: score += 2
@@ -104,9 +112,9 @@ def main(argv=None):
     p.add_argument("--reference", action="append", default=[])
     p.add_argument("--constraint", action="append", default=[])
     g = sub.add_parser("graph")
-    g.add_argument("--data-shape", required=True, choices=("categories","time-series","parts-of-whole","distribution","relationship","geospatial","hierarchy","flow","cohort","single-kpi"))
+    g.add_argument("--data-shape", required=True, choices=DATA_SHAPES)
     g.add_argument("--purpose", default="comparison", choices=("comparison","trend","composition","distribution","relationship","geography","process","hierarchy","performance"))
-    g.add_argument("--audience", default="general", choices=("general","executive","analyst","operator"))
+    g.add_argument("--audience", default="general", choices=AUDIENCES)
     args = parser.parse_args(argv)
     if args.command == "prompt":
         result = build_prompt(args.kind,args.intent,args.audience,args.palette,args.aspect_ratio,args.text,args.reference,args.constraint,args.style)

@@ -19,6 +19,8 @@ Configure an MCP-capable agent to launch this command from the repository root. 
 - `design_graph_guidance`: Recommend chart and data graphic encodings based on data shape and purpose.
 - `design_composition_check`: Advisory HTML composition analysis against anti-patterns (card walls, badge clutter, run-on headings).
 
+Clients can use `tools/list` for the input schemas. Calls reject unknown fields and invalid types; `design_intake` uses the canonical bounded intake schema. The visual prompt tool also accepts bounded `text`, `references`, and `constraints` arrays. These fields are creative brief inputs, not instructions to fetch references or invoke an image provider.
+
 ## Cloud deployment
 
 `headronist.cloud:application` is a WSGI callable that can run under a compatible managed Python server. It requires `HEADRONIST_API_TOKEN` (at least 24 characters), accepts authenticated POST requests at `/mcp`, limits bodies to 64KiB, and serves `/health`. Deploy only behind HTTPS, gateway rate limits, monitoring and secret management. This module does not deploy itself.
