@@ -1,13 +1,13 @@
 @layer headronist.components {
-:where(.hd-hero){container-type:inline-size;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:clamp(1.25rem,4vw,3rem);padding-block:clamp(3rem,9vw,7rem);min-width:0}
-:where(.hd-hero__content){display:flex;flex-direction:column;align-items:flex-start;gap:clamp(.9rem,2vw,1.5rem);min-width:0;max-width:72ch}
-:where(.hd-hero__eyebrow){margin:0;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-:where(.hd-hero__title){margin:0;font-family:var(--hd-font-ui,system-ui,sans-serif);font-size:clamp(2rem,6.5cqi,5rem);line-height:1.13;letter-spacing:-.035em;font-weight:750;overflow-wrap:break-word;text-wrap:balance;max-width:18ch}
-:where(.hd-hero__description){margin:0;font-size:clamp(1rem,1.6cqi,1.25rem);line-height:1.6;max-width:55ch;overflow-wrap:anywhere}
-:where(.hd-hero__actions){display:flex;flex-wrap:wrap;align-items:center;gap:.75rem}
+:where(.hd-hero){container-type:inline-size;display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:clamp(var(--hd-space-5),4vw,var(--hd-space-8));padding-block:clamp(var(--hd-space-8),9vw,7rem);min-width:0}
+:where(.hd-hero__content){display:flex;flex-direction:column;align-items:flex-start;gap:clamp(.9rem,2vw,var(--hd-space-6));min-width:0;max-width:72ch}
+:where(.hd-hero__eyebrow){margin:0;font-size:var(--hd-type-1);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+:where(.hd-hero__title){margin:0;font-family:var(--hd-font-ui,system-ui,sans-serif);font-size:clamp(var(--hd-type-7),6.5cqi,5rem);line-height:1.13;letter-spacing:-.035em;font-weight:750;overflow-wrap:break-word;text-wrap:balance;max-width:18ch}
+:where(.hd-hero__description){margin:0;font-size:clamp(var(--hd-type-4),1.6cqi,var(--hd-type-5));line-height:1.6;max-width:55ch;overflow-wrap:anywhere}
+:where(.hd-hero__actions){display:flex;flex-wrap:wrap;align-items:center;gap:var(--hd-space-3)}
 :where(.hd-hero__media){min-width:0;max-width:100%;overflow:hidden}
 :where(.hd-hero__media img){display:block;width:100%;height:auto;object-fit:contain}
 :where(.hd-hero__title,.hd-hero__description){position:static;transform:none;white-space:normal;height:auto;min-height:0}
 @container (min-width:52rem){:where(.hd-hero--split){grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
-@media(max-width:360px){:where(.hd-hero__title){font-size:clamp(1.85rem,9vw,2.5rem)}}
+@media(max-width:360px){:where(.hd-hero__title){font-size:clamp(1.85rem,9vw,var(--hd-type-8))}}
 }

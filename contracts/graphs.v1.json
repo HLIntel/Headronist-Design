@@ -308,12 +308,22 @@
       "when": "Communicate one key value with target, context and change.",
       "avoid": "A naked number without timeframe, units or comparison.",
       "encoding": "Value plus reference target or prior period.",
-      "accessibility": "Include metric definition, period, units and direction semantics."
+      "accessibility": "Include metric definition, period, units and direction semantics.",
+      "variants": {
+        "trend": {
+          "label": "KPI trend card",
+          "when": "Show how one KPI moves over ordered time: current value, change versus the prior period, and the recent series in one card.",
+          "avoid": "Many KPIs in one card, unordered periods, or a series too short to read as a trend (fewer than three points).",
+          "encoding": "Current value plus a line or small-multiples series over time; see line and small_multiples.",
+          "accessibility": "State the period, units, change direction semantics and exact start and end values; provide the series as a table."
+        }
+      }
     }
   },
   "rules": [
     "Choose the encoding from the analytical question, not visual novelty.",
     "Use line charts for continuous time; bars for category comparisons.",
+    "For a single KPI over time, use the kpi trend variant (value plus line or small multiples) instead of a bare line chart with no current value.",
     "Do not use pie or donut charts for many categories or close values.",
     "Avoid 3D charts, truncated magnitude axes, dual axes without strong justification, and decorative chart junk.",
     "Use colorblind-safe palettes and never encode a category by color alone.",
