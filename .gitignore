@@ -9,3 +9,7 @@ __pycache__/
 .env.*
 !.env.example
 artifacts/
+
+# Derived Cloudflare worker bundle (worker/build.py)
+worker/dist/
+worker/.wrangler/
